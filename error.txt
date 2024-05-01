@@ -1,0 +1,17 @@
+[ 33%] Building CXX object CMakeFiles/test-physical-object.dir/src/Physical_Engine.cpp.o
+/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp: In member function ‘void PhysicalEngine::resolveCollisions()’:
+/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp:1379:28: error: ‘min_collision’ declared as reference but not initialized
+ 1379 |                 Collision &min_collision;
+      |                            ^~~~~~~~~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp:1406:92: error: invalid type argument of unary ‘*’ (have ‘float’)
+ 1406 |                 speed = (obj->getMass() - min_collision.obj2->getMass())/(obj->getMass() + *min_collision.obj2->getMass()) * speed
+      |                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp:1407:118: error: no match for ‘operator*’ (operand types are ‘float’ and ‘Vector2DF’ {aka ‘NumericVector<float, 2>’})
+ 1407 |                                 + 2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass()) * min_collision.obj2->getSpeed();
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                    |                                                                               |
+      |                                                                    float                                                                           Vector2DF {aka NumericVector<float, 2>}
+make[3]: *** [CMakeFiles/test-physical-object.dir/build.make:90 : CMakeFiles/test-physical-object.dir/src/Physical_Engine.cpp.o] Erreur 1
+make[2]: *** [CMakeFiles/Makefile2:128 : CMakeFiles/test-physical-object.dir/all] Erreur 2
+make[1]: *** [CMakeFiles/Makefile2:135 : CMakeFiles/test-physical-object.dir/rule] Erreur 2
+make: *** [Makefile:147 : test-physical-object] Erreur 2

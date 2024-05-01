@@ -1,0 +1,19 @@
+Start testing: Apr 29 11:01 CEST
+----------------------------------------------------------
+Unable to find executable: bin/test-physical-object
+1/1 Testing: test-physical-object
+1/1 Test: test-physical-object
+Command: ""
+Directory: /home/julien/Cours2A/Prog_Avance/Projet
+"test-physical-object" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-physical-object" end time: Apr 29 11:01 CEST
+"test-physical-object" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 29 11:01 CEST

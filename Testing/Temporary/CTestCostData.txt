@@ -1,0 +1,3 @@
+test-physical-object 0 0
+---
+test-physical-object
