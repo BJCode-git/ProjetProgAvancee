@@ -8,6 +8,7 @@
 #include "Physical_Engine/NumericVector.hpp"
 #include "Physical_Engine/Physical_Object/Physical_Object.hpp"
 
+class Convex_Polygon;
 
 /**
  * @class Circle

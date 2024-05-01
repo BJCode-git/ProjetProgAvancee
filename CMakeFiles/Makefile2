@@ -65,6 +65,8 @@ CMAKE_BINARY_DIR = /home/julien/Cours2A/Prog_Avance/Projet
 # The main recursive "all" target.
 all: CMakeFiles/main.dir/all
 all: CMakeFiles/test-physical-object.dir/all
+all: CMakeFiles/test-circle-drawing.dir/all
+all: CMakeFiles/test-image-drawing.dir/all
 all: include/Physical_Engine/all
 .PHONY : all
 
@@ -75,6 +77,8 @@ preinstall: include/Physical_Engine/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/main.dir/clean
 clean: CMakeFiles/test-physical-object.dir/clean
+clean: CMakeFiles/test-circle-drawing.dir/clean
+clean: CMakeFiles/test-image-drawing.dir/clean
 clean: include/Physical_Engine/clean
 .PHONY : clean
 
@@ -126,12 +130,12 @@ CMakeFiles/main.dir/clean:
 CMakeFiles/test-physical-object.dir/all: include/Physical_Engine/CMakeFiles/Physical_Engine.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=9,10,11 "Built target test-physical-object"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=13,14 "Built target test-physical-object"
 .PHONY : CMakeFiles/test-physical-object.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test-physical-object.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test-physical-object.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 0
 .PHONY : CMakeFiles/test-physical-object.dir/rule
@@ -144,6 +148,58 @@ test-physical-object: CMakeFiles/test-physical-object.dir/rule
 CMakeFiles/test-physical-object.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/clean
 .PHONY : CMakeFiles/test-physical-object.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test-circle-drawing.dir
+
+# All Build rule for target.
+CMakeFiles/test-circle-drawing.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=9,10 "Built target test-circle-drawing"
+.PHONY : CMakeFiles/test-circle-drawing.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test-circle-drawing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test-circle-drawing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 0
+.PHONY : CMakeFiles/test-circle-drawing.dir/rule
+
+# Convenience name for target.
+test-circle-drawing: CMakeFiles/test-circle-drawing.dir/rule
+.PHONY : test-circle-drawing
+
+# clean rule for target.
+CMakeFiles/test-circle-drawing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/clean
+.PHONY : CMakeFiles/test-circle-drawing.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test-image-drawing.dir
+
+# All Build rule for target.
+CMakeFiles/test-image-drawing.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=11,12 "Built target test-image-drawing"
+.PHONY : CMakeFiles/test-image-drawing.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test-image-drawing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test-image-drawing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 0
+.PHONY : CMakeFiles/test-image-drawing.dir/rule
+
+# Convenience name for target.
+test-image-drawing: CMakeFiles/test-image-drawing.dir/rule
+.PHONY : test-image-drawing
+
+# clean rule for target.
+CMakeFiles/test-image-drawing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/clean
+.PHONY : CMakeFiles/test-image-drawing.dir/clean
 
 #=============================================================================
 # Target rules for target include/Physical_Engine/CMakeFiles/Physical_Engine.dir

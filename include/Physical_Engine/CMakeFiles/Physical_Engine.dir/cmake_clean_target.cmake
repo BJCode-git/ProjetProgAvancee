@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "libPhysical_Engine.a"
+  "../../lib/libPhysical_Engine.a"
 )

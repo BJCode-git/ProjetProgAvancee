@@ -1,4 +1,5 @@
 #include "Physical_Engine/Convex_Polygon/Convex_Polygon.hpp"
+#include "Physical_Engine/Circle/Circle.hpp"
 
 /******************
  * Convex_Polygon *
@@ -58,6 +59,7 @@ bool Convex_Polygon::removePoint(Point2DF point){
 }
 
 bool Convex_Polygon::removePoint(unsigned int index){
+	if (index >= points.size()) return false;
 	auto it = points.begin();
 	std::advance(it, index);
 	points.erase(it);

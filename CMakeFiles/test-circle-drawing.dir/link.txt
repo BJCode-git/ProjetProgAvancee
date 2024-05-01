@@ -1,0 +1,1 @@
+/usr/bin/c++ -g "CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o" -o bin/test-circle-drawing   -L/home/julien/Cours2A/Prog_Avance/Projet/lib  -L/usr/local/lib  -Wl,-rpath,/home/julien/Cours2A/Prog_Avance/Projet/lib:/usr/local/lib /usr/local/lib/libSDL2.so 

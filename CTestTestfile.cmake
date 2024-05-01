@@ -5,5 +5,9 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 add_test(test-physical-object "bin/test-physical-object")
-set_tests_properties(test-physical-object PROPERTIES  _BACKTRACE_TRIPLES "/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;18;add_test;/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;0;")
+set_tests_properties(test-physical-object PROPERTIES  _BACKTRACE_TRIPLES "/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;23;add_test;/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;0;")
+add_test(test-circle-drawing "bin/test-circle-drawing")
+set_tests_properties(test-circle-drawing PROPERTIES  _BACKTRACE_TRIPLES "/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;24;add_test;/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;0;")
+add_test(test-image-drawing "bin/test-image-drawing")
+set_tests_properties(test-image-drawing PROPERTIES  _BACKTRACE_TRIPLES "/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;25;add_test;/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;0;")
 subdirs("include/Physical_Engine")

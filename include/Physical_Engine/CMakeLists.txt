@@ -1,7 +1,7 @@
+cmake_minimum_required(VERSION 3.17)
 # Définition de la bibliothèque Physical_Engine
 
-
-# Ajout du dossier include/indicators pour les fichiers d'en-tête
+# Ajout du dossier Physical_Engine pour les fichiers d'en-tête
 include_directories(Physical_Engine)
 
 # Ajout des fichiers source de la bibliothèque
@@ -29,8 +29,12 @@ add_library(Physical_Engine ${SOURCES} ${HEADERS})
 # Spécification des répertoires d'inclusion pour la bibliothèque
 target_include_directories(Physical_Engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Physical_Engine)
 
+# Définition des répertoires de sortie pour les binaires et les bibliothèques
+set(EXECUTABLE_OUTPUT_PATH ../../bin)
+set(LIBRARY_OUTPUT_PATH ../../lib)
+
 # Installation de la bibliothèque
-install(TARGETS Physical_Engine
+install(TARGETS  Physical_Engine
         LIBRARY  DESTINATION lib
         ARCHIVE  DESTINATION lib
         RUNTIME  DESTINATION bin

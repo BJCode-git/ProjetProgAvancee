@@ -1,19 +1,127 @@
-Start testing: Apr 29 11:01 CEST
+Start testing: May 01 23:16 CEST
 ----------------------------------------------------------
-Unable to find executable: bin/test-physical-object
-1/1 Testing: test-physical-object
-1/1 Test: test-physical-object
-Command: ""
+1/3 Testing: test-physical-object
+1/3 Test: test-physical-object
+Command: "/home/julien/Cours2A/Prog_Avance/Projet/bin/test-physical-object"
 Directory: /home/julien/Cours2A/Prog_Avance/Projet
-"test-physical-object" start time: 
+"test-physical-object" start time: May 01 23:16 CEST
 Output:
 ----------------------------------------------------------
+Running tests...
+[?25l[■------------------------------------------------- ] test_BoundingBoxtest_BoundingBox
+Création d'une bounding box
+[■■■----------------------------------------------- ] test_BoundingBoxCréation d'une bounding box
+Création d'une bounding box
+Collision check
+[■■■■■■-------------------------------------------- ] test_BoundingBoxintersection point( 4 ; 2 )
+Erreur dans le test : intersection_point[0] == 1.5
+[■■■■■■■■------------------------------------------ ] test_BoundingBoxErreur dans le test : intersection_point[1] == 1.5
+[■■■■■■■■■■■--------------------------------------- ] test_BoundingBoxDestruction d'une bounding box
+Destruction d'une bounding box
+Destruction d'une bounding box
+[■■■■■■■■■■■--------------------------------------- ] test_BoundingBox passedtest_Physical_Object
+Création d'une bounding box par défaut
+Création d'un objet physique Cercle
+Création d'un disque
+Création d'une bounding box
+Destruction d'une bounding box
+[■■------------------------------------------------ ] test_BoundingBox passed[■■■----------------------------------------------- ] test_BoundingBox passed[■■■■---------------------------------------------- ] test_BoundingBox passedErreur dans le test : obj.getPosition() == Point2DF(1)
+[■■■■■--------------------------------------------- ] test_BoundingBox passed[■■■■■■-------------------------------------------- ] test_BoundingBox passed[■■■■■■■------------------------------------------- ] test_BoundingBox passedErreur dans le test : obj.getPosition() == Point2DF(3)
+[■■■■■■■■------------------------------------------ ] test_BoundingBox passed[■■■■■■■■■----------------------------------------- ] test_BoundingBox passed[■■■■■■■■■■---------------------------------------- ] test_BoundingBox passedDestruction d'un cercle
+Destruction d'un objet physique
+Destruction d'une bounding box
+[■■■■■■■■■■■■■■■■■■■■■----------------------------- ] test_Physical_Object passedtest_Convex_Polygon
+Création d'une bounding box par défaut
+Création d'un objet physique Polygone
+Création d'un Polygone convexe
+Erreur dans le test : polygon.pushPoint({3, 3})
+[■■■----------------------------------------------- ] test_Physical_Object passedErreur dans le test : polygon.getPoints().size() == 5
+[■■■■---------------------------------------------- ] test_Physical_Object passed[■■■■■--------------------------------------------- ] test_Physical_Object passedErreur dans le test : polygon.removePoint({3, 3})
+[■■■■■■-------------------------------------------- ] test_Physical_Object passed[■■■■■■■------------------------------------------- ] test_Physical_Object passed[■■■■■■■■------------------------------------------ ] test_Physical_Object passedDestruction d'un polygone convexe
+Destruction d'un objet physique
+Destruction d'une bounding box
+[■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■------------------- ] test_Convex_Polygon passedtest_Circle
+Création d'une bounding box par défaut
+Création d'un objet physique Cercle
+Création d'un disque
+Création d'une bounding box
+Destruction d'une bounding box
+Destruction d'un cercle
+Destruction d'un objet physique
+Destruction d'une bounding box
+[■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■--------- ] test_Circle passedtest_collision_methods
+Création d'une bounding box par défaut
+Création d'un objet physique Polygone
+Création d'un Polygone convexe
+Création d'une bounding box par défaut
+Création d'un objet physique Polygone
+Création d'un Polygone convexe
+Erreur dans le test : intersection_point[0] == 1.5
+Erreur dans le test : intersection_point[1] == 1.5
+Création d'une bounding box par défaut
+Création d'un objet physique Cercle
+Création d'un disque
+Création d'une bounding box
+Destruction d'une bounding box
+Erreur dans le test : intersection_point[0] == 1
+Erreur dans le test : intersection_point[1] == 1
+Création d'une bounding box par défaut
+Création d'un objet physique Cercle
+Création d'un disque
+Création d'une bounding box
+Destruction d'une bounding box
+Erreur dans le test : intersection_point[0] == 2
+Erreur dans le test : intersection_point[1] == 2
+Destruction d'un cercle
+Destruction d'un objet physique
+Destruction d'une bounding box
+Destruction d'un cercle
+Destruction d'un objet physique
+Destruction d'une bounding box
+Destruction d'un polygone convexe
+Destruction d'un objet physique
+Destruction d'une bounding box
+Destruction d'un polygone convexe
+Destruction d'un objet physique
+Destruction d'une bounding box
+[■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ ] test_collision_methods passed
+[?25h
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test-physical-object" end time: Apr 29 11:01 CEST
+"test-physical-object" end time: May 01 23:16 CEST
 "test-physical-object" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Apr 29 11:01 CEST
+2/3 Testing: test-circle-drawing
+2/3 Test: test-circle-drawing
+Command: "/home/julien/Cours2A/Prog_Avance/Projet/bin/test-circle-drawing"
+Directory: /home/julien/Cours2A/Prog_Avance/Projet
+"test-circle-drawing" start time: May 01 23:16 CEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   3.33 sec
+----------------------------------------------------------
+Test Passed.
+"test-circle-drawing" end time: May 01 23:16 CEST
+"test-circle-drawing" time elapsed: 00:00:03
+----------------------------------------------------------
+
+3/3 Testing: test-image-drawing
+3/3 Test: test-image-drawing
+Command: "/home/julien/Cours2A/Prog_Avance/Projet/bin/test-image-drawing"
+Directory: /home/julien/Cours2A/Prog_Avance/Projet
+"test-image-drawing" start time: May 01 23:16 CEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   4.32 sec
+----------------------------------------------------------
+Test Passed.
+"test-image-drawing" end time: May 01 23:16 CEST
+"test-image-drawing" time elapsed: 00:00:04
+----------------------------------------------------------
+
+End testing: May 01 23:16 CEST

@@ -30,7 +30,7 @@ class BoundingBox{
 		 * @param bottom_right The bottom-right corner of the bounding box.
 		 */
 		BoundingBox(const Point2DF top_left, const Point2DF top_right, 
-					const Point2DF bottom_left, const Point2DF bottom_right);
+					const Point2DF bottom_right, const Point2DF bottom_left);
 
 		/**
 		 * @brief Destructor for BoundingBox.
@@ -52,6 +52,11 @@ class BoundingBox{
 		 */
 		Point2DF getCenter() const;
 
+		Point2DF getTopLeft()     const{ return top_left;};
+		Point2DF getTopRight()    const{ return top_right;};
+		Point2DF getBottomRight() const{ return bottom_right;};
+		Point2DF getBottomLeft()  const{ return bottom_left;};
+
 	private:
 		/**
 		 * @brief Checks if the bounding box is valid.
@@ -66,7 +71,7 @@ class BoundingBox{
 		 */
 		std::pair<float, float> project(const Vector2DF& axis) const;
 
-		Point2DF top_left, top_right, bottom_left, bottom_right;
+		Point2DF top_left, top_right, bottom_right, bottom_left ;
 };
 
 

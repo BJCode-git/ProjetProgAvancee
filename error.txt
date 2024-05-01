@@ -1,17 +1,64 @@
-[ 33%] Building CXX object CMakeFiles/test-physical-object.dir/src/Physical_Engine.cpp.o
-/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp: In member function ‘void PhysicalEngine::resolveCollisions()’:
-/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp:1379:28: error: ‘min_collision’ declared as reference but not initialized
- 1379 |                 Collision &min_collision;
-      |                            ^~~~~~~~~~~~~
-/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp:1406:92: error: invalid type argument of unary ‘*’ (have ‘float’)
- 1406 |                 speed = (obj->getMass() - min_collision.obj2->getMass())/(obj->getMass() + *min_collision.obj2->getMass()) * speed
-      |                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/julien/Cours2A/Prog_Avance/Projet/src/Physical_Engine.cpp:1407:118: error: no match for ‘operator*’ (operand types are ‘float’ and ‘Vector2DF’ {aka ‘NumericVector<float, 2>’})
- 1407 |                                 + 2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass()) * min_collision.obj2->getSpeed();
-      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                                                                    |                                                                               |
-      |                                                                    float                                                                           Vector2DF {aka NumericVector<float, 2>}
-make[3]: *** [CMakeFiles/test-physical-object.dir/build.make:90 : CMakeFiles/test-physical-object.dir/src/Physical_Engine.cpp.o] Erreur 1
-make[2]: *** [CMakeFiles/Makefile2:128 : CMakeFiles/test-physical-object.dir/all] Erreur 2
-make[1]: *** [CMakeFiles/Makefile2:135 : CMakeFiles/test-physical-object.dir/rule] Erreur 2
-make: *** [Makefile:147 : test-physical-object] Erreur 2
+[ 16%] Building CXX object include/Physical_Engine/CMakeFiles/Physical_Engine.dir/Physical_Engine.cpp.o
+[ 33%] Building CXX object include/Physical_Engine/CMakeFiles/Physical_Engine.dir/Physical_Object/Physical_Object.cpp.o
+[ 50%] Building CXX object include/Physical_Engine/CMakeFiles/Physical_Engine.dir/Convex_Polygon/Convex_Polygon.cpp.o
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp: In member function ‘virtual bool Convex_Polygon::isColliding(const Physical_Object&, Vector2DF&, Vector2DF&) const’:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:262:52: error: cannot ‘dynamic_cast’ ‘other’ (of type ‘const class Physical_Object’) to type ‘const class Circle&’ (target is not pointer or reference to complete type)
+  262 |                                 return isColliding(dynamic_cast<const Circle&>(other), intersection, normal);
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp: In member function ‘virtual bool Convex_Polygon::isColliding(const Circle&, Vector2DF&, Vector2DF&) const’:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:365:50: error: invalid use of incomplete type ‘const class Circle’
+  365 |                 std::pair<float, float> proj2 = {other.getPosition().scalarProduct(axis) - other.getRadius(),
+      |                                                  ^~~~~
+In file included from /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:1:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp:14:7: note: forward declaration of ‘class Circle’
+   14 | class Circle;
+      |       ^~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:365:92: error: invalid use of incomplete type ‘const class Circle’
+  365 |                 std::pair<float, float> proj2 = {other.getPosition().scalarProduct(axis) - other.getRadius(),
+      |                                                                                            ^~~~~
+In file included from /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:1:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp:14:7: note: forward declaration of ‘class Circle’
+   14 | class Circle;
+      |       ^~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:366:82: error: invalid use of incomplete type ‘const class Circle’
+  366 |                                                                                  other.getPosition().scalarProduct(axis) + other.getRadius()};
+      |                                                                                  ^~~~~
+In file included from /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:1:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp:14:7: note: forward declaration of ‘class Circle’
+   14 | class Circle;
+      |       ^~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:366:124: error: invalid use of incomplete type ‘const class Circle’
+  366 |                                                                                  other.getPosition().scalarProduct(axis) + other.getRadius()};
+      |                                                                                                                            ^~~~~
+In file included from /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:1:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp:14:7: note: forward declaration of ‘class Circle’
+   14 | class Circle;
+      |       ^~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:366:141: error: could not convert ‘{<expression error>, <expression error>}’ from ‘<brace-enclosed initializer list>’ to ‘std::pair<float, float>’
+  366 |                                                                                  other.getPosition().scalarProduct(axis) + other.getRadius()};
+      |                                                                                                                                             ^
+      |                                                                                                                                             |
+      |                                                                                                                                             <brace-enclosed initializer list>
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:380:36: error: invalid use of incomplete type ‘const class Circle’
+  380 |                 Vector2DF point = {other.getPosition()[0], other.getPosition()[1]};
+      |                                    ^~~~~
+In file included from /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:1:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp:14:7: note: forward declaration of ‘class Circle’
+   14 | class Circle;
+      |       ^~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:380:60: error: invalid use of incomplete type ‘const class Circle’
+  380 |                 Vector2DF point = {other.getPosition()[0], other.getPosition()[1]};
+      |                                                            ^~~~~
+In file included from /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:1:
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp:14:7: note: forward declaration of ‘class Circle’
+   14 | class Circle;
+      |       ^~~~~~
+/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.cpp:380:82: error: could not convert ‘{<expression error>, <expression error>}’ from ‘<brace-enclosed initializer list>’ to ‘Vector2DF’ {aka ‘NumericVector<float, 2>’}
+  380 |                 Vector2DF point = {other.getPosition()[0], other.getPosition()[1]};
+      |                                                                                  ^
+      |                                                                                  |
+      |                                                                                  <brace-enclosed initializer list>
+make[3]: *** [include/Physical_Engine/CMakeFiles/Physical_Engine.dir/build.make:104 : include/Physical_Engine/CMakeFiles/Physical_Engine.dir/Convex_Polygon/Convex_Polygon.cpp.o] Erreur 1
+make[2]: *** [CMakeFiles/Makefile2:154 : include/Physical_Engine/CMakeFiles/Physical_Engine.dir/all] Erreur 2
+make[1]: *** [CMakeFiles/Makefile2:161 : include/Physical_Engine/CMakeFiles/Physical_Engine.dir/rule] Erreur 2
+make: *** [Makefile:205 : Physical_Engine] Erreur 2

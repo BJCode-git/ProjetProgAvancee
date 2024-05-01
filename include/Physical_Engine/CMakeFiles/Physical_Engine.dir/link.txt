@@ -1,2 +1,2 @@
-/usr/bin/ar qc libPhysical_Engine.a CMakeFiles/Physical_Engine.dir/Physical_Engine.cpp.o CMakeFiles/Physical_Engine.dir/Physical_Object/Physical_Object.cpp.o CMakeFiles/Physical_Engine.dir/Convex_Polygon/Convex_Polygon.cpp.o CMakeFiles/Physical_Engine.dir/Circle/Circle.cpp.o CMakeFiles/Physical_Engine.dir/BoundingBox/BoundingBox.cpp.o
-/usr/bin/ranlib libPhysical_Engine.a
+/usr/bin/ar qc ../../lib/libPhysical_Engine.a CMakeFiles/Physical_Engine.dir/Physical_Engine.cpp.o CMakeFiles/Physical_Engine.dir/Physical_Object/Physical_Object.cpp.o CMakeFiles/Physical_Engine.dir/Convex_Polygon/Convex_Polygon.cpp.o CMakeFiles/Physical_Engine.dir/Circle/Circle.cpp.o CMakeFiles/Physical_Engine.dir/BoundingBox/BoundingBox.cpp.o
+/usr/bin/ranlib ../../lib/libPhysical_Engine.a

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "../../lib/libPhysical_Engine.a"
+  "../../lib/libPhysical_Engine.pdb"
   "CMakeFiles/Physical_Engine.dir/BoundingBox/BoundingBox.cpp.o"
   "CMakeFiles/Physical_Engine.dir/BoundingBox/BoundingBox.cpp.o.d"
   "CMakeFiles/Physical_Engine.dir/Circle/Circle.cpp.o"
@@ -9,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Physical_Engine.dir/Physical_Engine.cpp.o.d"
   "CMakeFiles/Physical_Engine.dir/Physical_Object/Physical_Object.cpp.o"
   "CMakeFiles/Physical_Engine.dir/Physical_Object/Physical_Object.cpp.o.d"
-  "libPhysical_Engine.a"
-  "libPhysical_Engine.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

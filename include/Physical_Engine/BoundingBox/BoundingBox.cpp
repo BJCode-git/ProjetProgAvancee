@@ -15,21 +15,23 @@ bool isOverlap(const std::pair<float, float>& proj1, const std::pair<float, floa
 BoundingBox::BoundingBox():
 	top_left({0, 0}),
 	top_right({0, 0}),
-	bottom_left({0, 0}),
-	bottom_right({0, 0})
+	bottom_right({0, 0}),
+	bottom_left({0, 0})
+	
 {
 	debug("Création d'une bounding box par défaut");
 }
 
-BoundingBox::BoundingBox(const Point2DF top_left,const Point2DF top_right, 
-						 const Point2DF bottom_left,const Point2DF bottom_right):
+BoundingBox::BoundingBox(const Point2DF top_left,const Point2DF top_right, const Point2DF bottom_right,
+						 const Point2DF bottom_left):
 	top_left(top_left),
 	top_right(top_right),
-	bottom_left(bottom_left),
-	bottom_right(bottom_right)
+	bottom_right(bottom_right),
+	bottom_left(bottom_left)
+	
 {
 	if(!isBoundingBox()){ 
-		std::cerr << top_left << " " << top_right << " " << bottom_left << " " << bottom_right << std::endl;
+		std::cerr << top_left << " " << top_right << " " << bottom_right << " " << bottom_left << " "  << std::endl;
 		throw std::invalid_argument("Les points ne forment pas une bounding box");
 	}
 	debug("Création d'une bounding box");
@@ -44,19 +46,29 @@ bool BoundingBox::isBoundingBox() const{
 	// On vérifie que les points forment bien une bounding box
 
 
-	// On vérifie que les points sont bien ordonnés
+	// On vérifie que les points soient bien ordonnés
+	/*
+	 * top_left    top_right
+	 * +-----------+
+	 * |           |
+	 * |           |
+	 * +-----------+
+	 * bottom_left bottom_right
+	 */
+	/*
 	if(top_left[1] > bottom_left[1] || top_right[1]   > bottom_right[1] 
 	|| top_left[0] > top_right[0]   || bottom_left[0] > bottom_right[0]){
 		debug("Les points ne sont pas ordonnés");
 		return false;
 	}
+	*/
 
 	// On vérifie que les côtés sont bien égaux (rectangle)
 
-	unsigned int width_t  = top_left.distance_square(top_right);
-	unsigned int width_b  = bottom_left.distance_square(bottom_right);
-	unsigned int height_l = top_left.distance_square(bottom_left);
-	unsigned int height_r = top_right.distance_square(bottom_right);
+	float width_t  = top_left.distance_square(top_right);
+	float width_b  = bottom_left.distance_square(bottom_right);
+	float height_l = top_left.distance_square(bottom_left);
+	float height_r = top_right.distance_square(bottom_right);
 
 	if( width_t != width_b || height_l != height_r){
 		std::cerr << width_t << " " << width_b << " " << height_l << " " << height_r << std::endl;
@@ -65,16 +77,27 @@ bool BoundingBox::isBoundingBox() const{
 	}
 
 	// On vérifie que les côtés sont bien perpendiculaires
-	Vector2DF v1 = top_right - top_left;
-	Vector2DF v2 = bottom_left - top_left;
-	Vector2DF v3 = bottom_right - bottom_left;
-	Vector2DF v4 = top_right - bottom_right;
+	Vector2DF up_side    = top_right    - top_left;
+	Vector2DF left_side  = bottom_left  - top_left;
+	Vector2DF down_side  = bottom_left  - bottom_right;
+	Vector2DF right_side = bottom_right - top_right;
 
-	if(v1.scalarProduct(v2) != 0 || v2.scalarProduct(v3) != 0 || v3.scalarProduct(v4) != 0 || v4.scalarProduct(v1) != 0){
+	if(up_side.scalarProduct(left_side) != 0 || left_side.scalarProduct(down_side) != 0
+	|| down_side.scalarProduct(right_side) != 0 || right_side.scalarProduct(up_side) != 0){
 		debug("Les côtés ne sont pas perpendiculaires");
+		std::cerr << "top_left : "     << top_left     << std::endl 
+				  << "top_right : "    << top_right    << std::endl 
+				  << "bottom_right : " << bottom_right << std::endl
+				  << "bottom_left : "  << bottom_left  << std::endl;
+
+		std::cerr << "up_side : "    << up_side << std::endl 
+				  << "left_side : "  << left_side << std::endl 
+				  << "down_side : "  << down_side << std::endl 
+				  << "right_side : " << right_side << std::endl;
+		std::cerr << up_side.scalarProduct(left_side) << " " << left_side.scalarProduct(down_side) << " " 
+				  << down_side.scalarProduct(right_side) << " " << right_side.scalarProduct(up_side) << std::endl;
 		return false;
 	}
-
 	return true;
 
 }

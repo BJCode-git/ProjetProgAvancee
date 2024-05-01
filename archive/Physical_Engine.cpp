@@ -1378,7 +1378,7 @@ void PhysicalEngine::resolveCollisions(){
 	for(auto& [obj, collision_list] : collisions){
 		// on cherche la distance la plus proche au point de collision pour éviter la pénétration
 		float min_distance = std::numeric_limits<float>::max();
-		Collision &min_collision{};
+		Collision min_collision;
 		Vector2DF speed = obj->getSpeed();
 
 		for(auto& collision : collision_list){
@@ -1407,8 +1407,8 @@ void PhysicalEngine::resolveCollisions(){
 		// avec e le coefficient de restitution (0 < e < 1)
 		// On pourrait même prendre en compte la masse des objets et la vitesse de l'objet 2
 		// v' = (m1-m2)/(m1+m2)v1 + 2m2/(m1+m2)v2
-		speed = (obj->getMass() - min_collision.obj2->getMass())/(obj->getMass() + *min_collision.obj2->getMass()) * speed
-				+ 2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass()) * min_collision.obj2->getSpeed();
+		speed = speed * (obj->getMass() - min_collision.obj2->getMass())/(obj->getMass() + min_collision.obj2->getMass())
+				+ min_collision.obj2->getSpeed() *2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass());
 		// ou simplement opposer la vitesse : v' = -v pour un rebond parfait
 		//speed = speed - 2 * speed.scalarProduct(min_collision.normal) * min_collision.normal;
 
