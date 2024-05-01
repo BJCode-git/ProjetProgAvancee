@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/main.dir/main.cpp.o -o bin/main 
+/usr/bin/c++ -g CMakeFiles/main.dir/main.cpp.o -o bin/main   -L/home/julien/Cours2A/Prog_Avance/Projet/lib  -L/usr/local/lib  -Wl,-rpath,/home/julien/Cours2A/Prog_Avance/Projet/lib:/usr/local/lib /usr/local/lib/libSDL2.so /usr/lib/x86_64-linux-gnu/libSDL2_image.so 

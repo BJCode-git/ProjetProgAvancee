@@ -1,4 +1,5 @@
 #include "Physical_Engine/Circle/Circle.hpp"
+#include "Physical_Engine/Convex_Polygon/Convex_Polygon.hpp"
 
 /******************
  *     Circle     *
@@ -40,12 +41,12 @@ void Circle::computeMinimumBoundingBox(){
 	// On met à jour la bounding box
 	// top_left = (x - r, y - r)
 	// top_right = (x + r, y - r)
-	// bottom_left = (x - r, y + r)
 	// bottom_right = (x + r, y + r)
+	// bottom_left = (x - r, y + r)
 	setBoundingBox(  Point2DF({centroid[0] - radius, centroid[1] - radius}),
 					 Point2DF({centroid[0] + radius, centroid[1] - radius}),
-					 Point2DF({centroid[0] - radius, centroid[1] + radius}),
-					 Point2DF({centroid[0] + radius, centroid[1] + radius}));
+					 Point2DF({centroid[0] + radius, centroid[1] + radius}),
+					 Point2DF({centroid[0] - radius, centroid[1] + radius}));
 }
 
 void Circle::update(){

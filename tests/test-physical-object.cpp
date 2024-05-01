@@ -5,7 +5,10 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include "Physical_Engine.hpp"
+
+#include "Physical_Engine/Convex_Polygon/Convex_Polygon.hpp"
+#include "Physical_Engine/Circle/Circle.hpp"
+//#include "Physical_Engine.hpp"
 #include <indicators/cursor_control.hpp>
 #include <indicators/progress_bar.hpp>
 
@@ -112,14 +115,14 @@ bool test_BoundingBox(indicators::ProgressBar &bar,int origine ,int &increment, 
     debug("test_BoundingBox");
 
     // Test case 1: Creating a bounding box
-    BoundingBox bbox({0, 0}, {2, 0}, {0, 2}, {2, 2});
+    BoundingBox bbox({0, 0}, {2, 0}, {2, 2}, {0, 2});
     ASSERT_TRUE(bbox.getCenter() == Point2DF(1.0));
     increment = 100 /4 * proportion/100;
     bar.set_progress(origine + increment);
-
+    //top left, top right,  bottom right , bottom left
     // Test case 2: Bounding box collision
-    BoundingBox bbox1({0, 0}, {2, 0}, {0, 2}, {2, 2});
-    BoundingBox bbox2({1, 1}, {3, 1}, {1, 3}, {3, 3});
+    BoundingBox bbox1({0, 0}, {2, 0}, {2, 2}, {0, 2});
+    BoundingBox bbox2({1, 1}, {3, 1}, {3, 3}, {1, 3});
     Vector2DF intersection_point, normal;
     ASSERT_TRUE(bbox1.isColliding(bbox2, intersection_point, normal));
     std::cout << "Collision check" <<std::endl;

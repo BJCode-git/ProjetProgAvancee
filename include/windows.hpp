@@ -46,10 +46,8 @@ class Window{
 		
 	private:
 
-		std::shared_ptr<SDL_Window>   window;
+		std::unique_ptr<SDL_Window>   window;
 		std::shared_ptr<SDL_Renderer> renderer;
-		std::shared_ptr<SDL_Texture>  texture;
-		std::shared_ptr<SDL_Surface>  surface;
 
 };
 
