@@ -12,7 +12,8 @@ Vector2DF Gravity(const Physical_Object& obj) {
 Vector2DF Friction(const Physical_Object& obj) {
 
 	float alpha = 0.1;
-	return {-obj.getSpeed()[0] * alpha, -obj.getSpeed()[1] * alpha};
+	return -obj.getSpeed()* alpha;
+	//return {-obj.getSpeed()[0] * alpha, -obj.getSpeed()[1] * alpha};
 }
 
 
@@ -25,7 +26,7 @@ Physical_Object::Physical_Object(Point2DF centroid,
 						float mass,
 						bool is_static,
 						bool ignore_gravity,
-						bool ignore_collision,
+						//bool ignore_collision,
 						bool breakable,
 						uint8_t life):
 	centroid(centroid),
@@ -34,7 +35,7 @@ Physical_Object::Physical_Object(Point2DF centroid,
 	shape(shape),
 	mass(mass),
 	is_static(is_static),
-	ignore_collision(ignore_collision),
+	//ignore_collision(ignore_collision),
 	breakable(false),
 	life(1),
 	hitbox()
@@ -63,6 +64,10 @@ Physical_Object::Physical_Object(Point2DF centroid,
 
 Physical_Object::~Physical_Object(){
 	debug("Destruction d'un objet physique");
+}
+
+Physical_Object::void reduceLife(){
+	if(breakable && life > 0) life--;
 }
 
 void Physical_Object::setBreakable(bool breakable, uint8_t life){
@@ -120,13 +125,17 @@ void Physical_Object::setMass(float){
 void Physical_Object::setStatic(bool){
 	this->is_static = is_static;
 }
-
+/*
 void Physical_Object::setIgnoreCollision(bool){
 	this->ignore_collision = ignore_collision;
 }
-
+*/
 Vector2DF        Physical_Object::getSpeed()             const{
 	return speed;
+}
+
+void             Physical_Object::setSpeed(Vector2DF speed)  {
+	this->speed = speed;
 }
 
 Vector2DF        Physical_Object::getAcceleration()      const{
@@ -144,10 +153,11 @@ float            Physical_Object::getMass()              const{
 bool             Physical_Object::isStatic()             const{
 	return is_static;
 }
-
+/*
 bool             Physical_Object::isCollisions_ignored() const{
 	return ignore_collision;
 }
+*/
 		
 Vector2DF Physical_Object::getPosition()const{
 	return centroid;
@@ -157,37 +167,37 @@ void      Physical_Object::setPosition(Vector2DF){
 	this->centroid = centroid;
 }
 
-void Physical_Object::updateSpeed(){
+void Physical_Object::updateSpeed(float dt){
 	// On met à jour la vitesse
-	// (v(t+1) -v(t))/(t+1 -t) ~ a(t) => v(t+1) = v(t) + a(t)
-	speed[0] += acceleration[0];
-	speed[1] += acceleration[1];
+	// (v(t+dt) -v(t))/dt ~ a(t) => v(t+dt) = v(t) + a(t)*dt
+	speed[0] += acceleration[0] * dt;
+	speed[1] += acceleration[1] * dt;
 }
 
-void Physical_Object::updateAcceleration(){
+void Physical_Object::updateAcceleration(float dt){
 	// On met à jour l'accélération
-	// (a(t+1) -a(t))/(t+1 -t) ~ F_ext/m => a(t+1) = a(t) + F_ext/m
+	// (a(t+dt) -a(t))/dt ~ F_ext/m => a(t+dt) = a(t) + F_ext/m *dt
 	acceleration[0] = 0;
 	acceleration[1] = 0;
 
 	// Principes fondamentaux de la dynamique
 	for(auto F : F_ext){
 		Vector2DF v = F(*this);
-		acceleration = acceleration + v/ mass;
+		acceleration = acceleration + v/ mass *dt;
 	}
 }
 
 
-void Physical_Object::update(){
+void Physical_Object::update(float dt){
 	if(is_static) return;
 
-	updateSpeed();
-	updateAcceleration();
+	updateSpeed(dt);
+	updateAcceleration(dt);
 
 	// On met à jour la position
-	// (x(t+1) -x(t))/(t+1 -t) ~ v(t) => x(t+1) = x(t) + v(t)
-	centroid[0]  += speed[0];
-	centroid[1] += speed[1];
+	// (x(t+dt) -x(t))/dt ~ v(t) => x(t+dt) = x(t) + v(t)
+	centroid[0] += speed[0] * dt;
+	centroid[1] += speed[1] * dt;
 
 }
 

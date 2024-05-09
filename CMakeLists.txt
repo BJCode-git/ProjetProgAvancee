@@ -4,7 +4,7 @@ project(Casse-brique-BRELOT)
 # Configuration du standard C++ à utiliser
 set(CMAKE_CXX_STANDARD 26)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake_modules/")
 
 # Configuration des répertoires source et binaire
 set(PROJECT_SOURCE_DIR src)
@@ -66,12 +66,17 @@ endif()
 # Configuration des bibliothèques SDL_image
 find_package(SDL2_image REQUIRED)
 if(SDL2_IMAGE_FOUND)
-
-    target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
-    target_link_libraries(main PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
     target_link_libraries(test-image-drawing PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
 else()
     message(FATAL_ERROR "SDL2_image not found")
+endif()
+
+find_package(SDL2_ttf REQUIRED)
+if(SDL2_TTF_FOUND AND SDL2_FOUND AND SDL2_IMAGE_FOUND)
+    target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
+    target_link_libraries(main PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})
+else()
+    message(FATAL_ERROR "SDL2 some packages were not found")
 endif()
 
 # Lier votre exécutable avec la bibliothèque Physical_Engine

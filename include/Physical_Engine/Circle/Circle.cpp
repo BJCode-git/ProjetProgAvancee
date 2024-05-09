@@ -49,8 +49,8 @@ void Circle::computeMinimumBoundingBox(){
 					 Point2DF({centroid[0] - radius, centroid[1] + radius}));
 }
 
-void Circle::update(){
-	Physical_Object::update();
+void Circle::update(float dt){
+	Physical_Object::update(dt);
 }
 
 std::pair<float, float> Circle::project(const Vector2DF& axis) const {

@@ -35,7 +35,7 @@ class Convex_Polygon : public Physical_Object{
 
 		const Polygon& getPoints() const;
 		
-		virtual void      update()                                                            override;
+		virtual void      update(float dt=1)                                                  override;
 		virtual void      setPosition(Vector2DF)                                              override;
 		virtual Vector2DF getPosition()                                                 const override;
 		virtual bool      isColliding(const Physical_Object &,Vector2DF &,Vector2DF &)  const override;

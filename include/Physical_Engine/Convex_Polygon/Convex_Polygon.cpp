@@ -243,13 +243,14 @@ void Convex_Polygon::computeMinimumBoundingBox(){ // Vérifier si le polygone a 
 }
 
 
-void Convex_Polygon::update(){
-	Physical_Object::update();
+void Convex_Polygon::update(float dt){
+
+	Physical_Object::update(dt);
 
 	// On met à jour les positions des points du polygone
 	for (auto& p : points) {
-		p[0] += speed[0];
-		p[1] += speed[1];
+		p[0] += speed[0]*dt;
+		p[1] += speed[1]*dt;
 	}
 
 }

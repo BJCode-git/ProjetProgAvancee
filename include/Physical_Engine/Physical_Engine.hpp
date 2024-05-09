@@ -5,14 +5,18 @@
 #include <cmath>       // Pour std::sqrt, std::abs, etc...
 #include <limits>      // Pour std::numeric_limits
 #include <type_traits> // Pour std::enable_if_t, std::is_convertible_v, etc.
-#include <memory>     // Pour std::shared_ptr, etc...
-#include <vector>     // Pour std::vector
-#include <array>      // Pour std::array
-#include <list>       // Pour std::list
-#include <map>        // Pour std::map
-#include <utility>    // Pour std::pair, std::make_pair, etc...
-#include <algorithm>  // Pour std::min, std::max, find,sort, etc...
+#include <memory>      // Pour std::shared_ptr, etc...
+#include <vector>      // Pour std::vector
+#include <array>       // Pour std::array
+#include <list>        // Pour std::list
+#include <map>         // Pour std::map
+#include <utility>     // Pour std::pair, std::make_pair, etc...
+#include <algorithm>   // Pour std::min, std::max, find,sort, etc...
 
+#include <chrono>
+
+//#include <unistd.h>    // Pour Sleep
+//#include <windows.h>   // Pour Sleep
 
 #include "Physical_Engine/NumericVector.hpp"
 #include "Physical_Engine/Physical_Object/Physical_Object.hpp"
@@ -28,24 +32,25 @@ struct Scene{
 // Classe pour le moteur physique
 // On fait très simple pour l'instant
 // Pas de Phase large, Phase étroite directement
-class PhysicalEngine{
+class Physical_Engine{
 	public:
-		PhysicalEngine();
-		~PhysicalEngine();
+		Physical_Engine();
+		~Physical_Engine();
 
 		void addObject(std::shared_ptr<Physical_Object>);
 		void removeObject(std::shared_ptr<Physical_Object>);
 		void clearObjects();
 
+		void setScene(int width, int height);
+
 		void start();
 		void stop();
 
-		void update();
+		void update(float dt=1);
 
 		const std::vector<std::shared_ptr<Physical_Object>> & getObjects() const;
 
 	private:
-
 		bool running;
 		Scene scene;
 		
