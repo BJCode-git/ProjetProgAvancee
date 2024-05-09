@@ -19,6 +19,7 @@
 
 
 class Physical_Object;
+class Physical_Engine;
 
 // force appliquée à un objet physique, 
 //prend en paramètre la position de l'objet et la masse de l'objet
@@ -41,7 +42,7 @@ enum class SHAPE { NONE, CIRCLE, POLYGON};
  * @note This is an abstract base class and cannot be instantiated directly.
  */
 class Physical_Object{
-
+	friend class Physical_Engine;
 	public:
 
 		Physical_Object(Point2DF centroid = {0, 0},
@@ -49,13 +50,13 @@ class Physical_Object{
 						float mass = 1.0,
 						bool is_static = false,
 						bool ignore_gravity = false,
-						bool ignore_collision = false,
+						//bool ignore_collision = false,
 						bool breakable = false,
 						uint8_t life = 1
 						);
 		virtual ~Physical_Object();
 
-
+		void reduceLife();
 		void setBreakable(bool,uint8_t);
 		bool isBreakable() const;
 		uint8_t getLife() const;
@@ -85,14 +86,14 @@ class Physical_Object{
 		virtual void     saveState();
 		virtual void     restoreState();
 		
-		virtual Vector2DF getPosition() const                          ;
-		virtual void      setPosition(Vector2DF)                        ;
+		virtual Vector2DF getPosition() const   ;
+		virtual void      setPosition(Vector2DF);
+
 		// Méthodes virtuelles pures
 		virtual bool      isColliding(const Physical_Object &, Vector2DF &, Vector2DF &) const = 0;
-		virtual void      update()                                                             = 0;
+		virtual void      update(float dt=1)                                                   = 0;
 
 	protected:
-		
 		// donne la normale à un point donné de l'objet physique
 		//virtual void getNormal(Vector2DF)   = 0;
 
@@ -107,14 +108,17 @@ class Physical_Object{
 		virtual std::pair<float, float> project(const Vector2DF& axis) const = 0;
 
 	private:
-		void updateSpeed()       ;
-		void updateAcceleration();
+		// Change la vitesse, seule le moteur physique peut le faire (car ami)
+		void      setSpeed(Vector2DF)   ;
+
+		void updateSpeed(float dt=1)       ;
+		void updateAcceleration(float dt=1);
 
 		const SHAPE shape;
 		BoundingBox hitbox;
 
 		float mass;
-		bool ignore_collision, is_static, breakable;
+		bool is_static, breakable; //ignore_collision,
 		uint8_t life;
 		std::list<Force> F_ext;
 

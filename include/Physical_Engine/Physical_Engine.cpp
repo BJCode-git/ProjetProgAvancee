@@ -2,11 +2,11 @@
 
 
 /******************
- * PhysicalEngine *
+ * Physical_Engine *
  ******************/
 
 
-PhysicalEngine::PhysicalEngine():
+Physical_Engine::Physical_Engine():
 	objects(),
 	collisions(),
 	running(false)
@@ -14,45 +14,102 @@ PhysicalEngine::PhysicalEngine():
 	debug("Création d'un moteur physique");
 }
 
-PhysicalEngine::~PhysicalEngine(){
+Physical_Engine::~Physical_Engine(){
 	debug("Destruction d'un moteur physique");
 }
 
-void PhysicalEngine::addObject(std::shared_ptr<Physical_Object>   obj){
+Physical_Engine::setScene(int width, int height){
+	scene.width = width;
+	scene.height = height;
+}
+
+void Physical_Engine::addObject(std::shared_ptr<Physical_Object>   obj){
 	objects.push_back(obj);
 }
 
-void PhysicalEngine::removeObject(std::shared_ptr<Physical_Object> obj){
+void Physical_Engine::removeObject(std::shared_ptr<Physical_Object> obj){
 	auto it = std::find(objects.begin(), objects.end(), obj);
 	if (it != objects.end()) objects.erase(it);
 }
 
-void PhysicalEngine::clearObjects(){
+void Physical_Engine::clearObjects(){
 	objects.clear();
 }
 
-void PhysicalEngine::start(){
+void Physical_Engine::start(){
 	running = true;
+
+	//constexpr float CLOCKS_PER_MS = CLOCKS_PER_SEC / 1000;
+	//clock_t current_time,last_clock = std::clock();
+
+	std::chrono::high_resolution_clock::time_point last_time = std::chrono::high_resolution_clock::now(), 
+												   current_time;
+ 
+	std::chrono::duration<float, std::milli> delta;
+	float dt = 0;
+	constexpr float  max_dt= 10; //ms
+	
+
+	
 	while(running){
-		update();
+	
+		// On calcule le temps écoulé depuis le dernier appel à update en ms
+		current_time = std::chrono::high_resolution_clock::now();
+		delta = current_time - last_time;
+		last_time = current_time;
+		dt = delta.count();
+		
+		// On met à jour les objets physiques
+		// on vérifie si le temps écoulé est supérieur à max_dt
+		// on procède comme suit pour limiter le temps de calcul
+		if( dt >= max_dt){
+			update(dt % 10);
+		}
+		else{
+			sleep_time = max_dt - dt;
+			this_thread::sleep_for(chrono::duration<double, milli>(sleep_time)); //ms
+		}
+	
 	}
+
 }
 
-void PhysicalEngine::stop(){
+void Physical_Engine::stop(){
 	running = false;
 }
 
-const std::vector<std::shared_ptr<Physical_Object>>& PhysicalEngine::getObjects() const{
+const std::vector<std::shared_ptr<Physical_Object>>& Physical_Engine::getObjects() const{
 	return objects;
 }
 
 
-void PhysicalEngine::update(){
+void Physical_Engine::update(float dt){
 
 	// On met à jour les objets physiques
 	for(auto obj : objects){
 		obj->saveState();
-		obj->update();
+		obj->update(dt);
+	}
+
+	// on détecte si un objet sort de la scène
+	for(auto obj : objects){
+		Vector2DF position = obj->getPosition();
+		Vector2DF speed    = obj->getSpeed();
+
+		// on réduit la vie de l'objet si il sort du bas de la scène
+ 		if( position[1] >= scene.height) obj->reduceLife();
+
+		// on fait rebondir l'objet sur les bords de la scène 
+		if(position[0]<= 0  || position[0] >= scene.width){
+			speed[0] = -speed[0];
+			obj->setSpeed(speed);
+		}
+
+		if(position[1]<= 0 ){
+			speed[1] = -speed[1];
+			obj->setSpeed(speed);
+		}
+
 	}
 	
 	// On détecte les collisions
@@ -63,7 +120,7 @@ void PhysicalEngine::update(){
 }
 
 //std::map<std::shared_ptr<Physical_Object>, std::list<Collision>> collisions;
-void PhysicalEngine::detectCollisions(){
+void Physical_Engine::detectCollisions(){
 	// On détecte les collisions entre les objets physiques
 	// On compare chaque objet avec tous les autres objets O(n^2)
 	for(auto it1 = objects.begin(); it1 != std::prev(objects.end()); ++it1){
@@ -89,7 +146,7 @@ void PhysicalEngine::detectCollisions(){
 		std::map<std::shared_ptr<Physical_Object>, std::list<Collision>> collisions;
 */
 
-void PhysicalEngine::resolveCollisions(){
+void Physical_Engine::resolveCollisions(){
 	// On résout les collisions
 	for(auto& [obj, collision_list] : collisions){
 		// on cherche la distance la plus proche au point de collision pour éviter la pénétration
@@ -133,5 +190,8 @@ void PhysicalEngine::resolveCollisions(){
 		// on applique la nouvelle vitesse, 
 		// à la prochaine itération, l'objet ne devrait plus être en collision
 		obj->setSpeed(speed);
+
+		min_collision.obj2->reduceLife();
 	}
+
 }

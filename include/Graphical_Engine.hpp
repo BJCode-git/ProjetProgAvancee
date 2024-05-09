@@ -4,12 +4,13 @@
 #include <memory>
 #include <chrono>
 #include <ctime>
+#include <thread>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
 
-#include "Physical_Engine.hpp"
+#include "Physical_Engine/Physical_Engine.hpp"
 
 
 // Algrithme de Bresenham pour dessiner un cercle rempli
@@ -89,11 +90,12 @@ class Animation{
 };
 */
 
-class Graphical_Object : public Graphical_Object{
+class Graphical_Object{
 
 	public:
 
-		Graphical_Object(std::shared_ptr<Physical_object> PhyObject);
+		Graphical_Object(std::shared_ptr<Physical_object> PhyObject,
+						 std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
 		~Graphical_Object();
 
 		virtual void draw(std::shared_ptr<SDL_Renderer>> renderer) const = 0;
@@ -146,25 +148,42 @@ class GraphicalEngine{
 
 	public:
 
-		GraphicalEngine(SDL_Renderer* renderer);
+		GraphicalEngine(std::shared_ptr<SDL_Renderer> renderer, 
+						int scene_width,
+						int scene_height,
+						uint16_t fps_limit = 60);
 		~GraphicalEngine();
+
+		void setRenderer(std::shared_ptr<SDL_Renderer> renderer);
+		std::shared_ptr<SDL_Renderer> getRenderer() const;
+
+		void start();
+		void stop();
 
 		void draw();
 		void clear();
 
-		void addObject(std::unique_ptr<Graphical_Object> object,
+		void addObject(std::shared_ptr<Physical_object> object,
 					   std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
-		void addGraphicalPolygon(std::shared_ptr<Physical_object> PhyObject,
+		void addGraphicalPolygon(std::shared_ptr<Convex_Polygon> PhyObject,
 								 std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
-		void addGraphicalCircle(std::shared_ptr<Physical_object> PhyObject,
+		void addGraphicalCircle(std::shared_ptr<Circle> PhyObject,
 								std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
-		void removeObject(std::unique_ptr<Graphical_Object> object);
+		void removeObject(size_t index);
+
+		void setFPSLimit(uint16_t fps_limit);
+		void getFPSLimit() const;
 
 
 	private:
 		std::vector<std::unique_ptr<Graphical_Object>> objects;
 		std::shared_ptr<SDL_Renderer> renderer;
 
+		uint16_t fps_limit;
+		int window_width;
+		int window_height;
+
+		bool running;
 };
 
 
