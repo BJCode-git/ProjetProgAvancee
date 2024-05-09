@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o"
-  "CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o.d"
+  "CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o"
+  "CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o.d"
   "bin/test-circle-drawing"
   "bin/test-circle-drawing.pdb"
 )

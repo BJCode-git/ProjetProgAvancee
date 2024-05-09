@@ -69,28 +69,28 @@ include CMakeFiles/test-circle-drawing.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test-circle-drawing.dir/flags.make
 
-CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o: CMakeFiles/test-circle-drawing.dir/flags.make
-CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o: tests/test-circle-drawing.cpp
-CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o: CMakeFiles/test-circle-drawing.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o -MF CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o.d -o CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/tests/test-circle-drawing.cpp
+CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o: CMakeFiles/test-circle-drawing.dir/flags.make
+CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o: src/tests/test-circle-drawing.cpp
+CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o: CMakeFiles/test-circle-drawing.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o -MF CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o.d -o CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/src/tests/test-circle-drawing.cpp
 
-CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julien/Cours2A/Prog_Avance/Projet/tests/test-circle-drawing.cpp > CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.i
+CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julien/Cours2A/Prog_Avance/Projet/src/tests/test-circle-drawing.cpp > CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.i
 
-CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/tests/test-circle-drawing.cpp -o CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.s
+CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/src/tests/test-circle-drawing.cpp -o CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.s
 
 # Object files for target test-circle-drawing
 test__circle__drawing_OBJECTS = \
-"CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o"
+"CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o"
 
 # External object files for target test-circle-drawing
 test__circle__drawing_EXTERNAL_OBJECTS =
 
-bin/test-circle-drawing: CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o
+bin/test-circle-drawing: CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o
 bin/test-circle-drawing: CMakeFiles/test-circle-drawing.dir/build.make
 bin/test-circle-drawing: /usr/local/lib/libSDL2.so
 bin/test-circle-drawing: CMakeFiles/test-circle-drawing.dir/link.txt

@@ -19,7 +19,6 @@
 
 
 class Physical_Object;
-class Physical_Engine;
 
 // force appliquée à un objet physique, 
 //prend en paramètre la position de l'objet et la masse de l'objet
@@ -42,7 +41,6 @@ enum class SHAPE { NONE, CIRCLE, POLYGON};
  * @note This is an abstract base class and cannot be instantiated directly.
  */
 class Physical_Object{
-	friend class Physical_Engine;
 	public:
 
 		Physical_Object(Point2DF centroid = {0, 0},
@@ -108,8 +106,6 @@ class Physical_Object{
 		virtual std::pair<float, float> project(const Vector2DF& axis) const = 0;
 
 	private:
-		// Change la vitesse, seule le moteur physique peut le faire (car ami)
-		void      setSpeed(Vector2DF)   ;
 
 		void updateSpeed(float dt=1)       ;
 		void updateAcceleration(float dt=1);

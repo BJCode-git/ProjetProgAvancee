@@ -13,6 +13,7 @@
 #include <utility>     // Pour std::pair, std::make_pair, etc...
 #include <algorithm>   // Pour std::min, std::max, find,sort, etc...
 
+#include <thread>
 #include <chrono>
 
 //#include <unistd.h>    // Pour Sleep

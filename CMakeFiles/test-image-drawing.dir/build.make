@@ -69,28 +69,28 @@ include CMakeFiles/test-image-drawing.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test-image-drawing.dir/flags.make
 
-CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o: CMakeFiles/test-image-drawing.dir/flags.make
-CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o: tests/test-image-drawing.cpp
-CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o: CMakeFiles/test-image-drawing.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o -MF CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o.d -o CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/tests/test-image-drawing.cpp
+CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o: CMakeFiles/test-image-drawing.dir/flags.make
+CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o: src/tests/test-image-drawing.cpp
+CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o: CMakeFiles/test-image-drawing.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o -MF CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o.d -o CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/src/tests/test-image-drawing.cpp
 
-CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julien/Cours2A/Prog_Avance/Projet/tests/test-image-drawing.cpp > CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.i
+CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julien/Cours2A/Prog_Avance/Projet/src/tests/test-image-drawing.cpp > CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.i
 
-CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/tests/test-image-drawing.cpp -o CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.s
+CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/src/tests/test-image-drawing.cpp -o CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.s
 
 # Object files for target test-image-drawing
 test__image__drawing_OBJECTS = \
-"CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o"
+"CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o"
 
 # External object files for target test-image-drawing
 test__image__drawing_EXTERNAL_OBJECTS =
 
-bin/test-image-drawing: CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o
+bin/test-image-drawing: CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o
 bin/test-image-drawing: CMakeFiles/test-image-drawing.dir/build.make
 bin/test-image-drawing: /usr/local/lib/libSDL2.so
 bin/test-image-drawing: /usr/lib/x86_64-linux-gnu/libSDL2_image.so

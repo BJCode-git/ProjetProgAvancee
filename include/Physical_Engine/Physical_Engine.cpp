@@ -18,7 +18,7 @@ Physical_Engine::~Physical_Engine(){
 	debug("Destruction d'un moteur physique");
 }
 
-Physical_Engine::setScene(int width, int height){
+void Physical_Engine::setScene(int width, int height){
 	scene.width = width;
 	scene.height = height;
 }
@@ -62,13 +62,10 @@ void Physical_Engine::start(){
 		// On met à jour les objets physiques
 		// on vérifie si le temps écoulé est supérieur à max_dt
 		// on procède comme suit pour limiter le temps de calcul
-		if( dt >= max_dt){
-			update(dt % 10);
-		}
-		else{
-			sleep_time = max_dt - dt;
-			this_thread::sleep_for(chrono::duration<double, milli>(sleep_time)); //ms
-		}
+		if( dt >= max_dt)
+			update(dt / 10);
+		else
+			std::this_thread::sleep_for(std::chrono::duration<double, std::milli>(max_dt - dt)); //ms
 	
 	}
 

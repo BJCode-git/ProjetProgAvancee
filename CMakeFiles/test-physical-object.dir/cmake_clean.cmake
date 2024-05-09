@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test-physical-object.dir/tests/test-physical-object.cpp.o"
-  "CMakeFiles/test-physical-object.dir/tests/test-physical-object.cpp.o.d"
+  "CMakeFiles/test-physical-object.dir/src/tests/test-physical-object.cpp.o"
+  "CMakeFiles/test-physical-object.dir/src/tests/test-physical-object.cpp.o.d"
   "bin/test-physical-object"
   "bin/test-physical-object.pdb"
 )
