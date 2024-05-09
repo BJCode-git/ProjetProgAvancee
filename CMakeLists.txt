@@ -43,9 +43,9 @@ add_subdirectory(include/Physical_Engine)
 # Configuration des exécutables
 add_executable(main main.cpp)
 
-add_executable(test-physical-object tests/test-physical-object.cpp)
-add_executable(test-circle-drawing tests/test-circle-drawing.cpp)
-add_executable(test-image-drawing tests/test-image-drawing.cpp)
+add_executable(test-physical-object src/tests/test-physical-object.cpp)
+add_executable(test-circle-drawing  src/tests/test-circle-drawing.cpp)
+add_executable(test-image-drawing   src/tests/test-image-drawing.cpp)
 
 # Configuration des bibliothèques SDL
 find_package(SDL2 REQUIRED)

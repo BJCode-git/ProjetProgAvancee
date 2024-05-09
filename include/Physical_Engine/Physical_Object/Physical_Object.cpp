@@ -12,7 +12,7 @@ Vector2DF Gravity(const Physical_Object& obj) {
 Vector2DF Friction(const Physical_Object& obj) {
 
 	float alpha = 0.1;
-	return -obj.getSpeed()* alpha;
+	return obj.getSpeed()* -alpha;
 	//return {-obj.getSpeed()[0] * alpha, -obj.getSpeed()[1] * alpha};
 }
 
@@ -66,7 +66,7 @@ Physical_Object::~Physical_Object(){
 	debug("Destruction d'un objet physique");
 }
 
-Physical_Object::void reduceLife(){
+void Physical_Object::reduceLife(){
 	if(breakable && life > 0) life--;
 }
 
@@ -132,10 +132,6 @@ void Physical_Object::setIgnoreCollision(bool){
 */
 Vector2DF        Physical_Object::getSpeed()             const{
 	return speed;
-}
-
-void             Physical_Object::setSpeed(Vector2DF speed)  {
-	this->speed = speed;
 }
 
 Vector2DF        Physical_Object::getAcceleration()      const{

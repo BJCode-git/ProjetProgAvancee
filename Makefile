@@ -260,77 +260,77 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-tests/test-circle-drawing.o: tests/test-circle-drawing.cpp.o
-.PHONY : tests/test-circle-drawing.o
+src/tests/test-circle-drawing.o: src/tests/test-circle-drawing.cpp.o
+.PHONY : src/tests/test-circle-drawing.o
 
 # target to build an object file
-tests/test-circle-drawing.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.o
-.PHONY : tests/test-circle-drawing.cpp.o
+src/tests/test-circle-drawing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.o
+.PHONY : src/tests/test-circle-drawing.cpp.o
 
-tests/test-circle-drawing.i: tests/test-circle-drawing.cpp.i
-.PHONY : tests/test-circle-drawing.i
+src/tests/test-circle-drawing.i: src/tests/test-circle-drawing.cpp.i
+.PHONY : src/tests/test-circle-drawing.i
 
 # target to preprocess a source file
-tests/test-circle-drawing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.i
-.PHONY : tests/test-circle-drawing.cpp.i
+src/tests/test-circle-drawing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.i
+.PHONY : src/tests/test-circle-drawing.cpp.i
 
-tests/test-circle-drawing.s: tests/test-circle-drawing.cpp.s
-.PHONY : tests/test-circle-drawing.s
+src/tests/test-circle-drawing.s: src/tests/test-circle-drawing.cpp.s
+.PHONY : src/tests/test-circle-drawing.s
 
 # target to generate assembly for a file
-tests/test-circle-drawing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/tests/test-circle-drawing.cpp.s
-.PHONY : tests/test-circle-drawing.cpp.s
+src/tests/test-circle-drawing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.s
+.PHONY : src/tests/test-circle-drawing.cpp.s
 
-tests/test-image-drawing.o: tests/test-image-drawing.cpp.o
-.PHONY : tests/test-image-drawing.o
+src/tests/test-image-drawing.o: src/tests/test-image-drawing.cpp.o
+.PHONY : src/tests/test-image-drawing.o
 
 # target to build an object file
-tests/test-image-drawing.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.o
-.PHONY : tests/test-image-drawing.cpp.o
+src/tests/test-image-drawing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o
+.PHONY : src/tests/test-image-drawing.cpp.o
 
-tests/test-image-drawing.i: tests/test-image-drawing.cpp.i
-.PHONY : tests/test-image-drawing.i
+src/tests/test-image-drawing.i: src/tests/test-image-drawing.cpp.i
+.PHONY : src/tests/test-image-drawing.i
 
 # target to preprocess a source file
-tests/test-image-drawing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.i
-.PHONY : tests/test-image-drawing.cpp.i
+src/tests/test-image-drawing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.i
+.PHONY : src/tests/test-image-drawing.cpp.i
 
-tests/test-image-drawing.s: tests/test-image-drawing.cpp.s
-.PHONY : tests/test-image-drawing.s
+src/tests/test-image-drawing.s: src/tests/test-image-drawing.cpp.s
+.PHONY : src/tests/test-image-drawing.s
 
 # target to generate assembly for a file
-tests/test-image-drawing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/tests/test-image-drawing.cpp.s
-.PHONY : tests/test-image-drawing.cpp.s
+src/tests/test-image-drawing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.s
+.PHONY : src/tests/test-image-drawing.cpp.s
 
-tests/test-physical-object.o: tests/test-physical-object.cpp.o
-.PHONY : tests/test-physical-object.o
+src/tests/test-physical-object.o: src/tests/test-physical-object.cpp.o
+.PHONY : src/tests/test-physical-object.o
 
 # target to build an object file
-tests/test-physical-object.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/tests/test-physical-object.cpp.o
-.PHONY : tests/test-physical-object.cpp.o
+src/tests/test-physical-object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/src/tests/test-physical-object.cpp.o
+.PHONY : src/tests/test-physical-object.cpp.o
 
-tests/test-physical-object.i: tests/test-physical-object.cpp.i
-.PHONY : tests/test-physical-object.i
+src/tests/test-physical-object.i: src/tests/test-physical-object.cpp.i
+.PHONY : src/tests/test-physical-object.i
 
 # target to preprocess a source file
-tests/test-physical-object.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/tests/test-physical-object.cpp.i
-.PHONY : tests/test-physical-object.cpp.i
+src/tests/test-physical-object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/src/tests/test-physical-object.cpp.i
+.PHONY : src/tests/test-physical-object.cpp.i
 
-tests/test-physical-object.s: tests/test-physical-object.cpp.s
-.PHONY : tests/test-physical-object.s
+src/tests/test-physical-object.s: src/tests/test-physical-object.cpp.s
+.PHONY : src/tests/test-physical-object.s
 
 # target to generate assembly for a file
-tests/test-physical-object.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/tests/test-physical-object.cpp.s
-.PHONY : tests/test-physical-object.cpp.s
+src/tests/test-physical-object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/src/tests/test-physical-object.cpp.s
+.PHONY : src/tests/test-physical-object.cpp.s
 
 # Help Target
 help:
@@ -353,15 +353,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tests/test-circle-drawing.o"
-	@echo "... tests/test-circle-drawing.i"
-	@echo "... tests/test-circle-drawing.s"
-	@echo "... tests/test-image-drawing.o"
-	@echo "... tests/test-image-drawing.i"
-	@echo "... tests/test-image-drawing.s"
-	@echo "... tests/test-physical-object.o"
-	@echo "... tests/test-physical-object.i"
-	@echo "... tests/test-physical-object.s"
+	@echo "... src/tests/test-circle-drawing.o"
+	@echo "... src/tests/test-circle-drawing.i"
+	@echo "... src/tests/test-circle-drawing.s"
+	@echo "... src/tests/test-image-drawing.o"
+	@echo "... src/tests/test-image-drawing.i"
+	@echo "... src/tests/test-image-drawing.s"
+	@echo "... src/tests/test-physical-object.o"
+	@echo "... src/tests/test-physical-object.i"
+	@echo "... src/tests/test-physical-object.s"
 .PHONY : help
 
 
