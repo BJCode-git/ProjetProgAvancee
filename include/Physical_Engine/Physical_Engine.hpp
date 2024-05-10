@@ -16,8 +16,8 @@
 #include <thread>
 #include <chrono>
 
-//#include <unistd.h>    // Pour Sleep
-//#include <windows.h>   // Pour Sleep
+#include <SDL2/SDL.h>   // Pour event
+
 
 #include "Physical_Engine/NumericVector.hpp"
 #include "Physical_Engine/Physical_Object/Physical_Object.hpp"
@@ -44,12 +44,27 @@ class Physical_Engine{
 
 		void setScene(int width, int height);
 
+		void operator()(){start();}
+
 		void start();
 		void stop();
 
 		void update(float dt=1);
 
 		const std::vector<std::shared_ptr<Physical_Object>> & getObjects() const;
+
+	private:
+		// envoie un événement de destruction d'un objet physique
+		// au moteur de jeu
+		void sendDestructEvent();
+
+		void removeDeadObjects();
+
+		// détecte les collisions entre les objets physiques
+		// On suppose qu'à l'état initial, les objets physiques ne se chevauchent pas
+		void detectCollisions();
+
+		void resolveCollisions();
 
 	private:
 		bool running;
@@ -64,11 +79,7 @@ class Physical_Engine{
 		std::vector<std::shared_ptr<Physical_Object>> objects;
 		std::map<std::shared_ptr<Physical_Object>, std::list<Collision>> collisions;
 
-		// détecte les collisions entre les objets physiques
-		// On suppose qu'à l'état initial, les objets physiques ne se chevauchent pas
-		void detectCollisions();
 
-		void resolveCollisions();
 
 };
 

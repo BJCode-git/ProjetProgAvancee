@@ -13,15 +13,12 @@ Convex_Polygon::Convex_Polygon(const Polygon &points):
 	if (!isConvex()) throw std::invalid_argument("Le polygone n'est pas convexe");
 	computeCentroid();
 }
-/*
-Convex_Polygon::Convex_Polygon(const Polygon points):
-	Physical_Object({0, 0}, SHAPE::POLYGON),
-	points(points),
-	hitbox()
-{
-	if (!isConvex()) throw std::invalid_argument("Le polygone n'est pas convexe");
-	computeCentroid();
-}*/
+
+Convex_Polygon::Convex_Polygon(std::initializer_list<Point2DF> list){
+	for(auto point : list){
+		points.push_back(point);
+	}
+}
 
 Convex_Polygon::~Convex_Polygon(){
 	debug("Destruction d'un polygone convexe");

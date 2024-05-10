@@ -12,10 +12,12 @@ Physical_Engine::Physical_Engine():
 	running(false)
 {
 	debug("Création d'un moteur physique");
+	SDL_InitSubSystem(SDL_INIT_EVENTS);
 }
 
 Physical_Engine::~Physical_Engine(){
 	debug("Destruction d'un moteur physique");
+	//SDL_QuitSubSystem(SDL_INIT_EVENTS);
 }
 
 void Physical_Engine::setScene(int width, int height){
@@ -80,6 +82,24 @@ const std::vector<std::shared_ptr<Physical_Object>>& Physical_Engine::getObjects
 }
 
 
+void Physical_Engine::sendDestructEvent(){
+	SDL_Event event;
+	event.type = SDL_USEREVENT;
+	SDL_PushEvent(&event);
+}
+
+void Physical_Engine::removeDeadObjects(){
+	// On supprime les objets physiques qui ont une vie nulle
+
+	auto it = objects.begin();
+	while(it != objects.end()){
+		if((*it)->getLife() <= 0) 
+			it = objects.erase(it);
+		else 
+			it++;
+	}
+}
+
 void Physical_Engine::update(float dt){
 
 	// On met à jour les objets physiques
@@ -88,13 +108,25 @@ void Physical_Engine::update(float dt){
 		obj->update(dt);
 	}
 
+	bool need_to_destroy = false;
 	// on détecte si un objet sort de la scène
-	for(auto obj : objects){
+	auto it = objects.begin();
+	while(it != objects.end()){
+		auto obj = *it;
 		Vector2DF position = obj->getPosition();
 		Vector2DF speed    = obj->getSpeed();
 
 		// on réduit la vie de l'objet si il sort du bas de la scène
- 		if( position[1] >= scene.height) obj->reduceLife();
+ 		if( position[1] >= scene.height){
+			obj->reduceLife();
+			if(obj->getLife() <= 0) {
+				it = objects.erase(it);
+				sendDestructEvent();
+			}
+		}
+		else{
+			it++;
+		}
 
 		// on fait rebondir l'objet sur les bords de la scène 
 		if(position[0]<= 0  || position[0] >= scene.width){
@@ -108,12 +140,14 @@ void Physical_Engine::update(float dt){
 		}
 
 	}
-	
+
 	// On détecte les collisions
 	detectCollisions();
 
 	// On résout les collisions
 	resolveCollisions();
+
+	removeDeadObjects();
 }
 
 //std::map<std::shared_ptr<Physical_Object>, std::list<Collision>> collisions;
@@ -189,6 +223,7 @@ void Physical_Engine::resolveCollisions(){
 		obj->setSpeed(speed);
 
 		min_collision.obj2->reduceLife();
+
 	}
 
 }

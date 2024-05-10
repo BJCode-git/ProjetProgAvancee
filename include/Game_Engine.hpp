@@ -1,30 +1,40 @@
 #ifndef GAME_ENGINE_HPP
 
+#include <iostream>
 #include <memory>
 #include <thread>
 
 
-#include "windows.hpp"
-#include "Graphical_Engine.hpp"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
+
 #include "Physical_Engine/Physical_Engine.hpp"
+#include "Graphical_Engine.hpp"
+#include "Windows.hpp"
+
 //#include "Sound_Engine.hpp"
 
 
-
-
-class Game_engine{
+class GameEngine{
 	
 	public:
-		Game_engine();
-		~Game_engine();
+		GameEngine();
+		~GameEngine();
 
 		void start() const;
 		void stop() const;
-
+	
+	private:
+		void init();
 		void handle_events();
 	
 	private:
-		unsigned int score;
+		bool running;
+		int score;
+		std::shared_ptr<Convex_Polygon> phy_bar;
+		Window w;
+
 
 		std::unique_ptr<Window> window;
 		std::unique_ptr<Graphical_Engine> graphical_engine;
@@ -34,6 +44,7 @@ class Game_engine{
 		std::thread graphical_engine_thread;
 		std::thread physical_engine_thread;
 		//std::thread sound_engine_thread;
+
 };
 
 
