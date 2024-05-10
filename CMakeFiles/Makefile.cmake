@@ -52,7 +52,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/main.dir/DependInfo.cmake"
+  "CMakeFiles/BrickBreaker.dir/DependInfo.cmake"
   "CMakeFiles/test-physical-object.dir/DependInfo.cmake"
   "CMakeFiles/test-circle-drawing.dir/DependInfo.cmake"
   "CMakeFiles/test-image-drawing.dir/DependInfo.cmake"

@@ -172,17 +172,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named BrickBreaker
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+BrickBreaker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BrickBreaker
+.PHONY : BrickBreaker
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+BrickBreaker/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/build
+.PHONY : BrickBreaker/fast
 
 #=============================================================================
 # Target rules for targets named test-physical-object
@@ -241,7 +241,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -249,7 +249,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -257,7 +257,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/tests/test-circle-drawing.o: src/tests/test-circle-drawing.cpp.o
@@ -345,8 +345,8 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... BrickBreaker"
 	@echo "... Physical_Engine"
-	@echo "... main"
 	@echo "... test-circle-drawing"
 	@echo "... test-image-drawing"
 	@echo "... test-physical-object"

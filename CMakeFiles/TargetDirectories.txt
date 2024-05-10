@@ -1,4 +1,4 @@
-/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/main.dir
+/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/BrickBreaker.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test-physical-object.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test-circle-drawing.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test-image-drawing.dir

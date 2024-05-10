@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DDEBUG
 
-CXX_INCLUDES = -I/home/julien/Cours2A/Prog_Avance/Projet/include -I/home/julien/Cours2A/Prog_Avance/Projet/include/indicators/include -I/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Physical_Engine
+CXX_INCLUDES = -I/home/julien/Cours2A/Prog_Avance/Projet/include -I/home/julien/Cours2A/Prog_Avance/Projet/include/indicators/include -I/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Physical_Engine -isystem /usr/local/include/SDL2
 
 CXX_FLAGS = -g -std=gnu++23
 

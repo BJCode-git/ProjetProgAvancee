@@ -19,8 +19,7 @@ using Vector2DF = NumericVector<float       ,2>;//std::pair<float, float>;
 // Point 2D
 using Point2D  = NumericVector<unsigned int,2>;
 using Point2DF = NumericVector<float       ,2>;
-// Polygone 2D
-using Polygon  = std::vector<Point2DF>;
+
 
 /**
  * @class NumericVector

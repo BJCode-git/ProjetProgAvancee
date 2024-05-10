@@ -1,4 +1,4 @@
-#include "windows.hpp"
+#include "Windows.hpp"
 
 /*
 
@@ -33,6 +33,12 @@ Window::Window(const std::string title, int x, int y, int w, int h, Uint32 flags
 	width(w),
 	height(h)
 {
+	i(TTF_Init() == -1){
+		std::cerr << "Error: " << TTF_GetError() << std::endl;
+		throw std::runtime_error("Error: " + std::string(TTF_GetError()));
+	}
+
+
 	window = std::unique_ptr<SDL_Window*>(SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED, w, h, flags));
 	renderer = std::shared_ptr<SDL_Renderer*>(SDL_CreateRenderer(*window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED));
 
@@ -47,6 +53,7 @@ Window::Window(const std::string title, int x, int y, int w, int h, Uint32 flags
 
 Window::~Window(){
 	TTF_CloseFont(*font);
+	TTF_Quit();
 	SDL_DestroyTexture(*renderer);
 	SDL_DestroyWindow(*window);
 }

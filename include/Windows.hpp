@@ -13,7 +13,7 @@ class Window{
 		Window(const std::string title, int w = 960, int h = 540, Uint32 flags = SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_MOUSE_FOCUS);
 		~Window();
 
-		shared_ptr<SDL_Renderer> get_renderer() const;
+		std::shared_ptr<SDL_Renderer> get_renderer() const;
 		int get_width() const;
 		int get_height() const;
 

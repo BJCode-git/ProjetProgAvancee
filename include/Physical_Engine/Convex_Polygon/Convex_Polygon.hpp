@@ -21,9 +21,13 @@ class Circle;
  * in a 2D space. It provides methods for manipulating and querying the polygon's points, as well
  * as performing collision detection with other objects.
  */
+
+ // Polygone 2D
+using Polygon  = std::vector<Point2DF>;
 class Convex_Polygon : public Physical_Object{
 	public:
 		Convex_Polygon(const Polygon &);
+		Convex_Polygon(std::initializer_list<Point2DF> list);
 		//Convex_Polygon(const Polygon);
 		~Convex_Polygon();
 

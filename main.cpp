@@ -1,8 +1,11 @@
 #include <iostream>
-#include "include/Game_engine.hpp"
+#include "Game_Engine.hpp"
 
 
 int main(){
-	std::cout << "Hello World" << std::endl;
+	
+	GameEngine game;
+	game.start();
+
 	return 0;
 }

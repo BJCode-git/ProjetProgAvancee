@@ -41,47 +41,39 @@ add_subdirectory(include/Physical_Engine)
 #add_library(Physical_Engine STATIC lib/libPhysical_Engine.a)
 
 # Configuration des exécutables
-add_executable(main main.cpp)
+add_executable(BrickBreaker main.cpp)
 
+# Configuration des tests
 add_executable(test-physical-object src/tests/test-physical-object.cpp)
 add_executable(test-circle-drawing  src/tests/test-circle-drawing.cpp)
 add_executable(test-image-drawing   src/tests/test-image-drawing.cpp)
 
 # Configuration des bibliothèques SDL
 find_package(SDL2 REQUIRED)
-if(SDL2_FOUND)
-    #target_link_libraries(main PRIVATE ${SDL2_LIBRARIES})
-    #target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIRS})
-    target_include_directories(test-circle-drawing PRIVATE ${SDL2_INCLUDE_DIRS})
-    
-    # Configuration des bibliothèques pour les tests
-    #target_link_libraries(main PRIVATE ${SDL2_LIBRARIES})
-    target_link_libraries(test-circle-drawing PRIVATE ${SDL2_LIBRARIES})
-    #target_link_libraries(test-image-drawing PRIVATE ${SDL2_LIBRARIES})
-else()
-    message(FATAL_ERROR "SDL2 not found")
-endif()
-
-
 # Configuration des bibliothèques SDL_image
 find_package(SDL2_image REQUIRED)
-if(SDL2_IMAGE_FOUND)
-    target_link_libraries(test-image-drawing PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
-else()
-    message(FATAL_ERROR "SDL2_image not found")
-endif()
-
+# Configuration des bibliothèques SDL_ttf
 find_package(SDL2_ttf REQUIRED)
-if(SDL2_TTF_FOUND AND SDL2_FOUND AND SDL2_IMAGE_FOUND)
-    target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
-    target_link_libraries(main PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})
-else()
-    message(FATAL_ERROR "SDL2 some packages were not found")
-endif()
 
-# Lier votre exécutable avec la bibliothèque Physical_Engine
+
+# Ajout des dépendances pour les exécutables
+
+# Lier votre l'exécutable avec la bibliothèque Physical_Engine
 target_link_libraries(test-physical-object Physical_Engine)
+
+# Lier les exécutables avec les bibliothèques SDL
+target_include_directories(test-circle-drawing PRIVATE ${SDL2_INCLUDE_DIRS})
+target_link_libraries(test-circle-drawing PRIVATE ${SDL2_LIBRARIES})
+
+# Lier les exécutables avec les bibliothèques SDL_image
+target_include_directories(test-image-drawing PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
+target_link_libraries(test-image-drawing PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
+
+# Lier les exécutables avec les bibliothèques SDL_ttf
+target_include_directories(BrickBreaker PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
+target_link_libraries(BrickBreaker PRIVATE Physical_Engine ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})
+
 
 
 # Installer l'exécutable main
-#install(TARGETS main DESTINATION bin)
+install(TARGETS BrickBreaker DESTINATION bin)

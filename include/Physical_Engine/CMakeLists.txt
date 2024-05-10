@@ -26,8 +26,12 @@ set(HEADERS
 # Création de la bibliothèque
 add_library(Physical_Engine ${SOURCES} ${HEADERS})
 
+# Recherche de la bibliothèque SDL2
+find_package(SDL2 REQUIRED)
+
 # Spécification des répertoires d'inclusion pour la bibliothèque
-target_include_directories(Physical_Engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Physical_Engine)
+target_include_directories(Physical_Engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Physical_Engine ${SDL2_INCLUDE_DIRS})
+target_link_libraries(Physical_Engine ${SDL2_LIBRARIES})
 
 # Définition des répertoires de sortie pour les binaires et les bibliothèques
 set(EXECUTABLE_OUTPUT_PATH ../../bin)

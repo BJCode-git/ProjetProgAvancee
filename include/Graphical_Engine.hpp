@@ -26,11 +26,11 @@ struct Color{
 	Uint8 a;
 };
 
-using BLUE  = Color{  0,   0, 255, 255};
-using RED   = Color{255,   0,   0, 255};
-using GREEN = Color{  0, 255,   0, 255};
-using BLACK = Color{  0,   0,   0, 255};
-using WHITE = Color{255, 255, 255, 255};
+constexpr Color BLUE  = Color(  0,   0, 255, 255);
+constexpr Color RED   = Color(255,   0,   0, 255);
+constexpr Color GREEN = Color(  0, 255,   0, 255);
+constexpr Color BLACK = Color(  0,   0,   0, 255);
+constexpr Color WHITE = Color(255, 255, 255, 255);
 
 /*
 template<typename T>
@@ -94,11 +94,13 @@ class Graphical_Object{
 
 	public:
 
-		Graphical_Object(std::shared_ptr<Physical_object> PhyObject,
-						 std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
+		Graphical_Object(std::shared_ptr<Physical_Object> PhyObject,
+						 std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		~Graphical_Object();
 
-		virtual void draw(std::shared_ptr<SDL_Renderer>> renderer) const = 0;
+		virtual void draw(std::shared_ptr<SDL_Renderer> renderer) const = 0;
+
+		int PhyObjLife() const;
 		
 		Color getColor() const;
 		void setColor(Color color);
@@ -112,7 +114,7 @@ class Graphical_Object{
 		Color color;
 		
 		// On va dessiner l'objet selon sa forme et sa position
-		std::shared_ptr<Physical_object> PhyObject;
+		std::shared_ptr<Physical_Object> PhyObject;
 		std::shared_ptr<SDL_Texture> texture;
 };
 
@@ -124,7 +126,7 @@ class GraphicalCircle : public Graphical_Object{
 		GraphicalCircle(std::shared_ptr<Circle> Circle);
 		~GraphicalCircle();
 
-		virtual void draw(std::shared_ptr<SDL_Renderer>> renderer) const override;
+		virtual void draw(std::shared_ptr<SDL_Renderer> renderer) const override;
 
 	private:
 		std::shared_ptr<Circle> PhyObject;
@@ -137,22 +139,22 @@ class GraphicalPolygon : public Graphical_Object{
 		GraphicalPolygon(std::shared_ptr<Convex_Polygon> Polygon);
 		~GraphicalPolygon();
 
-		virtual void draw(std::shared_ptr<SDL_Renderer>> renderer) const override;
+		virtual void draw(std::shared_ptr<SDL_Renderer> renderer) const override;
 
 	private:
 		// On va dessiner l'objet selon sa forme et sa position
 		std::shared_ptr<Convex_Polygon> PhyObject;
 };
 
-class GraphicalEngine{
+class Graphical_Engine{
 
 	public:
 
-		GraphicalEngine(std::shared_ptr<SDL_Renderer> renderer, 
+		Graphical_Engine(std::shared_ptr<SDL_Renderer> renderer, 
 						int scene_width,
 						int scene_height,
 						uint16_t fps_limit = 60);
-		~GraphicalEngine();
+		~Graphical_Engine();
 
 		void setRenderer(std::shared_ptr<SDL_Renderer> renderer);
 		std::shared_ptr<SDL_Renderer> getRenderer() const;
@@ -160,20 +162,22 @@ class GraphicalEngine{
 		void start();
 		void stop();
 
+		void  operator()(){start();}
+
 		void draw();
 		void clear();
 
-		void addObject(std::shared_ptr<Physical_object> object,
-					   std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
+		void addObject(std::shared_ptr<Physical_Object> object,
+					   std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		void addGraphicalPolygon(std::shared_ptr<Convex_Polygon> PhyObject,
-								 std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
+								 std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		void addGraphicalCircle(std::shared_ptr<Circle> PhyObject,
-								std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
+								std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		void removeObject(size_t index);
 
 		void setFPSLimit(uint16_t fps_limit);
 		void getFPSLimit() const;
-
+	
 
 	private:
 		std::vector<std::unique_ptr<Graphical_Object>> objects;
