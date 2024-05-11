@@ -45,12 +45,6 @@ GameEngine::GameEngine():
 	physical_engine(nullptr)
 {
 
-	window = std::make_unique<Window>("Casse-briques Bro", 960, 540);
-	graphical_engine = std::make_unique<Graphical_Engine>(window->get_renderer(),
-														  window->get_width(),
-														  window->get_height());
-	physical_engine = std::make_unique<Physical_Engine>();
-
 	if(SDL_Init(SDL_INIT_EVERYTHING) != 0 ){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;
 		exit(EXIT_FAILURE);
@@ -65,6 +59,13 @@ GameEngine::GameEngine():
 		std::cerr << "Erreur lors de l'initialisation de SDL_ttf : " << TTF_GetError() << std::endl;
 		throw std::runtime_error("Erreur lors de l'initialisation de SDL_ttf");
 	}
+
+	window = std::make_unique<Window>("Casse-briques Test", 960, 540);
+	graphical_engine = std::make_unique<Graphical_Engine>(window->get_renderer(),
+														  window->get_width(),
+														  window->get_height());
+	physical_engine = std::make_unique<Physical_Engine>();
+
 	
 
 	init();
@@ -97,9 +98,8 @@ void GameEngine::handle_events(){
 
 			// on met le jeu en pause
 			if(phy_bar->getLife() <= 0){
-				stop();
 				window->print_text("Game Over");
-				stop();
+				//stop();
 				running = false;
 				std::this_thread::sleep_for(std::chrono::seconds(2));
 			}
@@ -111,9 +111,21 @@ void GameEngine::handle_events(){
 
 		break;
 		case SDL_QUIT:
-			stop();
-			running = false;
 			window->print_text("Fin du jeu");
+			running = false;
+			//stop();
+		break;
+		case SDL_WINDOWEVENT:
+		switch (event.window.event) {
+
+			case SDL_WINDOWEVENT_CLOSE:   // exit game
+				window->print_text("Fin du jeu");
+				running = false;
+				//stop();
+
+			default:
+				break;
+		}
 		break;
 		case SDL_KEYDOWN:
 			switch(event.key.keysym.sym){
@@ -130,19 +142,21 @@ void GameEngine::handle_events(){
 				//  v(k+1) - v(k)/(k+1 - k) ~ ln'(k) = 1/k
 				//  d'ou v(k+1) = v(k) + 1/k
 				case SDLK_LEFT:
-					v = std::max(v+1/k, max_velocity);
+					v = std::min(v+1/k, max_velocity);
 					k++;
 					speed = phy_bar->getSpeed();
 					speed[0] = - v;
 					phy_bar->setSpeed(speed);
+					debug("update bar speed : " + std::to_string(v));
 				break;
 				case SDLK_RIGHT:
-					v = std::max(v + 1/k, max_velocity);
+					v = std::min(v + 1/k, max_velocity);
 					k++;
 					//augmenter la vélocité de la barre
 					speed = phy_bar->getSpeed();
 					speed[0] = v;
 					phy_bar->setSpeed(speed);
+					debug("update bar speed : " + std::to_string(v));
 				break;
 				
 				default:
@@ -274,13 +288,14 @@ void GameEngine::start(){
 	while(running){
 		handle_events();
 	}
+	stop();
 
 	debug("GameEngine::start() reach end of loop , wait threads ...\n");
 
-	physical_engine_thread.join();
+	//physical_engine_thread.join();
 	graphical_engine_thread.join();
 	
-}   
+}
 
 
 void GameEngine::stop(){
@@ -288,8 +303,9 @@ void GameEngine::stop(){
 	graphical_engine->stop();
 	physical_engine->stop();
 
+	debug("GameEngine::stop()");
 	debug("Score: " + score);
-	debug("Stop\n");
+	
 	//sound_engine.stop();
 }
 

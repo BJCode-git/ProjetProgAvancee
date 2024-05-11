@@ -329,13 +329,13 @@ std::shared_ptr<SDL_Renderer> Graphical_Engine::getRenderer() const {
 
 
 void Graphical_Engine::draw(){
-	clear();
+	
 
 	auto timenow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
 	debug("Graphical_Engine::draw()" +  (std::string) std::ctime(&timenow) +"\n"  );
-	// Fond noir
-	SDL_SetRenderDrawColor(renderer.get(), 220, 0, 0, SDL_ALPHA_OPAQUE);
+	
 
+	clear();
 	auto it = objects.begin();
 	while (it != objects.end()) {
 		if ((*it)->PhyObjLife() <= 0) {
@@ -351,11 +351,12 @@ void Graphical_Engine::draw(){
 }
 
 void Graphical_Engine::clear(){
+	SDL_SetRenderDrawColor(renderer.get(), 0, 60, 124, SDL_ALPHA_OPAQUE);
 	SDL_RenderClear(renderer.get());
 }
 
 void Graphical_Engine::start(){
-
+	SDL_SetRenderDrawBlendMode(renderer.get(), SDL_BLENDMODE_BLEND);
 	running = true;
 	debug("Graphical_Engine::start()");
 
