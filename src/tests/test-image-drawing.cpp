@@ -54,9 +54,10 @@ int main() {
         SDL_SetRenderDrawColor(renderer, (i*5)%255, (i*25)%255, (i*10)%216 +40, SDL_ALPHA_OPAQUE);
         if (texture)
           SDL_RenderCopy(renderer, texture, NULL, &dest);
-        else{
-          SDL_RenderDrawRect(renderer, &dest);
-        }
+        
+        SDL_FRect r = {dest.x, dest.y, 32, 32};
+        SDL_RenderDrawRectF(renderer, &r);
+    
       }
 
       dest.y += 32;

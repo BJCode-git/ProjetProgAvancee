@@ -67,6 +67,8 @@ all: CMakeFiles/BrickBreaker.dir/all
 all: CMakeFiles/test-physical-object.dir/all
 all: CMakeFiles/test-circle-drawing.dir/all
 all: CMakeFiles/test-image-drawing.dir/all
+all: CMakeFiles/test-gif-drawing.dir/all
+all: CMakeFiles/test-render-drawing.dir/all
 all: include/Physical_Engine/all
 .PHONY : all
 
@@ -79,6 +81,8 @@ clean: CMakeFiles/BrickBreaker.dir/clean
 clean: CMakeFiles/test-physical-object.dir/clean
 clean: CMakeFiles/test-circle-drawing.dir/clean
 clean: CMakeFiles/test-image-drawing.dir/clean
+clean: CMakeFiles/test-gif-drawing.dir/clean
+clean: CMakeFiles/test-render-drawing.dir/clean
 clean: include/Physical_Engine/clean
 .PHONY : clean
 
@@ -130,7 +134,7 @@ CMakeFiles/BrickBreaker.dir/clean:
 CMakeFiles/test-physical-object.dir/all: include/Physical_Engine/CMakeFiles/Physical_Engine.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=16,17 "Built target test-physical-object"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=18,19 "Built target test-physical-object"
 .PHONY : CMakeFiles/test-physical-object.dir/all
 
 # Build rule for subdir invocation for target.
@@ -182,7 +186,7 @@ CMakeFiles/test-circle-drawing.dir/clean:
 CMakeFiles/test-image-drawing.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=14,15 "Built target test-image-drawing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=16,17 "Built target test-image-drawing"
 .PHONY : CMakeFiles/test-image-drawing.dir/all
 
 # Build rule for subdir invocation for target.
@@ -200,6 +204,58 @@ test-image-drawing: CMakeFiles/test-image-drawing.dir/rule
 CMakeFiles/test-image-drawing.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/clean
 .PHONY : CMakeFiles/test-image-drawing.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test-gif-drawing.dir
+
+# All Build rule for target.
+CMakeFiles/test-gif-drawing.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=14,15 "Built target test-gif-drawing"
+.PHONY : CMakeFiles/test-gif-drawing.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test-gif-drawing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test-gif-drawing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 0
+.PHONY : CMakeFiles/test-gif-drawing.dir/rule
+
+# Convenience name for target.
+test-gif-drawing: CMakeFiles/test-gif-drawing.dir/rule
+.PHONY : test-gif-drawing
+
+# clean rule for target.
+CMakeFiles/test-gif-drawing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/clean
+.PHONY : CMakeFiles/test-gif-drawing.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test-render-drawing.dir
+
+# All Build rule for target.
+CMakeFiles/test-render-drawing.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=20,21 "Built target test-render-drawing"
+.PHONY : CMakeFiles/test-render-drawing.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test-render-drawing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test-render-drawing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles 0
+.PHONY : CMakeFiles/test-render-drawing.dir/rule
+
+# Convenience name for target.
+test-render-drawing: CMakeFiles/test-render-drawing.dir/rule
+.PHONY : test-render-drawing
+
+# clean rule for target.
+CMakeFiles/test-render-drawing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/clean
+.PHONY : CMakeFiles/test-render-drawing.dir/clean
 
 #=============================================================================
 # Target rules for target include/Physical_Engine/CMakeFiles/Physical_Engine.dir

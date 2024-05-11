@@ -1,79 +1,60 @@
 #include "Game_Engine.hpp"
 
-/*
-
-class GameEngine{
-	
-	public:
-		GameEngine();
-		~GameEngine();
-
-		void start() const;
-		void stop() const;
-	
-	private:
-		void init();
-		void handle_events();
-	
-	private:
-
-		unsigned int score;
-		GraphicalPolygon graph_bar;
-		Convex_Polygon phy_bar;
-		Window w;
 
 
-		std::unique_ptr<Window> window;
-		std::unique_ptr<Graphical_Engine> graphical_engine;
-		std::unique_ptr<Physical_Engine> physical_engine;
-		//std::unique_ptr<Sound_Engine> sound_engine;
-
-		std::thread graphical_engine_thread;
-		std::thread physical_engine_thread;
-		//std::thread sound_engine_thread;
-
-};
-
-*/
-
-GameEngine::GameEngine(): 
+GameEngine::GameEngine(int width, int height): 
 	running(false),
 	score(0),
+
 	phy_bar(nullptr),
-	window(nullptr),
+	//window(nullptr),
 	graphical_engine(nullptr),
-	physical_engine(nullptr)
+	physical_engine(nullptr),
+	music(nullptr,Mix_FreeMusic)
 {
 
+	/*
 	if(SDL_Init(SDL_INIT_EVERYTHING) != 0 ){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;
 		exit(EXIT_FAILURE);
 	}
-
-	if(IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) == 0) {
+	constexpr int IMG_INIT_ALL = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF | IMG_INIT_WEBP;
+	int flags = IMG_INIT_ALL;
+	if( (IMG_Init( flags)  &flags) != ( flags )) {
 		std::cerr << "Erreur lors de l'initialisation de SDL_image : " << IMG_GetError() << std::endl;
 		throw std::runtime_error("Erreur lors de l'initialisation de SDL_image");
 	}
-	
 	else if(TTF_Init() < 0){
 		std::cerr << "Erreur lors de l'initialisation de SDL_ttf : " << TTF_GetError() << std::endl;
 		throw std::runtime_error("Erreur lors de l'initialisation de SDL_ttf");
 	}
+	*/
 
-	window = std::make_unique<Window>("Casse-briques Test", 960, 540);
-	graphical_engine = std::make_unique<Graphical_Engine>(window->get_renderer(),
-														  window->get_width(),
-														  window->get_height());
+	if(SDL_InitSubSystem(SDL_INIT_AUDIO) != 0 ){
+		std::cerr << "Error: " << SDL_GetError() << std::endl;
+		exit(EXIT_FAILURE);
+	}
+
+	if (Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 1024 ) ){
+		std::cerr << "Error: " << Mix_GetError() << std::endl;
+	}
+
+
+
+	//window = std::make_unique<Window>("Casse-briques Test", 960, 540);
+	//graphical_engine = std::make_unique<Graphical_Engine>(window->get_renderer(),
+	//													  window->get_width(),
+	//													  window->get_height());
+	graphical_engine = std::make_unique<Graphical_Engine>(960, 540);
 	physical_engine = std::make_unique<Physical_Engine>();
 
-	
 
 	init();
 
-	
 }
 
 GameEngine::~GameEngine(){
+	Mix_Quit();
 	SDL_Quit();
 }
 
@@ -98,7 +79,8 @@ void GameEngine::handle_events(){
 
 			// on met le jeu en pause
 			if(phy_bar->getLife() <= 0){
-				window->print_text("Game Over");
+				//window->print_text("Game Over");
+				graphical_engine->print_text("Game Over");
 				//stop();
 				running = false;
 				std::this_thread::sleep_for(std::chrono::seconds(2));
@@ -106,12 +88,14 @@ void GameEngine::handle_events(){
 			else{
 				score++;
 				debug("Score: " + score);
-				window->print_score(score);
+				//window->print_score(score);
+				graphical_engine->print_text("Score: " + std::to_string(score));
 			}
 
 		break;
 		case SDL_QUIT:
-			window->print_text("Fin du jeu");
+			//window->print_text("Fin du jeu");
+			graphical_engine->print_text("Fin du jeu");
 			running = false;
 			//stop();
 		break;
@@ -119,7 +103,8 @@ void GameEngine::handle_events(){
 		switch (event.window.event) {
 
 			case SDL_WINDOWEVENT_CLOSE:   // exit game
-				window->print_text("Fin du jeu");
+				//window->print_text("Fin du jeu");
+				graphical_engine->print_text("Fin du jeu");
 				running = false;
 				//stop();
 
@@ -193,8 +178,11 @@ void GameEngine::init(){
 	// on la place en bas et au milieu de l'écran
 	// on lui donne une taille de 10 pixels de haut et de 25 pixels de longs
 	// rappelons que le haut est à y = 0 et le bas à y = 540, avec un padding de 5 pixels
-	float width = window->get_width();
-	float height = window->get_height();
+	//float width = window->get_width();
+	//float height = window->get_height();
+
+	float width = graphical_engine->get_win_width();
+	float height = graphical_engine->get_win_height();
 
 	phy_bar = std::make_shared<Convex_Polygon>(Polygon{
 		Point2DF{width/2 - 25, height - 15},
@@ -209,7 +197,7 @@ void GameEngine::init(){
 	// on l'ajoute à l'engine physique
 	physical_engine->addObject(phy_bar);
 	// on l'ajoute à l'engine graphique
-	graphical_engine->addGraphicalPolygon(phy_bar);
+	graphical_engine->addGraphicalPolygon(phy_bar,"rsc/Breakout_Tile_Set_Free/PNG/47-Breakout-Tiles.png");
 
 	// on crée la balle
 	// on la place au dessus de la barre
@@ -225,7 +213,7 @@ void GameEngine::init(){
 	// on l'ajoute à l'engine physique
 	physical_engine->addObject(ball);
 	// on l'ajoute à l'engine graphique
-	graphical_engine->addGraphicalCircle(ball);
+	graphical_engine->addGraphicalCircle(ball,"rsc/Breakout_Tile_Set_Free/PNG/58-Breakout-Tiles.png");
 
 
 	// on crée les briques
@@ -249,14 +237,7 @@ void GameEngine::init(){
 		for(int j=0;j<n_brick; j++){
 		*/
 		for(int j=0;j<n_brick; j++){
-			/*
-			brick = std::make_shared<Convex_Polygon>(Polygon{
-				Point2DF{(float) 5 + j*(20+2)     ,(float) 5 +  i*(10+2)     },
-				Point2DF{(float) 5 + j*(20+2) + 20,(float) 5 +  i*(10+2)     },
-				Point2DF{(float) 5 + j*(20+2) + 20,(float) 5 +  i*(10+2) + 10},
-				Point2DF{(float) 5 + j*(20+2)     ,(float) 5 +  i*(10+2) + 10}
-			});
-			*/
+
 			brick = std::make_shared<Convex_Polygon>(Polygon{
 				Point2DF{(float) screen_padding + j*(brick_width+brick_padding)              ,(float) brick_padding +  i*(10+2)     },
 				Point2DF{(float) screen_padding + j*(brick_width+brick_padding) + brick_width,(float) brick_padding +  i*(10+2)     },
@@ -269,9 +250,18 @@ void GameEngine::init(){
 			// on l'ajoute à l'engine physique
 			physical_engine->addObject(brick);
 			// on l'ajoute à l'engine graphique
-			graphical_engine->addGraphicalPolygon(brick);
+			graphical_engine->addGraphicalPolygon(brick,"rsc/Breakout_Tile_Set_Free/PNG/0"+std::to_string(i+1)+"-Breakout-Tiles.png");
 		}
 		
+	}
+
+	// on charge la musique
+	music = std::unique_ptr<Mix_Music,void (*)(Mix_Music*)>(Mix_LoadMUS("rsc/GTO.wav"),Mix_FreeMusic);
+	if(music.get() == nullptr){
+		std::cerr << "Error: " << Mix_GetError() << std::endl;
+	}
+	else{
+		Mix_PlayMusic(music.get(),-1);
 	}
 
 }
@@ -280,20 +270,29 @@ void GameEngine::init(){
 void GameEngine::start(){
 
 	running = true;
-	// on lance les threads
-	graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get());
-	physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
 
-	window->print_text("Appuyez sur Echap pour mettre en pause");
+	
+	// on lance les threads
+	//graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get());
+	physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
+	//auto graphical_engine_th = std::async(std::launch::async, &Graphical_Engine::start, graphical_engine.get());
+
+	
+	//window->print_text("Appuyez sur Echap pour mettre en pause");
+	graphical_engine->print_text("Appuyez sur Echap pour mettre en pause");
 	while(running){
+		graphical_engine->draw();
+		//physical_engine->update();
+
 		handle_events();
 	}
 	stop();
 
 	debug("GameEngine::start() reach end of loop , wait threads ...\n");
-
+	//physical_engine_th.wait();
+	//graphical_engine_thread.join();
 	//physical_engine_thread.join();
-	graphical_engine_thread.join();
+	//graphical_engine_thread.join();
 	
 }
 

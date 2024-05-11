@@ -356,9 +356,9 @@ CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: \
  /usr/local/include/SDL2/SDL_system.h /usr/local/include/SDL2/SDL_timer.h \
  /usr/local/include/SDL2/SDL_version.h \
  /usr/local/include/SDL2/SDL_locale.h /usr/local/include/SDL2/SDL_misc.h \
- /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_version.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h \
+ /usr/local/include/SDL2/SDL_image.h /usr/local/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Physical_Engine.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
@@ -383,4 +383,5 @@ CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/BoundingBox/BoundingBox.hpp \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Circle/Circle.hpp \
+ /home/julien/Cours2A/Prog_Avance/Projet/include/Windows.hpp \
  /home/julien/Cours2A/Prog_Avance/Projet/include/debug.hpp

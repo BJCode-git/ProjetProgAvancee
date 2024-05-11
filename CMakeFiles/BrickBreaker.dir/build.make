@@ -142,8 +142,9 @@ bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o
 bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/build.make
 bin/BrickBreaker: lib/libPhysical_Engine.a
 bin/BrickBreaker: /usr/local/lib/libSDL2.so
-bin/BrickBreaker: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
+bin/BrickBreaker: /usr/local/lib/libSDL2_image.so
 bin/BrickBreaker: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
+bin/BrickBreaker: /usr/lib/x86_64-linux-gnu/libSDL2_mixer.so
 bin/BrickBreaker: /usr/local/lib/libSDL2.so
 bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin/BrickBreaker"

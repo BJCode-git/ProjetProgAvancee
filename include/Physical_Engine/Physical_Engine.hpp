@@ -44,7 +44,7 @@ class Physical_Engine{
 
 		void setScene(int width, int height);
 
-		void operator()(){start();}
+		//void operator()(){start();}
 
 		void start();
 		void stop();

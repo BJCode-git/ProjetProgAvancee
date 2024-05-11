@@ -224,6 +224,32 @@ test-image-drawing/fast:
 .PHONY : test-image-drawing/fast
 
 #=============================================================================
+# Target rules for targets named test-gif-drawing
+
+# Build rule for target.
+test-gif-drawing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-gif-drawing
+.PHONY : test-gif-drawing
+
+# fast build rule for target.
+test-gif-drawing/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/build
+.PHONY : test-gif-drawing/fast
+
+#=============================================================================
+# Target rules for targets named test-render-drawing
+
+# Build rule for target.
+test-render-drawing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-render-drawing
+.PHONY : test-render-drawing
+
+# fast build rule for target.
+test-render-drawing/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/build
+.PHONY : test-render-drawing/fast
+
+#=============================================================================
 # Target rules for targets named Physical_Engine
 
 # Build rule for target.
@@ -356,6 +382,30 @@ src/tests/test-circle-drawing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-circle-drawing.dir/build.make CMakeFiles/test-circle-drawing.dir/src/tests/test-circle-drawing.cpp.s
 .PHONY : src/tests/test-circle-drawing.cpp.s
 
+src/tests/test-gif-drawing.o: src/tests/test-gif-drawing.cpp.o
+.PHONY : src/tests/test-gif-drawing.o
+
+# target to build an object file
+src/tests/test-gif-drawing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/src/tests/test-gif-drawing.cpp.o
+.PHONY : src/tests/test-gif-drawing.cpp.o
+
+src/tests/test-gif-drawing.i: src/tests/test-gif-drawing.cpp.i
+.PHONY : src/tests/test-gif-drawing.i
+
+# target to preprocess a source file
+src/tests/test-gif-drawing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/src/tests/test-gif-drawing.cpp.i
+.PHONY : src/tests/test-gif-drawing.cpp.i
+
+src/tests/test-gif-drawing.s: src/tests/test-gif-drawing.cpp.s
+.PHONY : src/tests/test-gif-drawing.s
+
+# target to generate assembly for a file
+src/tests/test-gif-drawing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/src/tests/test-gif-drawing.cpp.s
+.PHONY : src/tests/test-gif-drawing.cpp.s
+
 src/tests/test-image-drawing.o: src/tests/test-image-drawing.cpp.o
 .PHONY : src/tests/test-image-drawing.o
 
@@ -404,6 +454,30 @@ src/tests/test-physical-object.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-object.dir/build.make CMakeFiles/test-physical-object.dir/src/tests/test-physical-object.cpp.s
 .PHONY : src/tests/test-physical-object.cpp.s
 
+src/tests/test-render-drawing.o: src/tests/test-render-drawing.cpp.o
+.PHONY : src/tests/test-render-drawing.o
+
+# target to build an object file
+src/tests/test-render-drawing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/src/tests/test-render-drawing.cpp.o
+.PHONY : src/tests/test-render-drawing.cpp.o
+
+src/tests/test-render-drawing.i: src/tests/test-render-drawing.cpp.i
+.PHONY : src/tests/test-render-drawing.i
+
+# target to preprocess a source file
+src/tests/test-render-drawing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/src/tests/test-render-drawing.cpp.i
+.PHONY : src/tests/test-render-drawing.cpp.i
+
+src/tests/test-render-drawing.s: src/tests/test-render-drawing.cpp.s
+.PHONY : src/tests/test-render-drawing.s
+
+# target to generate assembly for a file
+src/tests/test-render-drawing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/src/tests/test-render-drawing.cpp.s
+.PHONY : src/tests/test-render-drawing.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -420,8 +494,10 @@ help:
 	@echo "... BrickBreaker"
 	@echo "... Physical_Engine"
 	@echo "... test-circle-drawing"
+	@echo "... test-gif-drawing"
 	@echo "... test-image-drawing"
 	@echo "... test-physical-object"
+	@echo "... test-render-drawing"
 	@echo "... src/Game_Engine.o"
 	@echo "... src/Game_Engine.i"
 	@echo "... src/Game_Engine.s"
@@ -437,12 +513,18 @@ help:
 	@echo "... src/tests/test-circle-drawing.o"
 	@echo "... src/tests/test-circle-drawing.i"
 	@echo "... src/tests/test-circle-drawing.s"
+	@echo "... src/tests/test-gif-drawing.o"
+	@echo "... src/tests/test-gif-drawing.i"
+	@echo "... src/tests/test-gif-drawing.s"
 	@echo "... src/tests/test-image-drawing.o"
 	@echo "... src/tests/test-image-drawing.i"
 	@echo "... src/tests/test-image-drawing.s"
 	@echo "... src/tests/test-physical-object.o"
 	@echo "... src/tests/test-physical-object.i"
 	@echo "... src/tests/test-physical-object.s"
+	@echo "... src/tests/test-render-drawing.o"
+	@echo "... src/tests/test-render-drawing.i"
+	@echo "... src/tests/test-render-drawing.s"
 .PHONY : help
 
 
