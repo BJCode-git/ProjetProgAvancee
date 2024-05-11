@@ -6,7 +6,9 @@
 
 
 int main(){
-	Window w("Casse-briques Bro", 960, 540);
+	SDL_Init(SDL_INIT_EVERYTHING);
+	IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
+	TTF_Init();
 	GameEngine game;
 	game.start();
 

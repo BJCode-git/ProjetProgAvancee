@@ -38,25 +38,26 @@ Window::Window(const std::string title, int w, int h, Uint32 flags):
 	window(nullptr,SDL_DestroyWindow),
 	renderer(nullptr, SDL_DestroyRenderer)
 {
-	//if(TTF_Init() < 0 || SDL_InitSubSystem(SDL_INIT_VIDEO) < 0 ){
-	//	std::cerr << "Error: " << TTF_GetError() << std::endl;
-	//	throw std::runtime_error("Error: " + std::string(TTF_GetError()));
-	//}
+	if(TTF_Init() < 0 || SDL_InitSubSystem(SDL_INIT_VIDEO) < 0 ){
+		std::cerr << "Error: " << TTF_GetError() << std::endl;
+		throw std::runtime_error("Error: " + std::string(TTF_GetError()));
+	}
 
 	font = std::unique_ptr<TTF_Font,void (*)(TTF_Font*)>( TTF_OpenFont("rsc/mario.ttf", 10),
 																TTF_CloseFont);
 
 	// std::unique_ptr<SDL_Window>   window;
+
 	window   = std::unique_ptr<SDL_Window, void (*)(SDL_Window*)>
 			   (SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED, w, h, flags),
 			   SDL_DestroyWindow);
 	
 	 renderer = std::shared_ptr<SDL_Renderer> (SDL_CreateRenderer(window.get(),
 												-1, 
-												SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED),
+												SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
 												SDL_DestroyRenderer);
 	//renderer = std::shared_ptr<SDL_Renderer>(
-	//				SDL_CreateRenderer(window.get(), -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED),
+	//				SDL_CreateRenderer(window.get(), -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
 	//				SDL_DestroyRenderer);
 
 	
