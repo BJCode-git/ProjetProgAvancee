@@ -284,6 +284,15 @@ Casse-brique-BRELOT_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Casse-brique-BRELOT_SOURCE_DIR:STATIC=/home/julien/Cours2A/Prog_Avance/Projet
 
+//Value Computed by CMake
+Graphical_Engine_BINARY_DIR:STATIC=/home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine
+
+//Value Computed by CMake
+Graphical_Engine_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Graphical_Engine_SOURCE_DIR:STATIC=/home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine
+
 //Build indicators tests + enable CTest
 INDICATORS_BUILD_TESTS:BOOL=OFF
 
@@ -298,6 +307,15 @@ PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//Value Computed by CMake
+Physical_Engine_BINARY_DIR:STATIC=/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine
+
+//Value Computed by CMake
+Physical_Engine_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Physical_Engine_SOURCE_DIR:STATIC=/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine
 
 //The directory containing a CMake configuration file for SDL2IMAGE.
 SDL2IMAGE_DIR:PATH=SDL2IMAGE_DIR-NOTFOUND
@@ -510,7 +528,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

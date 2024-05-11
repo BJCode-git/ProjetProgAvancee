@@ -13,3 +13,4 @@ set_tests_properties(test-image-drawing PROPERTIES  _BACKTRACE_TRIPLES "/home/ju
 add_test(test-gif-drawing "bin/test-gif-drawing")
 set_tests_properties(test-gif-drawing PROPERTIES  _BACKTRACE_TRIPLES "/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;28;add_test;/home/julien/Cours2A/Prog_Avance/Projet/CMakeLists.txt;0;")
 subdirs("include/Physical_Engine")
+subdirs("include/Graphical_Engine")

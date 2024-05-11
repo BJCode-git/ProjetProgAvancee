@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libGraphical_Engine.a CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o
+/usr/bin/ranlib ../../lib/libGraphical_Engine.a

@@ -275,23 +275,21 @@ void GameEngine::start(){
 	// on lance les threads
 	//graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get());
 	physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
-	//auto graphical_engine_th = std::async(std::launch::async, &Graphical_Engine::start, graphical_engine.get());
+	//graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get();
 
 	
 	//window->print_text("Appuyez sur Echap pour mettre en pause");
 	graphical_engine->print_text("Appuyez sur Echap pour mettre en pause");
 	while(running){
-		graphical_engine->draw();
+		//graphical_engine->draw();
 		//physical_engine->update();
-
 		handle_events();
 	}
 	stop();
 
 	debug("GameEngine::start() reach end of loop , wait threads ...\n");
 	//physical_engine_th.wait();
-	//graphical_engine_thread.join();
-	//physical_engine_thread.join();
+	physical_engine_thread.join();
 	//graphical_engine_thread.join();
 	
 }

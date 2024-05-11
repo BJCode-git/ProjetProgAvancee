@@ -13,8 +13,7 @@
 #include <SDL2/SDL_mixer.h>
 
 #include "Physical_Engine/Physical_Engine.hpp"
-#include "Graphical_Engine.hpp"
-#include "Windows.hpp"
+#include "Graphical_Engine/Graphical_Engine.hpp"
 #include "debug.hpp"
 
 //#include "Sound_Engine.hpp"
