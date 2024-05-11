@@ -13,6 +13,7 @@
 #include "Physical_Engine/Physical_Engine.hpp"
 #include "Graphical_Engine.hpp"
 #include "Windows.hpp"
+#include "debug.hpp"
 
 //#include "Sound_Engine.hpp"
 

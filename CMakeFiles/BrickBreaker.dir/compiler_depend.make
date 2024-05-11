@@ -466,6 +466,7 @@ CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o: src/Game_Engine.cpp \
   include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp \
   include/Physical_Engine/Circle/Circle.hpp \
   include/Graphical_Engine.hpp \
+  include/debug.hpp \
   include/Windows.hpp
 
 CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: src/Graphical_Engine.cpp \
@@ -930,7 +931,8 @@ CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: src/Graphical_Engine.cpp
   include/Physical_Engine/Physical_Object/Physical_Object.hpp \
   include/Physical_Engine/BoundingBox/BoundingBox.hpp \
   include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp \
-  include/Physical_Engine/Circle/Circle.hpp
+  include/Physical_Engine/Circle/Circle.hpp \
+  include/debug.hpp
 
 CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o: src/Windows.cpp \
   /usr/include/stdc-predef.h \
@@ -1347,7 +1349,8 @@ CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o: src/Windows.cpp \
   /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/begin_code.h \
-  /usr/include/SDL2/close_code.h
+  /usr/include/SDL2/close_code.h \
+  include/debug.hpp
 
 CMakeFiles/BrickBreaker.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/stdc-predef.h \
@@ -1765,6 +1768,7 @@ CMakeFiles/BrickBreaker.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/begin_code.h \
   /usr/include/SDL2/close_code.h \
+  include/debug.hpp \
   include/Game_Engine.hpp \
   /usr/include/c++/11/thread \
   /usr/include/c++/11/stop_token \

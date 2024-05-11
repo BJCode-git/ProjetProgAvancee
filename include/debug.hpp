@@ -3,6 +3,6 @@
 	#ifdef DEBUG
 	#include <iostream>
 	#include <string>  
-	#define debug(x) std::cout << x << std::endl
+	#define debug(x) std::cout << x << std::endl << std::flush
 	#endif
 #endif

@@ -11,6 +11,7 @@
 
 
 #include "Physical_Engine/Physical_Engine.hpp"
+#include "debug.hpp"
 
 
 // Algrithme de Bresenham pour dessiner un cercle rempli
@@ -26,11 +27,11 @@ struct Color{
 	Uint8 a;
 };
 
-constexpr Color BLUE  = Color(  0,   0, 255, 255);
-constexpr Color RED   = Color(255,   0,   0, 255);
-constexpr Color GREEN = Color(  0, 255,   0, 255);
-constexpr Color BLACK = Color(  0,   0,   0, 255);
-constexpr Color WHITE = Color(255, 255, 255, 255);
+constexpr Color BLUE  = Color(  0,   0, 255, SDL_ALPHA_OPAQUE);
+constexpr Color RED   = Color(255,   0,   0, SDL_ALPHA_OPAQUE);
+constexpr Color GREEN = Color(  0, 255,   0, SDL_ALPHA_OPAQUE);
+constexpr Color BLACK = Color(  0,   0,   0, SDL_ALPHA_OPAQUE);
+constexpr Color WHITE = Color(255, 255, 255, SDL_ALPHA_OPAQUE);
 
 /*
 template<typename T>
