@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
+project(Physical_Engine)
 # Définition de la bibliothèque Physical_Engine
+
+set(CMAKE_CXX_STANDARD 20)
 
 # Ajout du dossier Physical_Engine pour les fichiers d'en-tête
 include_directories(Physical_Engine)

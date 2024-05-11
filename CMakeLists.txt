@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 project(Casse-brique-BRELOT)
 
 # Configuration du standard C++ à utiliser
-set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake_modules/")
 
@@ -37,14 +37,15 @@ endif()
 # Configuration du dossier de sortie pour les exécutables
 set(EXECUTABLE_OUTPUT_PATH bin)
 
-# Ajout de la sous-répertoire Physical_Engine
+# Ajout des sous-répertoire Physical_Engine et Graphical_Engine
 add_subdirectory(include/Physical_Engine)
+add_subdirectory(include/Graphical_Engine)
 
 # Ajout de la librairie Physical_Engine
 #add_library(Physical_Engine STATIC lib/libPhysical_Engine.a)
 
 # Configuration des exécutables
-add_executable(BrickBreaker src/main.cpp src/Game_Engine.cpp src/Graphical_Engine.cpp src/Windows.cpp)
+add_executable(BrickBreaker src/main.cpp src/Game_Engine.cpp)
 
 # Configuration des tests
 add_executable(test-physical-object src/tests/test-physical-object.cpp)
@@ -85,7 +86,7 @@ target_link_libraries(test-render-drawing PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE
 
 # Lier les exécutables avec les bibliothèques SDL_ttf
 target_include_directories(BrickBreaker PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS})
-target_link_libraries(BrickBreaker PRIVATE Physical_Engine ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2_MIXER_LIBRARIES})
+target_link_libraries(BrickBreaker PRIVATE Physical_Engine Graphical_Engine ${SDL2_MIXER_LIBRARIES})
 
 
 

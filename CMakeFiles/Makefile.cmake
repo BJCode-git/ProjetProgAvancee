@@ -34,6 +34,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "cmake_modules/FindSDL2_image.cmake"
   "cmake_modules/FindSDL2_mixer.cmake"
   "cmake_modules/FindSDL2_ttf.cmake"
+  "include/Graphical_Engine/CMakeLists.txt"
   "include/Physical_Engine/CMakeLists.txt"
   "/usr/local/lib/cmake/SDL2/sdl2-config-version.cmake"
   "/usr/local/lib/cmake/SDL2/sdl2-config.cmake"
@@ -49,6 +50,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/Physical_Engine/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include/Graphical_Engine/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -60,4 +62,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test-gif-drawing.dir/DependInfo.cmake"
   "CMakeFiles/test-render-drawing.dir/DependInfo.cmake"
   "include/Physical_Engine/CMakeFiles/Physical_Engine.dir/DependInfo.cmake"
+  "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/DependInfo.cmake"
   )

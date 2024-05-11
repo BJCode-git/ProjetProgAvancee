@@ -97,57 +97,27 @@ CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/src/Game_Engine.cpp -o CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.s
 
-CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: CMakeFiles/BrickBreaker.dir/flags.make
-CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: src/Graphical_Engine.cpp
-CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: CMakeFiles/BrickBreaker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o -MF CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o.d -o CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/src/Graphical_Engine.cpp
-
-CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julien/Cours2A/Prog_Avance/Projet/src/Graphical_Engine.cpp > CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.i
-
-CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/src/Graphical_Engine.cpp -o CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.s
-
-CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o: CMakeFiles/BrickBreaker.dir/flags.make
-CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o: src/Windows.cpp
-CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o: CMakeFiles/BrickBreaker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o -MF CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o.d -o CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/src/Windows.cpp
-
-CMakeFiles/BrickBreaker.dir/src/Windows.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BrickBreaker.dir/src/Windows.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julien/Cours2A/Prog_Avance/Projet/src/Windows.cpp > CMakeFiles/BrickBreaker.dir/src/Windows.cpp.i
-
-CMakeFiles/BrickBreaker.dir/src/Windows.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BrickBreaker.dir/src/Windows.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/src/Windows.cpp -o CMakeFiles/BrickBreaker.dir/src/Windows.cpp.s
-
 # Object files for target BrickBreaker
 BrickBreaker_OBJECTS = \
 "CMakeFiles/BrickBreaker.dir/src/main.cpp.o" \
-"CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o" \
-"CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o" \
-"CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o"
+"CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o"
 
 # External object files for target BrickBreaker
 BrickBreaker_EXTERNAL_OBJECTS =
 
 bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/src/main.cpp.o
 bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o
-bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o
-bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o
 bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/build.make
 bin/BrickBreaker: lib/libPhysical_Engine.a
+bin/BrickBreaker: lib/libGraphical_Engine.a
+bin/BrickBreaker: /usr/lib/x86_64-linux-gnu/libSDL2_mixer.so
+bin/BrickBreaker: lib/libPhysical_Engine.a
+bin/BrickBreaker: /usr/local/lib/libSDL2.so
 bin/BrickBreaker: /usr/local/lib/libSDL2.so
 bin/BrickBreaker: /usr/local/lib/libSDL2_image.so
 bin/BrickBreaker: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
-bin/BrickBreaker: /usr/lib/x86_64-linux-gnu/libSDL2_mixer.so
-bin/BrickBreaker: /usr/local/lib/libSDL2.so
 bin/BrickBreaker: CMakeFiles/BrickBreaker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin/BrickBreaker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/BrickBreaker"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BrickBreaker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
