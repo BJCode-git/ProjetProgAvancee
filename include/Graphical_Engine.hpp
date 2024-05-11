@@ -123,7 +123,8 @@ class GraphicalCircle : public Graphical_Object{
 
 	public:
 
-		GraphicalCircle(std::shared_ptr<Circle> Circle);
+		GraphicalCircle(std::shared_ptr<Circle> Circle, 
+						std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		~GraphicalCircle();
 
 		virtual void draw(std::shared_ptr<SDL_Renderer> renderer) const override;
@@ -136,7 +137,8 @@ class GraphicalPolygon : public Graphical_Object{
 
 	public:
 
-		GraphicalPolygon(std::shared_ptr<Convex_Polygon> Polygon);
+		GraphicalPolygon(std::shared_ptr<Convex_Polygon> Polygon, 
+						 std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		~GraphicalPolygon();
 
 		virtual void draw(std::shared_ptr<SDL_Renderer> renderer) const override;
@@ -167,8 +169,12 @@ class Graphical_Engine{
 		void draw();
 		void clear();
 
-		void addObject(std::shared_ptr<Physical_Object> object,
+		void addObject(std::shared_ptr<Convex_Polygon> object,
 					   std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
+
+		void addObject(std::shared_ptr<Circle> object,
+					   std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
+
 		void addGraphicalPolygon(std::shared_ptr<Convex_Polygon> PhyObject,
 								 std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		void addGraphicalCircle(std::shared_ptr<Circle> PhyObject,
@@ -176,14 +182,18 @@ class Graphical_Engine{
 		void removeObject(size_t index);
 
 		void setFPSLimit(uint16_t fps_limit);
-		void getFPSLimit() const;
+		int getFPSLimit() const;
+
+		//void setWindowSize(int width, int height);
+		//int getWindowWidth() const;
+		//int getWindowHeight() const;
 	
 
 	private:
 		std::vector<std::unique_ptr<Graphical_Object>> objects;
 		std::shared_ptr<SDL_Renderer> renderer;
 
-		uint16_t fps_limit;
+		int fps_limit;
 		int window_width;
 		int window_height;
 

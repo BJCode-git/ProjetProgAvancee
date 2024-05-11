@@ -24,8 +24,8 @@ class Circle : public Physical_Object{
 		Circle(Vector2DF pos, unsigned int r);
 		~Circle();
 
-		void setRadius(unsigned int radius);
-		int getRadius() const;
+		void setRadius(float radius);
+		float getRadius() const;
 
 		virtual void update(float dt=1)                                                   override;
 		virtual bool isColliding(const Physical_Object &, Vector2DF &, Vector2DF &) const override;
@@ -38,7 +38,7 @@ class Circle : public Physical_Object{
 		virtual std::pair<float, float> project(const Vector2DF& axis) const override;
 
 	private:
-		unsigned int radius;
+		float radius;
 		void computeMinimumBoundingBox() override;
 };
 

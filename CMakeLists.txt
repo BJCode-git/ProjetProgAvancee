@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 project(Casse-brique-BRELOT)
 
 # Configuration du standard C++ à utiliser
-set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake_modules/")
 
@@ -12,6 +12,7 @@ set(PROJECT_BINARY_DIR build)
 
 # Ajout du dossier include/indicators pour les fichiers d'en-tête
 include_directories(include include/indicators/include)
+
 
 # Ajout du dossier pour les bibliothèques
 link_directories(lib/)
@@ -41,7 +42,7 @@ add_subdirectory(include/Physical_Engine)
 #add_library(Physical_Engine STATIC lib/libPhysical_Engine.a)
 
 # Configuration des exécutables
-add_executable(BrickBreaker main.cpp)
+add_executable(BrickBreaker src/main.cpp src/Game_Engine.cpp src/Graphical_Engine.cpp src/Windows.cpp)
 
 # Configuration des tests
 add_executable(test-physical-object src/tests/test-physical-object.cpp)

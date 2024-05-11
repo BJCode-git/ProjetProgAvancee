@@ -55,10 +55,11 @@ class Physical_Object{
 		virtual ~Physical_Object();
 
 		void reduceLife();
-		void setBreakable(bool,uint8_t);
+		void setBreakable(bool,uint8_t l=1);
 		bool isBreakable() const;
 		uint8_t getLife() const;
 		SHAPE getShape() const;
+		const BoundingBox & getBoundingBox() const;
 
 		
 		void setSpeed         (Vector2DF);
@@ -100,6 +101,7 @@ class Physical_Object{
 
 		void setBoundingBox(const Point2DF ,const Point2DF ,const Point2DF ,const Point2DF );
 		void setBoundingBox(const BoundingBox &);
+		
 
 		// Méthodes virtuelles pures
 		virtual void                    computeMinimumBoundingBox()          = 0;

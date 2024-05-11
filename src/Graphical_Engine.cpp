@@ -19,7 +19,7 @@ class Graphical_Object : public Graphical_Object{
 
 	public:
 
-		Graphical_Object(std::shared_ptr<Physical_object> PhyObject);
+		Graphical_Object(std::shared_ptr<Physical_Object> PhyObject);
 		~Graphical_Object();
 
 		virtual void draw(std::shared_ptr<SDL_Renderer>> renderer) const = 0;
@@ -36,7 +36,7 @@ class Graphical_Object : public Graphical_Object{
 		Color color;
 		
 		// On va dessiner l'objet selon sa forme et sa position
-		std::shared_ptr<Physical_object> PhyObject;
+		std::shared_ptr<Physical_Object> PhyObject;
 		std::shared_ptr<SDL_Texture> texture;
 };
 
@@ -84,9 +84,9 @@ class Graphical_Engine{
 
 		void addObject(std::unique_ptr<Graphical_Object> object,
 					   std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
-		void addGraphicalPolygon(std::shared_ptr<Physical_object> PhyObject,
+		void addGraphicalPolygon(std::shared_ptr<Physical_Object> PhyObject,
 								 std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
-		void addGraphicalCircle(std::shared_ptr<Physical_object> PhyObject,
+		void addGraphicalCircle(std::shared_ptr<Physical_Object> PhyObject,
 								std::shared_ptr<SDL_Texture> texture = std::shared_ptr(nullptr));
 		void removeObject(std::unique_ptr<Graphical_Object> object);
 
@@ -159,8 +159,9 @@ void drawCircle(SDL_Renderer* renderer, float x, float y, float radius) {
  * Graphical_Object *
  ********************/
 
-Graphical_Object::Graphical_Object(std::shared_ptr<Physical_object> PhyObject) : 
-	PhyObject(PhyObject) 
+Graphical_Object::Graphical_Object(std::shared_ptr<Physical_Object> PhyObject, std::shared_ptr<SDL_Texture> texture) : 
+	PhyObject(PhyObject),
+	texture(texture)
 {}
 
 Graphical_Object::~Graphical_Object() {}
@@ -204,8 +205,8 @@ void Graphical_Object::draw(std::shared_ptr<SDL_Renderer> renderer) const {
  * GraphicalCircle *
  ******************/
 
-GraphicalCircle::GraphicalCircle(std::shared_ptr<Circle> Circle) :
-	Graphical_Object(Circle),
+GraphicalCircle::GraphicalCircle(std::shared_ptr<Circle> Circle, std::shared_ptr<SDL_Texture> texture) :
+	Graphical_Object(Circle, texture),
 	PhyObject(Circle)
 {}
 
@@ -214,15 +215,15 @@ GraphicalCircle::~GraphicalCircle() {}
 void GraphicalCircle::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 
 	if(texture) {
-		SDL_Rect dest = {PhyObject->getCenter()[0] - PhyObject->getRadius(), 
-						 PhyObject->getCenter()[1] - PhyObject->getRadius(), 
-						2 * PhyObject->getRadius(), 
-						2 * PhyObject->getRadius()};
+		SDL_FRect dest = {PhyObject->getPosition()[0] - PhyObject->getRadius(), 
+						  PhyObject->getPosition()[1] - PhyObject->getRadius(), 
+						  2 * PhyObject->getRadius(), 
+						  2 * PhyObject->getRadius()};
 
-		SDL_RenderCopy(renderer.get(), texture.get(), NULL, &dest);
+		SDL_RenderCopyF(renderer.get(), texture.get(), NULL, &dest);
 	} else {
 		SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
-		drawFilledCircle(renderer.get(), PhyObject->getCenter()[0], PhyObject->getCenter()[1], PhyObject->getRadius());
+		drawFilledCircle(renderer.get(), PhyObject->getPosition()[0], PhyObject->getPosition()[1], PhyObject->getRadius());
 	}
 
 }
@@ -232,8 +233,8 @@ void GraphicalCircle::draw(std::shared_ptr<SDL_Renderer> renderer) const {
  * GraphicalPolygon *
  ********************/
 
-GraphicalPolygon::GraphicalPolygon(std::shared_ptr<Convex_Polygon> Polygon) :
-	Graphical_Object(Polygon),
+GraphicalPolygon::GraphicalPolygon(std::shared_ptr<Convex_Polygon> Polygon, std::shared_ptr<SDL_Texture> texture) :
+	Graphical_Object(Polygon, texture),
 	PhyObject(Polygon)
 {}
 
@@ -290,47 +291,34 @@ Graphical_Engine::~Graphical_Engine() {
 	IMG_Quit();
 }
 
-void Graphical_Engine::draw() {
-	for (const auto& object : objects) {
-		object->draw(renderer);
-	}
+void Graphical_Engine::addObject(std::shared_ptr<Convex_Polygon> object, std::shared_ptr<SDL_Texture> texture) {
+	addGraphicalPolygon(object, texture);
 }
 
-void Graphical_Engine::clear() {
-	SDL_RenderClear(renderer);
+void Graphical_Engine::addObject(std::shared_ptr<Circle> object, std::shared_ptr<SDL_Texture> texture) {
+	addGraphicalCircle(object, texture);
 }
 
-void Graphical_Engine::addObject(std::unique_ptr<Graphical_Object> object, std::shared_ptr<SDL_Texture> texture) {
-	object->setTexture(texture);
-	objects.push_back(std::move(object));
+void Graphical_Engine::addGraphicalPolygon(std::shared_ptr<Convex_Polygon> PhyObject, std::shared_ptr<SDL_Texture> texture) {
+	objects.emplace_back( new GraphicalPolygon(PhyObject, texture));
 }
 
-void Graphical_Engine::addGraphicalPolygon(std::shared_ptr<Physical_object> PhyObject, std::shared_ptr<SDL_Texture> texture) {
-	addObject(std::make_unique<GraphicalPolygon>(PhyObject), texture);
+void Graphical_Engine::addGraphicalCircle(std::shared_ptr<Circle> PhyObject, std::shared_ptr<SDL_Texture> texture) {
+	objects.emplace_back(new GraphicalCircle(PhyObject, texture));
 }
 
-void Graphical_Engine::addGraphicalCircle(std::shared_ptr<Physical_object> PhyObject, std::shared_ptr<SDL_Texture> texture) {
-	addObject(std::make_unique<GraphicalCircle>(PhyObject), texture);
-}
-
-void Graphical_Engine::removeObject(std::unique_ptr<Graphical_Object> object) {
-	objects.erase(std::remove_if(objects.begin(), objects.end(), [&](const std::unique_ptr<Graphical_Object>& obj) {
-		return obj.get() == object.get();
-	}), objects.end());
+void Graphical_Engine::removeObject(size_t index) {
+	objects.erase(objects.begin() + index);
 }
 
 void Graphical_Engine::setFPSLimit(uint16_t fps_limit) {
 	this->fps_limit = fps_limit;
 }
 
-void Graphical_Engine::getFPSLimit() const {
+int Graphical_Engine::getFPSLimit() const {
 	return fps_limit;
 }
 
-void Graphical_Engine::setWindowSize(int width, int height) {
-	window_width = width;
-	window_height = height;
-}
 
 void Graphical_Engine::setRenderer(std::shared_ptr<SDL_Renderer> renderer) {
 	this->renderer = renderer;
@@ -344,7 +332,7 @@ std::shared_ptr<SDL_Renderer> Graphical_Engine::getRenderer() const {
 void Graphical_Engine::draw(){
 	clear();
 	// Fond noir
-	SDL_SetRenderDrawColor(*renderer, 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer.get(), 0, 0, 0, 255);
 
 	auto it = objects.begin();
 	while (it != objects.end()) {
@@ -352,12 +340,12 @@ void Graphical_Engine::draw(){
 			it = objects.erase(it);
 		} 
 		else {
-			it->draw();
+			(*it)->draw(renderer);
 			++it;
 		}
 	}
 
-	SDL_RenderPresent(*renderer);
+	SDL_RenderPresent(renderer.get());
 }
 
 void Graphical_Engine::clear(){
@@ -388,7 +376,7 @@ void Graphical_Engine::start(){
 		// On limite le nombre d'images par seconde à fps
 		if(dt >= max_dt) draw();
 
-		else std::this_thread::sleep_for(chrono::duration<double, milli>(max_dt - dt));
+		else std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(max_dt - dt));
 	}
 }
 
@@ -396,6 +384,3 @@ void Graphical_Engine::stop(){
 	running = false;
 }
 
-
-
-#endif

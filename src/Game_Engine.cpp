@@ -39,14 +39,17 @@ class GameEngine{
 GameEngine::GameEngine(): 
 	running(false),
 	score(0),
-	window(std::make_unique<Window>("Casse-briques Bro"),
-			960,
-			540),
-	graphical_engine(window->get_renderer(),
-					window->get_width(),
-					window->get_height()),
-	physical_engine(std::make_unique<Physical_Engine>())
+	phy_bar(nullptr),
+	window(nullptr),
+	graphical_engine(nullptr),
+	physical_engine(nullptr)
 {
+
+	window = std::make_unique<Window>("Casse-briques Bro", 960, 540);
+	graphical_engine = std::make_unique<Graphical_Engine>(window->get_renderer(),
+														  window->get_width(),
+														  window->get_height());
+	physical_engine = std::make_unique<Physical_Engine>();
 
 	if(SDL_Init(SDL_INIT_EVERYTHING) != 0){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;
@@ -61,11 +64,14 @@ GameEngine::~GameEngine(){
 
 
 void GameEngine::handle_events(){
-	SDL_Event event;
+
 	static bool pause = false;
-	satic float v = 0;
+	static float v = 0;
 	static float k = 1;
-	const_expr max_velocity = 5;
+	constexpr float max_velocity = 5;
+
+	SDL_Event event;
+	Vector2DF speed;
 
 	SDL_PollEvent(&event);
 	switch(event.type){
@@ -76,14 +82,14 @@ void GameEngine::handle_events(){
 			// on arrête le jeu
 
 			// on met le jeu en pause
-			if(phy_bar.getLife() <= 0){
+			if(phy_bar->getLife() <= 0){
 				stop();
 				window->print_text("Game Over");
 				SDL_Delay(2000);
 			}
 			else{
 				score++;
-				print_score(score);
+				window->print_score(score);
 			}
 
 		break;
@@ -108,15 +114,17 @@ void GameEngine::handle_events(){
 				case SDLK_LEFT:
 					v = std::max(v+1/k, max_velocity);
 					k++;
-					Vector2DF speed = phy_bar.getSpeed();
+					speed = phy_bar->getSpeed();
 					speed[0] = - v;
+					phy_bar->setSpeed(speed);
 				break;
 				case SDLK_RIGHT:
 					v = std::max(v + 1/k, max_velocity);
 					k++;
 					//augmenter la vélocité de la barre
-					Vector2DF speed = phy_bar.getSpeed();
+					speed = phy_bar->getSpeed();
 					speed[0] = v;
+					phy_bar->setSpeed(speed);
 				break;
 				
 				default:
@@ -124,7 +132,7 @@ void GameEngine::handle_events(){
 			}
 		break;
 		// on arrête de bouger la barre
-		case KEYUP:
+		case SDL_KEYUP:
 			switch(event.key.keysym.sym){
 				case SDLK_LEFT:
 				case SDLK_RIGHT:
@@ -153,39 +161,39 @@ void GameEngine::init(){
 	// on la place en bas et au milieu de l'écran
 	// on lui donne une taille de 10 pixels de haut et de 25 pixels de longs
 	// rappelons que le haut est à y = 0 et le bas à y = 540, avec un padding de 5 pixels
-	int width = window->get_width();
-	int height = window->get_height();
+	float width = window->get_width();
+	float height = window->get_height();
 
 	phy_bar = std::make_shared<Convex_Polygon>(Polygon{
-		Point2DF(width/2 - 25, height - 15),
-		Point2DF(width/2 + 25, height - 15),
-		Point2DF(width/2 + 25, height - 5),
-		Point2DF(width/2 - 25, height - 5)
+		Point2DF{width/2 - 25, height - 15},
+		Point2DF{width/2 + 25, height - 15},
+		Point2DF{width/2 + 25, height -  5},
+		Point2DF{width/2 - 25, height -  5}
 	});
 
-	phy_bar->setSpeed(Vector2DF(0,0));
+	phy_bar->setSpeed(Vector2DF{0,0});
 	phy_bar->setBreakable(false);
 
 	// on l'ajoute à l'engine physique
-	physical_engine->add_object(phy_bar);
+	physical_engine->addObject(phy_bar);
 	// on l'ajoute à l'engine graphique
-	graphical_engine.add_object(phy_bar);
+	graphical_engine->addGraphicalPolygon(phy_bar);
 
 	// on crée la balle
 	// on la place au dessus de la barre
-	std::shared_ptr<Circle> ball = std::make_shared<Circle>(Point2DF(width/2, height - 35), 5);
+	std::shared_ptr<Circle> ball = std::make_shared<Circle>(Point2DF{width/2, height - 35}, 5);
 
 	// on lui défini une vitesse initiale
 	// avec une composante horizontale aléatoire
 	// et une composante verticale négative 2*supérieure à la gravité
 	// pour qu'elle parte vers le haut
-	ball->setSpeed(Vector2DF(rand()%10 - 5, -2*Gravity(*ball)));
+	ball->setSpeed(Vector2DF{ static_cast<float> (std::rand()%10 - 5), -2.f*10.f});
 	ball->setBreakable(false);
 
 	// on l'ajoute à l'engine physique
-	physical_engine.add_object(ball);
+	physical_engine->addObject(ball);
 	// on l'ajoute à l'engine graphique
-	graphical_engine.add_object(ball);
+	graphical_engine->addGraphicalCircle(ball);
 
 
 	// on crée les briques
@@ -203,18 +211,17 @@ void GameEngine::init(){
 		// on place les briques à intervalle régulier
 		for(int j=0;j<n_brick; j++){
 			brick = std::make_shared<Convex_Polygon>(Polygon{
-				Point2DF(5 + j*(20+2), 5 + i*(10+2)),
-				Point2DF(5 + j*(20+2) + 20, 5 + i*(10+2)),
-				Point2DF(5 + j*(20+2) + 20, 5 + i*(10+2) + 10),
-				Point2DF(5 + j*(20+2), 5 + i*(10+2) + 10)
+				Point2DF{(float) 5 + j*(20+2)     ,(float) 5 +  i*(10+2)     },
+				Point2DF{(float) 5 + j*(20+2) + 20,(float) 5 +  i*(10+2)     },
+				Point2DF{(float) 5 + j*(20+2) + 20,(float) 5 +  i*(10+2) + 10},
+				Point2DF{(float) 5 + j*(20+2)     ,(float) 5 +  i*(10+2) + 10}
 			});
 
-			brick->setBreakable(true);
-			brick->setLife(1);
+			brick->setBreakable(true,1);
 			// on l'ajoute à l'engine physique
-			physical_engine.add_object(brick);
+			physical_engine->addObject(brick);
 			// on l'ajoute à l'engine graphique
-			graphical_engine.add_object(brick);
+			graphical_engine->addGraphicalPolygon(brick);
 		}
 		
 	}
@@ -226,8 +233,8 @@ void GameEngine::start(){
 
 	running = true;
 	// on lance les threads
-	graphical_engine_thread = std::thread(&Graphical_Engine::run, &graphical_engine);
-	physical_engine_thread  = std::thread(&Physical_Engine::run, &physical_engine);
+	graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get());
+	physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
 
 	while(running){
 		handle_events();
@@ -236,16 +243,14 @@ void GameEngine::start(){
 	physical_engine_thread.join();
 	graphical_engine_thread.join();
 	
-}
+}   
 
 
-void GameEngine::stop() const{
+void GameEngine::stop(){
 	running = false;
 
-	graphical_engine.stop();
-	physical_engine.stop();
+	graphical_engine->stop();
+	physical_engine->stop();
 	//sound_engine.stop();
 }
 
-
-#endif // GAME_ENGINE_HPP

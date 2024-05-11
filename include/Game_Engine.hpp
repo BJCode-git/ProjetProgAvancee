@@ -1,6 +1,7 @@
 #ifndef GAME_ENGINE_HPP
 
 #include <iostream>
+#include <cstdlib>
 #include <memory>
 #include <thread>
 
@@ -22,8 +23,8 @@ class GameEngine{
 		GameEngine();
 		~GameEngine();
 
-		void start() const;
-		void stop() const;
+		void start();
+		void stop();
 	
 	private:
 		void init();
@@ -33,8 +34,6 @@ class GameEngine{
 		bool running;
 		int score;
 		std::shared_ptr<Convex_Polygon> phy_bar;
-		Window w;
-
 
 		std::unique_ptr<Window> window;
 		std::unique_ptr<Graphical_Engine> graphical_engine;

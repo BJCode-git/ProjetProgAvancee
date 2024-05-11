@@ -236,29 +236,101 @@ Physical_Engine/fast:
 	$(MAKE) $(MAKESILENT) -f include/Physical_Engine/CMakeFiles/Physical_Engine.dir/build.make include/Physical_Engine/CMakeFiles/Physical_Engine.dir/build
 .PHONY : Physical_Engine/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/Game_Engine.o: src/Game_Engine.cpp.o
+.PHONY : src/Game_Engine.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/Game_Engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o
+.PHONY : src/Game_Engine.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/Game_Engine.i: src/Game_Engine.cpp.i
+.PHONY : src/Game_Engine.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Game_Engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.i
+.PHONY : src/Game_Engine.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/Game_Engine.s: src/Game_Engine.cpp.s
+.PHONY : src/Game_Engine.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Game_Engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.s
+.PHONY : src/Game_Engine.cpp.s
+
+src/Graphical_Engine.o: src/Graphical_Engine.cpp.o
+.PHONY : src/Graphical_Engine.o
+
+# target to build an object file
+src/Graphical_Engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o
+.PHONY : src/Graphical_Engine.cpp.o
+
+src/Graphical_Engine.i: src/Graphical_Engine.cpp.i
+.PHONY : src/Graphical_Engine.i
+
+# target to preprocess a source file
+src/Graphical_Engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.i
+.PHONY : src/Graphical_Engine.cpp.i
+
+src/Graphical_Engine.s: src/Graphical_Engine.cpp.s
+.PHONY : src/Graphical_Engine.s
+
+# target to generate assembly for a file
+src/Graphical_Engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.s
+.PHONY : src/Graphical_Engine.cpp.s
+
+src/Windows.o: src/Windows.cpp.o
+.PHONY : src/Windows.o
+
+# target to build an object file
+src/Windows.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o
+.PHONY : src/Windows.cpp.o
+
+src/Windows.i: src/Windows.cpp.i
+.PHONY : src/Windows.i
+
+# target to preprocess a source file
+src/Windows.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Windows.cpp.i
+.PHONY : src/Windows.cpp.i
+
+src/Windows.s: src/Windows.cpp.s
+.PHONY : src/Windows.s
+
+# target to generate assembly for a file
+src/Windows.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/Windows.cpp.s
+.PHONY : src/Windows.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BrickBreaker.dir/build.make CMakeFiles/BrickBreaker.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/tests/test-circle-drawing.o: src/tests/test-circle-drawing.cpp.o
 .PHONY : src/tests/test-circle-drawing.o
@@ -350,9 +422,18 @@ help:
 	@echo "... test-circle-drawing"
 	@echo "... test-image-drawing"
 	@echo "... test-physical-object"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/Game_Engine.o"
+	@echo "... src/Game_Engine.i"
+	@echo "... src/Game_Engine.s"
+	@echo "... src/Graphical_Engine.o"
+	@echo "... src/Graphical_Engine.i"
+	@echo "... src/Graphical_Engine.s"
+	@echo "... src/Windows.o"
+	@echo "... src/Windows.i"
+	@echo "... src/Windows.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/tests/test-circle-drawing.o"
 	@echo "... src/tests/test-circle-drawing.i"
 	@echo "... src/tests/test-circle-drawing.s"

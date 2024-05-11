@@ -10,6 +10,9 @@ Circle::Circle(Vector2DF & pos, unsigned int r):
 	Physical_Object(pos, SHAPE::CIRCLE),
 	radius(r)
 {
+	if(radius < 0)
+		throw std::invalid_argument("Le rayon d'un cercle ne peut pas être négatif");
+
 	debug("Création d'un disque");
 	//centroid = pos;
 	computeMinimumBoundingBox();
@@ -28,11 +31,13 @@ Circle::~Circle(){
 	debug("Destruction d'un cercle");
 }
 
-void Circle::setRadius(unsigned int radius){
+void Circle::setRadius(float radius){
+	if(radius < 0)
+		throw std::invalid_argument("Le rayon d'un cercle ne peut pas être négatif");
 	this->radius = radius;
 }
 
-int Circle::getRadius() const{
+float Circle::getRadius() const{
 	return radius;
 }
 
