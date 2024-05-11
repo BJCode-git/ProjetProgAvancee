@@ -32,6 +32,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.26.3/CMakeSystem.cmake"
   "CMakeLists.txt"
   "cmake_modules/FindSDL2_image.cmake"
+  "cmake_modules/FindSDL2_mixer.cmake"
   "cmake_modules/FindSDL2_ttf.cmake"
   "include/Physical_Engine/CMakeLists.txt"
   "/usr/local/lib/cmake/SDL2/sdl2-config-version.cmake"
@@ -56,5 +57,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test-physical-object.dir/DependInfo.cmake"
   "CMakeFiles/test-circle-drawing.dir/DependInfo.cmake"
   "CMakeFiles/test-image-drawing.dir/DependInfo.cmake"
+  "CMakeFiles/test-gif-drawing.dir/DependInfo.cmake"
+  "CMakeFiles/test-render-drawing.dir/DependInfo.cmake"
   "include/Physical_Engine/CMakeFiles/Physical_Engine.dir/DependInfo.cmake"
   )

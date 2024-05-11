@@ -93,7 +93,7 @@ test__image__drawing_EXTERNAL_OBJECTS =
 bin/test-image-drawing: CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.o
 bin/test-image-drawing: CMakeFiles/test-image-drawing.dir/build.make
 bin/test-image-drawing: /usr/local/lib/libSDL2.so
-bin/test-image-drawing: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
+bin/test-image-drawing: /usr/local/lib/libSDL2_image.so
 bin/test-image-drawing: CMakeFiles/test-image-drawing.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/test-image-drawing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test-image-drawing.dir/link.txt --verbose=$(VERBOSE)

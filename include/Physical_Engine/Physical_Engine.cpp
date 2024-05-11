@@ -50,9 +50,7 @@ void Physical_Engine::start(){
  
 	std::chrono::duration<float, std::milli> delta;
 	float dt = 0;
-	constexpr float  max_dt= 10; //ms
-	
-
+	constexpr float  max_dt= 100; //ms
 	
 	while(running){
 	
@@ -65,10 +63,12 @@ void Physical_Engine::start(){
 		// On met à jour les objets physiques
 		// on vérifie si le temps écoulé est supérieur à max_dt
 		// on procède comme suit pour limiter le temps de calcul
-		if( dt >= max_dt)
+		if( dt >= max_dt){
 			update(dt / 10);
-		else
+		}
+		else{
 			std::this_thread::sleep_for(std::chrono::duration<double, std::milli>(max_dt - dt)); //ms
+		}
 	
 	}
 
@@ -86,6 +86,7 @@ const std::vector<std::shared_ptr<Physical_Object>>& Physical_Engine::getObjects
 
 
 void Physical_Engine::sendDestructEvent(){
+	debug("Physical_Engine::sendDestructEvent()");
 	SDL_Event event;
 	event.type = SDL_USEREVENT;
 	SDL_PushEvent(&event);
@@ -114,25 +115,14 @@ void Physical_Engine::update(float dt){
 		obj->update(dt);
 	}
 
+	//debug("Physical_Engine::update() check objects");
 	bool need_to_destroy = false;
 	// on détecte si un objet sort de la scène
 	auto it = objects.begin();
-	while(it != objects.end()){
+	while(it <= objects.end()){
 		auto obj = *it;
 		Vector2DF position = obj->getPosition();
 		Vector2DF speed    = obj->getSpeed();
-
-		// on réduit la vie de l'objet si il sort du bas de la scène
- 		if( position[1] >= scene.height){
-			obj->reduceLife();
-			if(obj->getLife() <= 0) {
-				it = objects.erase(it);
-				sendDestructEvent();
-			}
-		}
-		else{
-			it++;
-		}
 
 		// on fait rebondir l'objet sur les bords de la scène 
 		if(position[0]<= 0  || position[0] >= scene.width){
@@ -145,14 +135,35 @@ void Physical_Engine::update(float dt){
 			obj->setSpeed(speed);
 		}
 
+		// on réduit la vie de l'objet si il sort du bas de la scène
+ 		if( position[1] >= scene.height){
+			obj->reduceLife();
+			if(obj->getLife() <= 0) {
+				it = objects.erase(it);
+				sendDestructEvent();
+			}
+			else{
+				++it;
+			}
+		}
+		else{
+			++it;
+		}
+		//debug("Physical_Engine::update()");
+
 	}
 
 	// On détecte les collisions
+	//debug("Physical_Engine::update() detectCollisions");
 	detectCollisions();
 
+
 	// On résout les collisions
+	//debug("Physical_Engine::update() resolveCollisions");
 	resolveCollisions();
 
+	// On supprime les objets physiques qui ont une vie nulle
+	//debug("Physical_Engine::update() removeDeadObjects");
 	removeDeadObjects();
 }
 

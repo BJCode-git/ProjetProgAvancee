@@ -323,6 +323,18 @@ SDL2_IMAGE_INCLUDE_DIR:PATH=/usr/include/SDL2
 //Path to a library.
 SDL2_IMAGE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2_image.so
 
+//Where the SDL2_mixer headers can be found
+SDL2_MIXER_INCLUDE_DIR:PATH=/usr/include/SDL2
+
+//Where the SDL2_mixer Library can be found
+SDL2_MIXER_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2_mixer.so
+
+//Disable search SDL2_mixer Library in default path
+SDL2_MIXER_NO_DEFAULT_PATH:BOOL=OFF
+
+//Custom SDL2_mixer Library path
+SDL2_MIXER_PATH:STRING=
+
 //Where the SDL2_ttf headers can be found
 SDL2_TTF_INCLUDE_DIR:PATH=/usr/include/SDL2
 
@@ -548,7 +560,9 @@ FIND_PACKAGE_MESSAGE_DETAILS_SDL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDLmain.
 //Details about finding SDL2TTF
 FIND_PACKAGE_MESSAGE_DETAILS_SDL2TTF:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so][/usr/include/SDL2][v()]
 //Details about finding SDL2_image
-FIND_PACKAGE_MESSAGE_DETAILS_SDL2_image:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2_image.so][/usr/include/SDL2][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_SDL2_image:INTERNAL=[/usr/local/lib/libSDL2_image.so][/usr/include/SDL2][v()]
+//Details about finding SDL2_mixer
+FIND_PACKAGE_MESSAGE_DETAILS_SDL2_mixer:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2_mixer.so][/usr/include/SDL2][v2.0.4()]
 //Details about finding SDL2_ttf
 FIND_PACKAGE_MESSAGE_DETAILS_SDL2_ttf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so][/usr/include/SDL2][v2.0.18()]
 //Details about finding Threads
@@ -587,6 +601,14 @@ SDL2TTF_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so;/usr/lib/
 SDL2_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL2_IMAGE_LIBRARY
 SDL2_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL2_MIXER_INCLUDE_DIR
+SDL2_MIXER_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL2_MIXER_LIBRARY
+SDL2_MIXER_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL2_MIXER_NO_DEFAULT_PATH
+SDL2_MIXER_NO_DEFAULT_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL2_MIXER_PATH
+SDL2_MIXER_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL2_TTF_INCLUDE_DIR
 SDL2_TTF_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL2_TTF_LIBRARY

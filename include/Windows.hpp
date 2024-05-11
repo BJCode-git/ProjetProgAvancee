@@ -6,7 +6,7 @@
 #include <string>
 
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
+//#include <SDL2/SDL_ttf.h>
 
 #include "debug.hpp"
 
@@ -19,14 +19,14 @@ class Window{
 		int get_width() const;
 		int get_height() const;
 
-		void print_score(int score);
-		void print_text(const std::string text);
+		//void print_score(int score);
+		//void print_text(const std::string text);
 
 	private:
 		int width;
 		int height;
 
-		std::unique_ptr<TTF_Font   , void (*)(TTF_Font*)>    font;
+		//std::unique_ptr<TTF_Font   , void (*)(TTF_Font*)>    font;
 		std::unique_ptr<SDL_Window ,void (*)(SDL_Window*)>   window;
 		std::shared_ptr<SDL_Renderer> renderer;
 		

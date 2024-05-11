@@ -9,6 +9,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake_modules/")
 # Configuration des répertoires source et binaire
 set(PROJECT_SOURCE_DIR src)
 set(PROJECT_BINARY_DIR build)
+set(SDL2_IMAGE_LIBRARY "/usr/local/lib/libSDL2_image.so")
 
 # Ajout du dossier include/indicators pour les fichiers d'en-tête
 include_directories(include include/indicators/include)
@@ -24,6 +25,7 @@ enable_testing()
 add_test(test-physical-object bin/test-physical-object)
 add_test(test-circle-drawing bin/test-circle-drawing)
 add_test(test-image-drawing bin/test-image-drawing)
+add_test(test-gif-drawing bin/test-gif-drawing)
 
 # Configuration du type de build
 set(CMAKE_BUILD_TYPE Debug)
@@ -48,6 +50,8 @@ add_executable(BrickBreaker src/main.cpp src/Game_Engine.cpp src/Graphical_Engin
 add_executable(test-physical-object src/tests/test-physical-object.cpp)
 add_executable(test-circle-drawing  src/tests/test-circle-drawing.cpp)
 add_executable(test-image-drawing   src/tests/test-image-drawing.cpp)
+add_executable(test-gif-drawing     src/tests/test-gif-drawing.cpp)
+add_executable(test-render-drawing  src/tests/test-render-drawing.cpp)
 
 # Configuration des bibliothèques SDL
 find_package(SDL2 REQUIRED)
@@ -55,6 +59,8 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 # Configuration des bibliothèques SDL_ttf
 find_package(SDL2_ttf REQUIRED)
+# Configuration des bibliothèques SDL_mixer
+find_package(SDL2_mixer REQUIRED)
 
 
 # Ajout des dépendances pour les exécutables
@@ -70,9 +76,16 @@ target_link_libraries(test-circle-drawing PRIVATE ${SDL2_LIBRARIES})
 target_include_directories(test-image-drawing PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
 target_link_libraries(test-image-drawing PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
 
+target_include_directories(test-gif-drawing PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
+target_link_libraries(test-gif-drawing PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
+
+target_include_directories(test-render-drawing PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
+target_link_libraries(test-render-drawing PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
+
+
 # Lier les exécutables avec les bibliothèques SDL_ttf
-target_include_directories(BrickBreaker PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
-target_link_libraries(BrickBreaker PRIVATE Physical_Engine ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})
+target_include_directories(BrickBreaker PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS})
+target_link_libraries(BrickBreaker PRIVATE Physical_Engine ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2_MIXER_LIBRARIES})
 
 
 

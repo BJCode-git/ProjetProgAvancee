@@ -264,6 +264,12 @@ CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o: src/Game_Engine.cpp \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/semaphore.h \
   /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+  /usr/include/c++/11/future \
+  /usr/include/c++/11/mutex \
+  /usr/include/c++/11/bits/unique_lock.h \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/bits/atomic_futex.h \
+  /usr/include/c++/11/bits/std_function.h \
   /usr/local/include/SDL2/SDL.h \
   /usr/local/include/SDL2/SDL_main.h \
   /usr/local/include/SDL2/SDL_stdinc.h \
@@ -428,12 +434,18 @@ CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o: src/Game_Engine.cpp \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_locale.h \
   /usr/local/include/SDL2/SDL_misc.h \
-  /usr/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
-  /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/begin_code.h \
   /usr/include/SDL2/close_code.h \
-  /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL_mixer.h \
+  /usr/include/SDL2/SDL_stdinc.h \
+  /usr/include/SDL2/SDL_rwops.h \
+  /usr/include/SDL2/SDL_audio.h \
+  /usr/include/SDL2/SDL_endian.h \
+  /usr/include/SDL2/SDL_version.h \
   include/Physical_Engine/Physical_Engine.hpp \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_vector.h \
@@ -453,7 +465,6 @@ CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o: src/Game_Engine.cpp \
   /usr/include/c++/11/bits/ranges_util.h \
   /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /usr/include/c++/11/functional \
-  /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
@@ -466,8 +477,8 @@ CMakeFiles/BrickBreaker.dir/src/Game_Engine.cpp.o: src/Game_Engine.cpp \
   include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp \
   include/Physical_Engine/Circle/Circle.hpp \
   include/Graphical_Engine.hpp \
-  include/debug.hpp \
-  include/Windows.hpp
+  include/Windows.hpp \
+  include/debug.hpp
 
 CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: src/Graphical_Engine.cpp \
   /usr/include/stdc-predef.h \
@@ -896,9 +907,10 @@ CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: src/Graphical_Engine.cpp
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_locale.h \
   /usr/local/include/SDL2/SDL_misc.h \
-  /usr/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
-  /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/begin_code.h \
   /usr/include/SDL2/close_code.h \
   include/Physical_Engine/Physical_Engine.hpp \
@@ -932,6 +944,7 @@ CMakeFiles/BrickBreaker.dir/src/Graphical_Engine.cpp.o: src/Graphical_Engine.cpp
   include/Physical_Engine/BoundingBox/BoundingBox.hpp \
   include/Physical_Engine/Convex_Polygon/Convex_Polygon.hpp \
   include/Physical_Engine/Circle/Circle.hpp \
+  include/Windows.hpp \
   include/debug.hpp
 
 CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o: src/Windows.cpp \
@@ -1346,10 +1359,6 @@ CMakeFiles/BrickBreaker.dir/src/Windows.cpp.o: src/Windows.cpp \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_locale.h \
   /usr/local/include/SDL2/SDL_misc.h \
-  /usr/include/SDL2/SDL_ttf.h \
-  /usr/include/SDL2/SDL.h \
-  /usr/include/SDL2/begin_code.h \
-  /usr/include/SDL2/close_code.h \
   include/debug.hpp
 
 CMakeFiles/BrickBreaker.dir/src/main.cpp.o: src/main.cpp \
@@ -1764,10 +1773,6 @@ CMakeFiles/BrickBreaker.dir/src/main.cpp.o: src/main.cpp \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_locale.h \
   /usr/local/include/SDL2/SDL_misc.h \
-  /usr/include/SDL2/SDL_ttf.h \
-  /usr/include/SDL2/SDL.h \
-  /usr/include/SDL2/begin_code.h \
-  /usr/include/SDL2/close_code.h \
   include/debug.hpp \
   include/Game_Engine.hpp \
   /usr/include/c++/11/thread \
@@ -1785,7 +1790,23 @@ CMakeFiles/BrickBreaker.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/semaphore.h \
   /usr/include/x86_64-linux-gnu/bits/semaphore.h \
-  /usr/include/SDL2/SDL_image.h \
+  /usr/include/c++/11/future \
+  /usr/include/c++/11/mutex \
+  /usr/include/c++/11/bits/unique_lock.h \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/bits/atomic_futex.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/local/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/begin_code.h \
+  /usr/include/SDL2/close_code.h \
+  /usr/include/SDL2/SDL_mixer.h \
+  /usr/include/SDL2/SDL_stdinc.h \
+  /usr/include/SDL2/SDL_rwops.h \
+  /usr/include/SDL2/SDL_audio.h \
+  /usr/include/SDL2/SDL_endian.h \
   /usr/include/SDL2/SDL_version.h \
   include/Physical_Engine/Physical_Engine.hpp \
   /usr/include/c++/11/vector \
@@ -1806,7 +1827,6 @@ CMakeFiles/BrickBreaker.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/c++/11/bits/ranges_util.h \
   /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /usr/include/c++/11/functional \
-  /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
@@ -1860,13 +1880,21 @@ include/Physical_Engine/Physical_Object/Physical_Object.hpp:
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
-/usr/include/SDL2/SDL_ttf.h:
+/usr/include/SDL2/SDL_endian.h:
+
+/usr/include/SDL2/SDL_stdinc.h:
+
+/usr/include/SDL2/SDL_mixer.h:
+
+/usr/include/SDL2/SDL_audio.h:
 
 /usr/include/SDL2/begin_code.h:
 
 /usr/include/SDL2/SDL.h:
 
-/usr/include/SDL2/SDL_image.h:
+/usr/include/SDL2/SDL_ttf.h:
+
+/usr/local/include/SDL2/SDL_image.h:
 
 /usr/local/include/SDL2/SDL_misc.h:
 
@@ -2073,6 +2101,12 @@ include/Physical_Engine/BoundingBox/BoundingBox.hpp:
 /usr/local/include/SDL2/SDL_main.h:
 
 /usr/local/include/SDL2/SDL.h:
+
+/usr/include/c++/11/bits/atomic_futex.h:
+
+/usr/include/c++/11/condition_variable:
+
+/usr/include/c++/11/future:
 
 /usr/include/c++/11/bits/stl_vector.h:
 
@@ -2498,6 +2532,8 @@ src/Game_Engine.cpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
+/usr/include/SDL2/SDL_rwops.h:
+
 /usr/include/inttypes.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
@@ -2529,6 +2565,8 @@ src/Game_Engine.cpp:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h:
 
 /usr/include/c++/11/bits/algorithmfwd.h:
+
+/usr/include/c++/11/bits/unique_lock.h:
 
 /usr/include/c++/11/ext/numeric_traits.h:
 
@@ -2663,6 +2701,8 @@ src/Game_Engine.cpp:
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/c++/11/mutex:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
