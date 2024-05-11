@@ -220,6 +220,10 @@ void Physical_Object::restoreState(){
 	life = saved_life;
 }
 
+const BoundingBox & Physical_Object::getBoundingBox() const{
+	return hitbox;
+}
+
 void Physical_Object::setBoundingBox(const Point2DF top_left,const Point2DF top_right, 
 									const  Point2DF bottom_left,const Point2DF bottom_right){
 	try{

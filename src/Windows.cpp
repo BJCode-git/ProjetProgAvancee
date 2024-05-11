@@ -29,33 +29,48 @@ class Window{
 
 */
 
-Window::Window(const std::string title, int x, int y, int w, int h, Uint32 flags):
+
+
+Window::Window(const std::string title, int w, int h, Uint32 flags):
 	width(w),
-	height(h)
+	height(h),
+	font(nullptr,TTF_CloseFont),
+	window(nullptr,SDL_DestroyWindow),
+	renderer(nullptr, SDL_DestroyRenderer)
 {
-	i(TTF_Init() == -1){
+	if(TTF_Init() < 0 || SDL_InitSubSystem(SDL_INIT_VIDEO) < 0 ){
 		std::cerr << "Error: " << TTF_GetError() << std::endl;
 		throw std::runtime_error("Error: " + std::string(TTF_GetError()));
 	}
 
+	font = std::unique_ptr<TTF_Font,void (*)(TTF_Font*)>( TTF_OpenFont("rsc/mario.ttf", 10),
+																TTF_CloseFont);
 
-	window = std::unique_ptr<SDL_Window*>(SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED, w, h, flags));
-	renderer = std::shared_ptr<SDL_Renderer*>(SDL_CreateRenderer(*window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED));
+	// std::unique_ptr<SDL_Window>   window;
+	window   = std::unique_ptr<SDL_Window, void (*)(SDL_Window*)>
+			   (SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED, w, h, flags),
+			   SDL_DestroyWindow);
+	
+	 renderer = std::shared_ptr<SDL_Renderer> (SDL_CreateRenderer(window.get(),
+												-1, 
+												SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED),
+												SDL_DestroyRenderer);
+	//renderer = std::shared_ptr<SDL_Renderer>(
+	//				SDL_CreateRenderer(window.get(), -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED),
+	//				SDL_DestroyRenderer);
 
-	font = std::unique_ptr<TTF_Font>( TTF_OpenFont("rsc/mario.ttf", 10));
-
-
-	if(font == nullptr){
+	
+	if(font.get() == nullptr){
 		std::cerr << "Error: " << TTF_GetError() << std::endl;
 	}
 
 }
 
 Window::~Window(){
-	TTF_CloseFont(*font);
+	TTF_CloseFont(font.get());
 	TTF_Quit();
-	SDL_DestroyTexture(*renderer);
-	SDL_DestroyWindow(*window);
+	SDL_DestroyRenderer(renderer.get());
+	SDL_DestroyWindow(window.get());
 }
 
 std::shared_ptr<SDL_Renderer> Window::get_renderer() const{
@@ -76,13 +91,13 @@ void Window::print_score(int score){
 
 	SDL_Color color = {255, 255, 255, 0};
 
-	SDL_Surface* surface = TTF_RenderText_Solid(*font, std::to_string(score).c_str(), color);
+	SDL_Surface *surface = TTF_RenderText_Solid(font.get(), std::to_string(score).c_str(), color);
 	if(surface == nullptr){
 		std::cerr << "Error: " << TTF_GetError() << std::endl;
 		return;
 	}
 
-	SDL_Texture texture = SDL_CreateTextureFromSurface(*renderer, surface);
+	SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer.get(), surface);
 	if(texture == nullptr){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;
 		return;
@@ -95,7 +110,7 @@ void Window::print_score(int score){
 	TextRect.y = 0;
 	TextRect.w = surface->w;
 	TextRect.h = surface->h;
-	SDL_RenderCopy(*renderer, *texture, NULL, &TextRect);
+	SDL_RenderCopy(renderer.get(), texture, NULL, &TextRect);
 }
 
 void Window::print_text(const std::string text){
@@ -104,13 +119,13 @@ void Window::print_text(const std::string text){
 
 	SDL_Color color = {255, 255, 255, 0};
 
-	SDL_Surface* surface = TTF_RenderText_Solid(*font, text.c_str(), color);
+	SDL_Surface *surface = TTF_RenderText_Solid(font.get(), text.c_str(), color);
 	if(surface == nullptr){
 		std::cerr << "Error: " << TTF_GetError() << std::endl;
 		return;
 	}
 
-	SDL_Texture texture = SDL_CreateTextureFromSurface(*renderer, surface);
+	SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer.get(), surface);
 	if(texture == nullptr){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;
 		return;
@@ -124,5 +139,5 @@ void Window::print_text(const std::string text){
 	TextRect.y = height / 2 - surface->h / 2;
 	TextRect.w = surface->w;
 	TextRect.h = surface->h;
-	SDL_RenderCopy(*renderer, *texture, NULL, &TextRect);
+	SDL_RenderCopy(renderer.get(), texture, NULL, &TextRect);
 }
