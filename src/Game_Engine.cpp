@@ -51,10 +51,24 @@ GameEngine::GameEngine():
 														  window->get_height());
 	physical_engine = std::make_unique<Physical_Engine>();
 
-	if(SDL_Init(SDL_INIT_EVERYTHING) != 0){
+	if(SDL_Init(SDL_INIT_EVERYTHING) != 0 ){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;
 		exit(EXIT_FAILURE);
 	}
+
+	if(IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) == 0) {
+		std::cerr << "Erreur lors de l'initialisation de SDL_image : " << IMG_GetError() << std::endl;
+		throw std::runtime_error("Erreur lors de l'initialisation de SDL_image");
+	}
+	
+	else if(TTF_Init() < 0){
+		std::cerr << "Erreur lors de l'initialisation de SDL_ttf : " << TTF_GetError() << std::endl;
+		throw std::runtime_error("Erreur lors de l'initialisation de SDL_ttf");
+	}
+	
+
+	init();
+
 	
 }
 
@@ -85,16 +99,20 @@ void GameEngine::handle_events(){
 			if(phy_bar->getLife() <= 0){
 				stop();
 				window->print_text("Game Over");
-				SDL_Delay(2000);
+				stop();
+				running = false;
+				std::this_thread::sleep_for(std::chrono::seconds(2));
 			}
 			else{
 				score++;
+				debug("Score: " + score);
 				window->print_score(score);
 			}
 
 		break;
 		case SDL_QUIT:
 			stop();
+			running = false;
 			window->print_text("Fin du jeu");
 		break;
 		case SDL_KEYDOWN:
@@ -203,19 +221,35 @@ void GameEngine::init(){
 	// on leur donne une taille de 20 pixels de large et 10 pixels de haut
 
 	std::shared_ptr<Convex_Polygon> brick;
-	int n_line = 3;
+	constexpr int n_line = 2;
 
 	for(int i = 0; i<n_line; i++){
 		// on parcout la largeur de l'écran
-		int n_brick = (width-10)/(2+20+2);
+		constexpr int n_brick = 5;//(width-10)/(2+20+2);
+		constexpr float screen_padding = 5;
+		constexpr float brick_padding = 4;
+		float brick_width = (width - 2*screen_padding)/(n_brick);
+		brick_width -= 2*brick_padding;
+		/*
 		// on place les briques à intervalle régulier
 		for(int j=0;j<n_brick; j++){
+		*/
+		for(int j=0;j<n_brick; j++){
+			/*
 			brick = std::make_shared<Convex_Polygon>(Polygon{
 				Point2DF{(float) 5 + j*(20+2)     ,(float) 5 +  i*(10+2)     },
 				Point2DF{(float) 5 + j*(20+2) + 20,(float) 5 +  i*(10+2)     },
 				Point2DF{(float) 5 + j*(20+2) + 20,(float) 5 +  i*(10+2) + 10},
 				Point2DF{(float) 5 + j*(20+2)     ,(float) 5 +  i*(10+2) + 10}
 			});
+			*/
+			brick = std::make_shared<Convex_Polygon>(Polygon{
+				Point2DF{(float) screen_padding + j*(brick_width+brick_padding)              ,(float) brick_padding +  i*(10+2)     },
+				Point2DF{(float) screen_padding + j*(brick_width+brick_padding) + brick_width,(float) brick_padding +  i*(10+2)     },
+				Point2DF{(float) screen_padding + j*(brick_width+brick_padding) + brick_width,(float) brick_padding +  i*(10+2) + 10},
+				Point2DF{(float) screen_padding + j*(brick_width+brick_padding)              ,(float) brick_padding +  i*(10+2) + 10}
+			});
+
 
 			brick->setBreakable(true,1);
 			// on l'ajoute à l'engine physique
@@ -236,9 +270,12 @@ void GameEngine::start(){
 	graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get());
 	physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
 
+	window->print_text("Appuyez sur Echap pour mettre en pause");
 	while(running){
 		handle_events();
 	}
+
+	debug("GameEngine::start() reach end of loop , wait threads ...\n");
 
 	physical_engine_thread.join();
 	graphical_engine_thread.join();
@@ -247,10 +284,12 @@ void GameEngine::start(){
 
 
 void GameEngine::stop(){
-	running = false;
 
 	graphical_engine->stop();
 	physical_engine->stop();
+
+	debug("Score: " + score);
+	debug("Stop\n");
 	//sound_engine.stop();
 }
 

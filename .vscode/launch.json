@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/julien/Cours2A/Prog_Avance/Projet",
-      "program": "/home/julien/Cours2A/Prog_Avance/Projet/build/Debug/outDebug",
+      "program": "/home/julien/Cours2A/Prog_Avance/Projet/bin/BrickBreaker",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -161,6 +161,7 @@ void drawCircle(SDL_Renderer* renderer, float x, float y, float radius) {
 
 Graphical_Object::Graphical_Object(std::shared_ptr<Physical_Object> PhyObject, std::shared_ptr<SDL_Texture> texture) : 
 	PhyObject(PhyObject),
+	color(WHITE),
 	texture(texture)
 {}
 
@@ -279,15 +280,13 @@ Graphical_Engine::Graphical_Engine(std::shared_ptr<SDL_Renderer> renderer,
 	window_width(scene_width),
 	window_height(scene_height)
 {
-	if(IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) == 0) {
-		std::cerr << "Erreur lors de l'initialisation de SDL_image : " << IMG_GetError() << std::endl;
-		throw std::runtime_error("Erreur lors de l'initialisation de SDL_image");
-	}
+	debug("Graphical_Engine::Graphical_Engine()");
 
 
 }
 
 Graphical_Engine::~Graphical_Engine() {
+	debug("Graphical_Engine::~Graphical_Engine()");
 	IMG_Quit();
 }
 
@@ -331,8 +330,11 @@ std::shared_ptr<SDL_Renderer> Graphical_Engine::getRenderer() const {
 
 void Graphical_Engine::draw(){
 	clear();
+
+	auto timenow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	debug("Graphical_Engine::draw()" +  (std::string) std::ctime(&timenow) +"\n"  );
 	// Fond noir
-	SDL_SetRenderDrawColor(renderer.get(), 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer.get(), 220, 0, 0, SDL_ALPHA_OPAQUE);
 
 	auto it = objects.begin();
 	while (it != objects.end()) {
@@ -355,6 +357,7 @@ void Graphical_Engine::clear(){
 void Graphical_Engine::start(){
 
 	running = true;
+	debug("Graphical_Engine::start()");
 
 	constexpr float  fps = 60; //ms
 	constexpr float  max_dt= 1000/fps; //ms
@@ -378,9 +381,12 @@ void Graphical_Engine::start(){
 
 		else std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(max_dt - dt));
 	}
+
+	debug("Graphical_Engine::start() reach end of loop");
 }
 
 void Graphical_Engine::stop(){
+	debug("Graphical_Engine::stop()");
 	running = false;
 }
 

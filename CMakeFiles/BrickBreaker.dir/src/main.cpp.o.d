@@ -348,6 +348,7 @@ CMakeFiles/BrickBreaker.dir/src/main.cpp.o: \
  /usr/local/include/SDL2/SDL_locale.h /usr/local/include/SDL2/SDL_misc.h \
  /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
+ /home/julien/Cours2A/Prog_Avance/Projet/include/debug.hpp \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Game_Engine.hpp \
  /usr/include/c++/11/thread /usr/include/c++/11/stop_token \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/std_thread.h \

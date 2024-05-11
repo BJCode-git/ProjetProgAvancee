@@ -38,10 +38,10 @@ Window::Window(const std::string title, int w, int h, Uint32 flags):
 	window(nullptr,SDL_DestroyWindow),
 	renderer(nullptr, SDL_DestroyRenderer)
 {
-	if(TTF_Init() < 0 || SDL_InitSubSystem(SDL_INIT_VIDEO) < 0 ){
-		std::cerr << "Error: " << TTF_GetError() << std::endl;
-		throw std::runtime_error("Error: " + std::string(TTF_GetError()));
-	}
+	//if(TTF_Init() < 0 || SDL_InitSubSystem(SDL_INIT_VIDEO) < 0 ){
+	//	std::cerr << "Error: " << TTF_GetError() << std::endl;
+	//	throw std::runtime_error("Error: " + std::string(TTF_GetError()));
+	//}
 
 	font = std::unique_ptr<TTF_Font,void (*)(TTF_Font*)>( TTF_OpenFont("rsc/mario.ttf", 10),
 																TTF_CloseFont);
@@ -68,7 +68,7 @@ Window::Window(const std::string title, int w, int h, Uint32 flags):
 
 Window::~Window(){
 	TTF_CloseFont(font.get());
-	TTF_Quit();
+	//TTF_Quit();
 	SDL_DestroyRenderer(renderer.get());
 	SDL_DestroyWindow(window.get());
 }
@@ -87,7 +87,7 @@ int Window::get_height() const{
 
 void Window::print_score(int score){
 
-	std::cout << "Score: " << score << std::endl;
+	debug("Score: " + score);
 
 	SDL_Color color = {255, 255, 255, 0};
 
@@ -115,7 +115,7 @@ void Window::print_score(int score){
 
 void Window::print_text(const std::string text){
 
-	std::cout << text << std::endl;
+	debug(text);
 
 	SDL_Color color = {255, 255, 255, 0};
 

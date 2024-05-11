@@ -11,13 +11,13 @@ Physical_Engine::Physical_Engine():
 	collisions(),
 	running(false)
 {
-	debug("Création d'un moteur physique");
+	debug("Physical_Engine::Physical_Engine()");
 	SDL_InitSubSystem(SDL_INIT_EVENTS);
 }
 
 Physical_Engine::~Physical_Engine(){
-	debug("Destruction d'un moteur physique");
-	//SDL_QuitSubSystem(SDL_INIT_EVENTS);
+	debug("Physical_Engine::~Physical_Engine()");
+	SDL_QuitSubSystem(SDL_INIT_EVENTS);
 }
 
 void Physical_Engine::setScene(int width, int height){
@@ -40,6 +40,7 @@ void Physical_Engine::clearObjects(){
 
 void Physical_Engine::start(){
 	running = true;
+	debug("Physical_Engine::start()");
 
 	//constexpr float CLOCKS_PER_MS = CLOCKS_PER_SEC / 1000;
 	//clock_t current_time,last_clock = std::clock();
@@ -71,9 +72,11 @@ void Physical_Engine::start(){
 	
 	}
 
+	debug("Physical_Engine::start() reach end of loop");
 }
 
 void Physical_Engine::stop(){
+	debug("Physical_Engine::stop()");
 	running = false;
 }
 
@@ -101,6 +104,9 @@ void Physical_Engine::removeDeadObjects(){
 }
 
 void Physical_Engine::update(float dt){
+
+	auto timenow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	debug("Physical_Engine::update()" +  (std::string) std::ctime(&timenow)  );
 
 	// On met à jour les objets physiques
 	for(auto obj : objects){
