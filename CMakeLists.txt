@@ -4,12 +4,14 @@ project(Casse-brique-BRELOT)
 # Configuration du standard C++ à utiliser
 set(CMAKE_CXX_STANDARD 20)
 
+set(CACHE PATH ${CMAKE_BINARY_DIR})
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake_modules/")
 
 # Configuration des répertoires source et binaire
 set(PROJECT_SOURCE_DIR src)
 set(PROJECT_BINARY_DIR build)
 set(SDL2_IMAGE_LIBRARY "/usr/local/lib/libSDL2_image.so")
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Build)
 
 # Ajout du dossier include/indicators pour les fichiers d'en-tête
 include_directories(include include/indicators/include)
@@ -26,6 +28,8 @@ add_test(test-physical-object bin/test-physical-object)
 add_test(test-circle-drawing bin/test-circle-drawing)
 add_test(test-image-drawing bin/test-image-drawing)
 add_test(test-gif-drawing bin/test-gif-drawing)
+add_test(test-render-drawing bin/test-render-drawing)
+add_test(test-shared-ptr bin/test-shared-ptr)
 
 # Configuration du type de build
 set(CMAKE_BUILD_TYPE Debug)
@@ -53,6 +57,7 @@ add_executable(test-circle-drawing  src/tests/test-circle-drawing.cpp)
 add_executable(test-image-drawing   src/tests/test-image-drawing.cpp)
 add_executable(test-gif-drawing     src/tests/test-gif-drawing.cpp)
 add_executable(test-render-drawing  src/tests/test-render-drawing.cpp)
+add_executable(test-shared-ptr     src/tests/test-shared-ptr.cpp)
 
 # Configuration des bibliothèques SDL
 find_package(SDL2 REQUIRED)

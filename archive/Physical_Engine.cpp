@@ -1303,7 +1303,8 @@ PhysicalEngine::~PhysicalEngine(){
 }
 
 void PhysicalEngine::addObject(std::shared_ptr<Physical_Object>   obj){
-	objects.push_back(obj);
+	//objects.push_back(obj);
+	objects.emplace_back(obj);
 }
 
 void PhysicalEngine::removeObject(std::shared_ptr<Physical_Object> obj){

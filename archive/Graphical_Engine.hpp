@@ -214,7 +214,7 @@ class Graphical_Engine{
 
 
 		std::shared_ptr<SDL_Renderer> renderer;
-		std::unique_ptr<TTF_Font   , void (*)(TTF_Font*)>    font;
+		std::unique_ptr<TTF_Font   , decltype()>    font;
 		std::unique_ptr<Window> window;
 
 		int fps_limit;

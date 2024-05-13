@@ -26,7 +26,7 @@ void Physical_Engine::setScene(int width, int height){
 }
 
 void Physical_Engine::addObject(std::shared_ptr<Physical_Object>   obj){
-	objects.push_back(obj);
+	objects.emplace_back(obj);
 }
 
 void Physical_Engine::removeObject(std::shared_ptr<Physical_Object> obj){
@@ -97,7 +97,11 @@ void Physical_Engine::removeDeadObjects(){
 
 	auto it = objects.begin();
 	while(it != objects.end()){
-		if((*it)->getLife() <= 0) 
+		if(*it == nullptr) {
+			it = objects.erase(it);
+			debug("Physical_Engine::removeDeadObjects() erase object");
+		}
+		else if((*it)->getLife() <= 0) 
 			it = objects.erase(it);
 		else 
 			it++;
@@ -116,29 +120,34 @@ void Physical_Engine::update(float dt){
 	}
 
 	//debug("Physical_Engine::update() check objects");
-	bool need_to_destroy = false;
+	
 	// on détecte si un objet sort de la scène
 	auto it = objects.begin();
 	while(it <= objects.end()){
-		auto obj = *it;
-		Vector2DF position = obj->getPosition();
-		Vector2DF speed    = obj->getSpeed();
+		if(*it == nullptr){ 
+			it = objects.erase(it);
+			continue;
+		};
+
+		(*it)->getPosition();
+		Vector2DF position; 
+		Vector2DF speed    = (*it)->getSpeed();
 
 		// on fait rebondir l'objet sur les bords de la scène 
 		if(position[0]<= 0  || position[0] >= scene.width){
 			speed[0] = -speed[0];
-			obj->setSpeed(speed);
+			(*it)->setSpeed(speed);
 		}
 
 		if(position[1]<= 0 ){
 			speed[1] = -speed[1];
-			obj->setSpeed(speed);
+			(*it)->setSpeed(speed);
 		}
 
 		// on réduit la vie de l'objet si il sort du bas de la scène
  		if( position[1] >= scene.height){
-			obj->reduceLife();
-			if(obj->getLife() <= 0) {
+			(*it)->reduceLife();
+			if((*it)->getLife() <= 0) {
 				it = objects.erase(it);
 				sendDestructEvent();
 			}
@@ -152,7 +161,7 @@ void Physical_Engine::update(float dt){
 		//debug("Physical_Engine::update()");
 
 	}
-
+	
 	// On détecte les collisions
 	//debug("Physical_Engine::update() detectCollisions");
 	detectCollisions();
@@ -172,7 +181,7 @@ void Physical_Engine::detectCollisions(){
 	// On détecte les collisions entre les objets physiques
 	// On compare chaque objet avec tous les autres objets O(n^2)
 	for(auto it1 = objects.begin(); it1 != std::prev(objects.end()); ++it1){
-		for(auto it2 = std::next(it1); it2 != objects.end(); ++it2){
+		for(auto it2 = it1+1; it2 != objects.end(); ++it2){
 			Vector2DF intersection_point;
 			Vector2DF normal;
 			if((*it1)->isColliding(**it2, intersection_point, normal)){
@@ -183,16 +192,7 @@ void Physical_Engine::detectCollisions(){
 	}
 }
 
-/*
-		struct Collision{
-					std::shared_ptr<Physical_Object> obj2;
-					Vector2DF intersection_point;
-					Vector2DF normal;
-				};
 
-		std::vector<std::shared_ptr<Physical_Object>> objects;
-		std::map<std::shared_ptr<Physical_Object>, std::list<Collision>> collisions;
-*/
 
 void Physical_Engine::resolveCollisions(){
 	// On résout les collisions
@@ -228,11 +228,17 @@ void Physical_Engine::resolveCollisions(){
 		// avec e le coefficient de restitution (0 < e < 1)
 		// On pourrait même prendre en compte la masse des objets et la vitesse de l'objet 2
 		// v' = (m1-m2)/(m1+m2)v1 + 2m2/(m1+m2)v2
+		/*
 		Vector2DF other_speed= min_collision.obj2->getSpeed();
 		speed = speed*(obj->getMass() - min_collision.obj2->getMass()) / (obj->getMass() + min_collision.obj2->getMass())
 				+  other_speed * 2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass());
+		*/
 		// ou simplement opposer la vitesse : v' = -v pour un rebond parfait
 		//speed = speed - 2 * speed.scalarProduct(min_collision.normal) * min_collision.normal;
+		speed -= speed;
+		Vector2DF other_speed= min_collision.obj2->getSpeed();
+		min_collision.obj2->setSpeed(-other_speed );
+
 
 
 		// on applique la nouvelle vitesse, 

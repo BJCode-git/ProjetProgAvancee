@@ -142,6 +142,78 @@ class NumericVector<T, Size, std::enable_if_t<std::is_arithmetic<T>::value>>{
 		}
 
 		/**
+		 * @brief Unary minus operator.
+		 * 
+		 * @return NumericVector<T, Size> The resulting vector after negation.
+		 */
+
+		NumericVector<T, Size> operator-() const {
+			NumericVector<T, Size> result;
+			for (size_t i = 0; i < Size; ++i) {
+				result[i] = -elements[i];
+			}
+			return result;
+		}
+		
+		/**
+		 * @brief Addition assignment operator.
+		 * 
+		 * @param other The vector to add.
+		 * @return NumericVector<T, Size>& A reference to the resulting vector after addition.
+		 */
+		NumericVector<T, Size> operator+=(const NumericVector<T, Size>& other) {
+			for (size_t i = 0; i < Size; ++i) {
+				elements[i] += other[i];
+			}
+			return *this;
+		}
+
+		/**
+		 * @brief Subtraction assignment operator.
+		 * 
+		 * @param other The vector to subtract.
+		 * @return NumericVector<T, Size>& A reference to the resulting vector after subtraction.
+		 */
+		NumericVector<T, Size> operator-=(const NumericVector<T, Size>& other) {
+			for (size_t i = 0; i < Size; ++i) {
+				elements[i] -= other[i];
+			}
+			return *this;
+		}
+
+		/**
+		 * @brief Scalar multiplication assignment operator.
+		 * 
+		 * @param scalar The scalar value to multiply the vector with.
+		 * @return NumericVector<T, Size>& A reference to the resulting vector after multiplication.
+		 */
+		NumericVector<T, Size> operator*=(const T& scalar) {
+			for (size_t i = 0; i < Size; ++i) {
+				elements[i] *= scalar;
+			}
+			return *this;
+		}
+
+
+		/**
+		 * @brief Scalar division assignment operator.
+		 * 
+		 * @param scalar The scalar value to divide the vector by.
+		 * @return NumericVector<T, Size>& A reference to the resulting vector after division.
+		 * @throw std::invalid_argument If the scalar value is zero.
+		 */
+		NumericVector<T, Size> operator/=(const T& scalar) {
+			if (scalar == 0) {
+				throw std::invalid_argument("Division by zero");
+			}
+			for (size_t i = 0; i < Size; ++i) {
+				elements[i] /= scalar;
+			}
+			return *this;
+		}
+
+
+		/**
 		 * @brief Scalar multiplication operator.
 		 * 
 		 * @param scalar The scalar value to multiply the vector with.
@@ -237,7 +309,7 @@ class NumericVector<T, Size, std::enable_if_t<std::is_arithmetic<T>::value>>{
 				norm += elements[i] * elements[i];
 			}
 			if (norm == 0) {
-				throw std::invalid_argument("Cannot normalize zero vector");
+				return;
 			}
 
 			for (size_t i = 0; i < Size; ++i) {

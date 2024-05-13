@@ -250,6 +250,19 @@ test-render-drawing/fast:
 .PHONY : test-render-drawing/fast
 
 #=============================================================================
+# Target rules for targets named test-shared-ptr
+
+# Build rule for target.
+test-shared-ptr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-shared-ptr
+.PHONY : test-shared-ptr
+
+# fast build rule for target.
+test-shared-ptr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-shared-ptr.dir/build.make CMakeFiles/test-shared-ptr.dir/build
+.PHONY : test-shared-ptr/fast
+
+#=============================================================================
 # Target rules for targets named Physical_Engine
 
 # Build rule for target.
@@ -443,6 +456,30 @@ src/tests/test-render-drawing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-render-drawing.dir/build.make CMakeFiles/test-render-drawing.dir/src/tests/test-render-drawing.cpp.s
 .PHONY : src/tests/test-render-drawing.cpp.s
 
+src/tests/test-shared-ptr.o: src/tests/test-shared-ptr.cpp.o
+.PHONY : src/tests/test-shared-ptr.o
+
+# target to build an object file
+src/tests/test-shared-ptr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-shared-ptr.dir/build.make CMakeFiles/test-shared-ptr.dir/src/tests/test-shared-ptr.cpp.o
+.PHONY : src/tests/test-shared-ptr.cpp.o
+
+src/tests/test-shared-ptr.i: src/tests/test-shared-ptr.cpp.i
+.PHONY : src/tests/test-shared-ptr.i
+
+# target to preprocess a source file
+src/tests/test-shared-ptr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-shared-ptr.dir/build.make CMakeFiles/test-shared-ptr.dir/src/tests/test-shared-ptr.cpp.i
+.PHONY : src/tests/test-shared-ptr.cpp.i
+
+src/tests/test-shared-ptr.s: src/tests/test-shared-ptr.cpp.s
+.PHONY : src/tests/test-shared-ptr.s
+
+# target to generate assembly for a file
+src/tests/test-shared-ptr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-shared-ptr.dir/build.make CMakeFiles/test-shared-ptr.dir/src/tests/test-shared-ptr.cpp.s
+.PHONY : src/tests/test-shared-ptr.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -464,6 +501,7 @@ help:
 	@echo "... test-image-drawing"
 	@echo "... test-physical-object"
 	@echo "... test-render-drawing"
+	@echo "... test-shared-ptr"
 	@echo "... src/Game_Engine.o"
 	@echo "... src/Game_Engine.i"
 	@echo "... src/Game_Engine.s"
@@ -485,6 +523,9 @@ help:
 	@echo "... src/tests/test-render-drawing.o"
 	@echo "... src/tests/test-render-drawing.i"
 	@echo "... src/tests/test-render-drawing.s"
+	@echo "... src/tests/test-shared-ptr.o"
+	@echo "... src/tests/test-shared-ptr.i"
+	@echo "... src/tests/test-shared-ptr.s"
 .PHONY : help
 
 

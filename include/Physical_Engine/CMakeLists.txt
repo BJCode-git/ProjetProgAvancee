@@ -4,6 +4,8 @@ project(Physical_Engine)
 
 set(CMAKE_CXX_STANDARD 20)
 
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Build)
+
 # Ajout du dossier Physical_Engine pour les fichiers d'en-tête
 include_directories(Physical_Engine)
 

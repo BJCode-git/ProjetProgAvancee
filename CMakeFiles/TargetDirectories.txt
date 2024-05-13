@@ -4,6 +4,7 @@
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test-image-drawing.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test-gif-drawing.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test-render-drawing.dir
+/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test-shared-ptr.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/test.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/edit_cache.dir
 /home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles/rebuild_cache.dir

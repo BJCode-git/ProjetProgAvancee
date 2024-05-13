@@ -10,7 +10,7 @@ Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 	static_background(nullptr),
 	textures(),
 	window(nullptr),
-	font(nullptr,TTF_CloseFont),
+	font( TTF_OpenFont("rsc/mario.ttf", 40),TTF_CloseFont),
 	fps_limit(60),
 	running(false)
 {
@@ -36,8 +36,9 @@ Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 	}
 
 
-	font = std::unique_ptr<TTF_Font,void (*)(TTF_Font*)>( TTF_OpenFont("rsc/mario.ttf", 40),
+	/*font = std::make_unique<TTF_Font,decltype(&TTF_CloseFont)>( TTF_OpenFont("rsc/mario.ttf", 40),
 														  TTF_CloseFont);
+	*/
 
 	if(font.get() == nullptr){
 		std::cerr << "Error: " << TTF_GetError() << std::endl;
@@ -64,15 +65,15 @@ void Graphical_Engine::addObject(std::shared_ptr<Circle> object, std::string tex
 
 void Graphical_Engine::addGraphicalPolygon(std::shared_ptr<Convex_Polygon> PhyObject, std::string texture_path) {
 	if (texture_path.empty()) {
-		objects.emplace_back(new GraphicalPolygon(PhyObject, nullptr));
+		objects.emplace_back(PhyObject, nullptr);
 	} 
 	else {
 		// on ajoute la texture à la liste des textures si elle n'existe pas
 		if (textures.find(texture_path) == textures.end()) {
-			textures[texture_path] = std::shared_ptr<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
+			textures[texture_path] = std::make_shared<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
 		}
 		else {
-			objects.emplace_back(new GraphicalPolygon(PhyObject, textures[texture_path]));
+			objects.emplace_back(PhyObject, textures[texture_path]);
 		}
 	}
 }
@@ -84,10 +85,10 @@ void Graphical_Engine::addGraphicalCircle(std::shared_ptr<Circle> PhyObject, std
 	else {
 		// on ajoute la texture à la liste des textures si elle n'existe pas
 		if (textures.find(texture_path) == textures.end()) {
-			textures[texture_path] = std::shared_ptr<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
+			textures[texture_path] = std::make_shared<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
 		}
 		else {
-			objects.emplace_back(new GraphicalCircle(PhyObject, textures[texture_path]));
+			objects.emplace_back(PhyObject, textures[texture_path]);
 		}
 	}
 }
@@ -105,9 +106,6 @@ int Graphical_Engine::getFPSLimit() const {
 }
 
 
-//void Graphical_Engine::setRenderer(std::shared_ptr<SDL_Renderer> renderer) {
-//	this->renderer = renderer;
-//}
 
 std::shared_ptr<SDL_Renderer> Graphical_Engine::getRenderer() const {
 	return renderer;

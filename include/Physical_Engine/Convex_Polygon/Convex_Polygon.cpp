@@ -72,9 +72,10 @@ const Polygon& Convex_Polygon::getPoints() const{
 void Convex_Polygon::setPosition(Vector2DF pos){
 	// On déplace le polygone en déplaçant tous ses points
 	Vector2DF offset = pos - centroid;
-	for (auto& p : points) {
-		p[0] += offset[0];
-		p[1] += offset[1];
+
+	for(auto it = points.begin(); it != points.end(); it++){
+		(*it)[0] += offset[0];
+		(*it)[1] += offset[1];
 	}
 	centroid = pos;
 }
@@ -118,6 +119,7 @@ void Convex_Polygon::computeCentroid(){
 	float x = 0;
 	float y = 0;
 	float Sum_area = 0, area = 0;
+	centroid= {0, 0};
 
 	// On ajoute le premier point à la fin pour fermer le polygone
 	points.push_back(points[0]);

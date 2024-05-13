@@ -26,13 +26,13 @@ void GraphicalPolygon::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 		//SDL_Rect dest = {topLeft[0], topLeft[1], topRight[0] - topLeft[0], bottomRight[1] - topRight[1]};
 		//SDL_RenderCopy(renderer.get(), texture.get(), NULL, &dest);
 	}
-	else {
+	
 
-		SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
-		const std::vector<Point2DF>& points = PhyObject->getPoints();
-		for (size_t i = 0; i < points.size(); i++) {
-			SDL_RenderDrawLineF(renderer.get(), points[i][0], points[i][1], points[(i + 1) % points.size()][0], points[(i + 1) % points.size()][1]);
-		}
+	SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
+	const std::vector<Point2DF>& points = PhyObject->getPoints();
+	for (size_t i = 0; i < points.size(); i++) {
+		SDL_RenderDrawLineF(renderer.get(), points[i][0], points[i][1], points[(i + 1) % points.size()][0], points[(i + 1) % points.size()][1]);
 	}
+	
 
 }

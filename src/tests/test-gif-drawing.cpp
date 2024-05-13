@@ -52,7 +52,10 @@ int main() {
 		} 
     else {
 			
-			SDL_FRect dstRect = {0, 0, width, height};
+			SDL_FRect dstRect = {0, 
+                           0, 
+                           static_cast<float> (width), 
+                           static_cast<float> (height)};
       SDL_SetRenderTarget(renderer, texture);
 			SDL_RenderCopyF(renderer, texture, nullptr, &dstRect);
       SDL_DestroyTexture(texture);

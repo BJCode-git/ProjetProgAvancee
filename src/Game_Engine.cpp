@@ -167,22 +167,25 @@ void GameEngine::handle_events(){
 
 
 void GameEngine::init(){
-	// on va créer les objets graphiques et physiques
-	// on va les lier
 
-	// on va notamment créer la barre de jeu
-	// ainsi que la balle
-	// on donnera une vitesse initiale à la balle
+	// on charge la musique
+	music = std::make_unique<Mix_Music,decltype(&Mix_FreeMusic)>(Mix_LoadMUS("rsc/GTO.wav"),Mix_FreeMusic);
+	if(music.get() == nullptr){
+		std::cerr << "Error: " << Mix_GetError() << std::endl;
+	}
+	else{
+		Mix_PlayMusic(music.get(),-1);
+	}
 
-	// creation de la barre
-	// on la place en bas et au milieu de l'écran
-	// on lui donne une taille de 10 pixels de haut et de 25 pixels de longs
-	// rappelons que le haut est à y = 0 et le bas à y = 540, avec un padding de 5 pixels
-	//float width = window->get_width();
-	//float height = window->get_height();
+	// on crée les objets physiques et graphiques
 
 	float width = graphical_engine->get_win_width();
 	float height = graphical_engine->get_win_height();
+
+	physical_engine->setScene(width,height);
+
+
+	// on crée la barre
 
 	phy_bar = std::make_shared<Convex_Polygon>(Polygon{
 		Point2DF{width/2 - 25, height - 15},
@@ -222,9 +225,7 @@ void GameEngine::init(){
 	// on les place en haut de l'écran
 	// on leur donne une taille de 20 pixels de large et 10 pixels de haut
 
-	std::shared_ptr<Convex_Polygon> brick;
 	constexpr int n_line = 2;
-
 	for(int i = 0; i<n_line; i++){
 		// on parcout la largeur de l'écran
 		constexpr int n_brick = 5;//(width-10)/(2+20+2);
@@ -232,13 +233,14 @@ void GameEngine::init(){
 		constexpr float brick_padding = 4;
 		float brick_width = (width - 2*screen_padding)/(n_brick);
 		brick_width -= 2*brick_padding;
+		
 		/*
 		// on place les briques à intervalle régulier
 		for(int j=0;j<n_brick; j++){
 		*/
 		for(int j=0;j<n_brick; j++){
 
-			brick = std::make_shared<Convex_Polygon>(Polygon{
+			std::shared_ptr<Convex_Polygon> brick = std::make_shared<Convex_Polygon>(Polygon{
 				Point2DF{(float) screen_padding + j*(brick_width+brick_padding)              ,(float) brick_padding +  i*(10+2)     },
 				Point2DF{(float) screen_padding + j*(brick_width+brick_padding) + brick_width,(float) brick_padding +  i*(10+2)     },
 				Point2DF{(float) screen_padding + j*(brick_width+brick_padding) + brick_width,(float) brick_padding +  i*(10+2) + 10},
@@ -255,15 +257,6 @@ void GameEngine::init(){
 		
 	}
 
-	// on charge la musique
-	music = std::unique_ptr<Mix_Music,void (*)(Mix_Music*)>(Mix_LoadMUS("rsc/GTO.wav"),Mix_FreeMusic);
-	if(music.get() == nullptr){
-		std::cerr << "Error: " << Mix_GetError() << std::endl;
-	}
-	else{
-		Mix_PlayMusic(music.get(),-1);
-	}
-
 }
 
 
@@ -274,22 +267,22 @@ void GameEngine::start(){
 	
 	// on lance les threads
 	//graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get());
-	physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
+	//physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
 	//graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get();
 
 	
 	//window->print_text("Appuyez sur Echap pour mettre en pause");
 	graphical_engine->print_text("Appuyez sur Echap pour mettre en pause");
 	while(running){
-		//graphical_engine->draw();
-		//physical_engine->update();
+		graphical_engine->draw();
+		physical_engine->update();
 		handle_events();
 	}
 	stop();
 
 	debug("GameEngine::start() reach end of loop , wait threads ...\n");
 	//physical_engine_th.wait();
-	physical_engine_thread.join();
+	//physical_engine_thread.join();
 	//graphical_engine_thread.join();
 	
 }

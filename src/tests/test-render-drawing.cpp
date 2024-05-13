@@ -3,7 +3,7 @@
 #include <iostream>
 #include <memory>
 
-std::unique_ptr<SDL_Window,void (*)(SDL_Window*)> window(nullptr,SDL_DestroyWindow);
+std::unique_ptr<SDL_Window,decltype(&SDL_DestroyWindow)> window(nullptr,SDL_DestroyWindow);
 std::shared_ptr<SDL_Renderer> renderer,render;
 
 

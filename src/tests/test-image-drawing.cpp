@@ -55,7 +55,11 @@ int main() {
         if (texture)
           SDL_RenderCopy(renderer, texture, NULL, &dest);
         
-        SDL_FRect r = {dest.x, dest.y, 32, 32};
+        SDL_FRect r = {static_cast<float> (dest.x), 
+                       static_cast<float> (dest.y), 
+                       32, 
+                       32
+                      };
         SDL_RenderDrawRectF(renderer, &r);
     
       }

@@ -27,7 +27,7 @@ class Window{
 		int height;
 
 		//std::unique_ptr<TTF_Font   , void (*)(TTF_Font*)>    font;
-		std::unique_ptr<SDL_Window ,void (*)(SDL_Window*)>   window;
+		std::unique_ptr<SDL_Window ,decltype(&SDL_DestroyWindow)>   window;
 		std::shared_ptr<SDL_Renderer> renderer;
 		
 

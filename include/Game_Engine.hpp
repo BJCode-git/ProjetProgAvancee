@@ -40,7 +40,7 @@ class GameEngine{
 		//std::unique_ptr<Window> window;
 		std::unique_ptr<Graphical_Engine> graphical_engine;
 		std::unique_ptr<Physical_Engine> physical_engine;
-		std::unique_ptr<Mix_Music,void (*)(Mix_Music*)> music;
+		std::unique_ptr<Mix_Music,decltype(&Mix_FreeMusic)> music;
 		//std::unique_ptr<Sound_Engine> sound_engine;
 
 		std::thread graphical_engine_thread;
