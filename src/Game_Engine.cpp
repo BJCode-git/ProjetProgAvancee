@@ -45,8 +45,8 @@ GameEngine::GameEngine(int width, int height):
 	//graphical_engine = std::make_unique<Graphical_Engine>(window->get_renderer(),
 	//													  window->get_width(),
 	//													  window->get_height());
-	graphical_engine = std::make_unique<Graphical_Engine>(960, 540);
-	physical_engine = std::make_unique<Physical_Engine>();
+	graphical_engine.reset(new Graphical_Engine(width,height));
+	physical_engine.reset(new Physical_Engine(width,height));
 
 
 	init();
@@ -169,8 +169,8 @@ void GameEngine::handle_events(){
 void GameEngine::init(){
 
 	// on charge la musique
-	music = std::make_unique<Mix_Music,decltype(&Mix_FreeMusic)>(Mix_LoadMUS("rsc/GTO.wav"),Mix_FreeMusic);
-	if(music.get() == nullptr){
+	music.reset(Mix_LoadMUS("rsc/GTO.wav"));
+	if(music == nullptr){
 		std::cerr << "Error: " << Mix_GetError() << std::endl;
 	}
 	else{

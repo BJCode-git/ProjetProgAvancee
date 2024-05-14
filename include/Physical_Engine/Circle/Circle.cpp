@@ -83,7 +83,7 @@ bool Circle::isColliding(const Physical_Object& other, Vector2DF& intersection, 
 }
 
 bool Circle::isColliding(const Circle& other, Vector2DF& collision_point, Vector2DF& normal) const{
-	Vector2DF d = other.centroid - centroid;
+
 	double distance = centroid.distance_square(other.centroid);
 
 	if (distance > radius*radius + other.radius*other.radius)

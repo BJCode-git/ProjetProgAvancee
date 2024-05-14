@@ -5,8 +5,8 @@
  ********************/
 
 Graphical_Object::Graphical_Object(std::shared_ptr<Physical_Object> PhyObject, std::shared_ptr<SDL_Texture> texture) : 
-	PhyObject(PhyObject),
 	color(GREEN),
+	PhyObject(PhyObject),
 	texture(texture)
 {}
 
@@ -46,8 +46,13 @@ void Graphical_Object::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 	SDL_RenderDrawLineF(renderer.get(), bottomRight[0], bottomRight[1], bottomLeft[0], bottomLeft[1]);
 	SDL_RenderDrawLineF(renderer.get(), bottomLeft[0], bottomLeft[1], topLeft[0], topLeft[1]);
 
+	SDL_FRect dest = {topLeft[0], topLeft[1], topRight[0] - topLeft[0], bottomRight[1] - topRight[1]};
+
+	SDL_RenderFillRectF(renderer.get(), &dest);
+	
+
 	if(texture) {
-		SDL_FRect dest = {topLeft[0], topLeft[1], topRight[0] - topLeft[0], bottomRight[1] - topRight[1]};
+		dest = {topLeft[0], topLeft[1], topRight[0] - topLeft[0], bottomRight[1] - topRight[1]};
 
 		SDL_RenderCopyF(renderer.get(), texture.get(), NULL, &dest);
 	}

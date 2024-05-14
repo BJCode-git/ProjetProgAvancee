@@ -5,7 +5,10 @@
  *     Forces     *
  ******************/
 
-Vector2DF Gravity(const Physical_Object& obj) {
+Vector2DF Gravity(const Physical_Object& obj){
+
+	// Pour éviter le warning "unused parameter"
+	do { (void)(obj); } while (0);
 	return {0, 9.81};
 }
 
@@ -33,12 +36,13 @@ Physical_Object::Physical_Object(Point2DF centroid,
 	speed({0, 0}),
 	acceleration({0, 0}),
 	shape(shape),
+	hitbox(),
 	mass(mass),
 	is_static(is_static),
 	//ignore_collision(ignore_collision),
-	breakable(false),
-	life(1),
-	hitbox()
+	breakable(breakable),
+	life(life)
+	
 {
 	std::string s_shape = "";
 	switch(shape){

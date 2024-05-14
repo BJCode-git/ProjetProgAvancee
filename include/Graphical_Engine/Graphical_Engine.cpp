@@ -4,26 +4,23 @@
  * Graphical_Engine *
  ******************/
 
+ 
 Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 	is_text_to_draw(false),
+	text_to_print(),
 	animated_background(nullptr),
 	static_background(nullptr),
+	objects(),
 	textures(),
-	window(nullptr),
-	font( TTF_OpenFont("rsc/mario.ttf", 40),TTF_CloseFont),
-	fps_limit(60),
+	window(new Window("Casse-briques Test", width, height)),
+	renderer(window->get_renderer()),
+	font(nullptr, TTF_CloseFont),
+	fps_limit(fps_limit),
 	running(false)
 {
-	//debug("Graphical_Engine::Graphical_Engine()");
-	window = std::make_unique<Window>("Casse-briques Test", width, height);
-	renderer = window->get_renderer();
+	debug("Graphical_Engine::Graphical_Engine()");
+	
 
-	set_background("rsc/bg.gif", true);
-
-	if(SDL_InitSubSystem(SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0 ){
-		std::cerr << "Error: " << SDL_GetError() << std::endl;
-		exit(EXIT_FAILURE);
-	}
 	constexpr int IMG_INIT_ALL = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF | IMG_INIT_WEBP;
 
 	if( (IMG_Init(IMG_INIT_ALL)  &IMG_INIT_ALL) != ( IMG_INIT_ALL )) {
@@ -35,10 +32,14 @@ Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 		throw std::runtime_error("Erreur lors de l'initialisation de SDL_ttf");
 	}
 
+	//window = std::make_unique<Window>("Casse-briques Test", width, height);
+	//renderer = window->get_renderer();
 
-	/*font = std::make_unique<TTF_Font,decltype(&TTF_CloseFont)>( TTF_OpenFont("rsc/mario.ttf", 40),
-														  TTF_CloseFont);
-	*/
+	font.reset( TTF_OpenFont("rsc/mario.ttf", 40));
+	/**/
+
+	set_background("rsc/bg.gif", true);
+
 
 	if(font.get() == nullptr){
 		std::cerr << "Error: " << TTF_GetError() << std::endl;
@@ -65,30 +66,31 @@ void Graphical_Engine::addObject(std::shared_ptr<Circle> object, std::string tex
 
 void Graphical_Engine::addGraphicalPolygon(std::shared_ptr<Convex_Polygon> PhyObject, std::string texture_path) {
 	if (texture_path.empty()) {
-		objects.emplace_back(PhyObject, nullptr);
+		objects.emplace_back(new GraphicalPolygon(PhyObject, nullptr));
 	} 
 	else {
-		// on ajoute la texture à la liste des textures si elle n'existe pas
-		if (textures.find(texture_path) == textures.end()) {
-			textures[texture_path] = std::make_shared<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
-		}
-		else {
-			objects.emplace_back(PhyObject, textures[texture_path]);
-		}
+		// On ajoute la texture à la liste des textures si elle n'existe pas
+		auto texture_iter = textures.find(texture_path);
+		if (texture_iter == textures.end() || texture_iter->second == nullptr) {
+			textures[texture_path] = std::shared_ptr<SDL_Texture> (IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
+		} 
+
+		objects.emplace_back(new GraphicalPolygon(PhyObject, textures[texture_path]));
 	}
 }
 
 void Graphical_Engine::addGraphicalCircle(std::shared_ptr<Circle> PhyObject, std::string texture_path) {
 	if (texture_path.empty()) {
+		std::unique_ptr<GraphicalCircle> obj = std::make_unique<GraphicalCircle>(PhyObject, nullptr);
 		objects.emplace_back(new GraphicalCircle(PhyObject, nullptr));
 	} 
 	else {
 		// on ajoute la texture à la liste des textures si elle n'existe pas
 		if (textures.find(texture_path) == textures.end()) {
-			textures[texture_path] = std::make_shared<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
+			textures[texture_path] = std::shared_ptr<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
 		}
 		else {
-			objects.emplace_back(PhyObject, textures[texture_path]);
+			objects.emplace_back(new GraphicalCircle(PhyObject, textures[texture_path]));
 		}
 	}
 }
@@ -258,8 +260,7 @@ void Graphical_Engine::start(){
 	running = true;
 	//debug("Graphical_Engine::start()");
 
-	constexpr float  fps = 60; //ms
-	constexpr float  max_dt= 1000/fps; //ms
+	float  max_dt= 1000/fps_limit; //ms
 
 	std::chrono::high_resolution_clock::time_point last_time = std::chrono::high_resolution_clock::now(), 
 												   current_time;

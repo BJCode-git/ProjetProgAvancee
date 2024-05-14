@@ -86,7 +86,7 @@ Vector2DF Convex_Polygon::getPosition() const{
 
 
 bool Convex_Polygon::isConvex() const {
-	int n = points.size();
+	size_t n = points.size();
 	if (n < 3) return false; // Un polygone doit avoir au moins 3 points
 
 	bool isPositive = false;
@@ -124,7 +124,7 @@ void Convex_Polygon::computeCentroid(){
 	// On ajoute le premier point à la fin pour fermer le polygone
 	points.push_back(points[0]);
 
-	for(int i = 0; i < points.size()-1; ++i){
+	for(size_t i = 0; i < points.size()-1; ++i){
 		area = points[i][0] * points[i+1][1] - points[i+1][0] * points[i][1];
 		x += ( points[i][0] + points[i+1][0]) * area;
 		y += ( points[i][1] + points[i+1][1]) * area;
@@ -155,7 +155,7 @@ void Convex_Polygon::rotatePoints(Polygon& points, const Vector2DF& pivot, float
 
 int Convex_Polygon::findMinimumBoundingBox(const Polygon& points) {
 	int n = points.size();
-	int k = 1, min_index = 0;
+	int min_index = 0;
 	float min_x = std::numeric_limits<float>::max();
 	for (int i = 0; i < n; ++i) {
 		if (points[i][0] < min_x) {

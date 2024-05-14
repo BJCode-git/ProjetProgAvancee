@@ -6,10 +6,11 @@
  ******************/
 
 
-Physical_Engine::Physical_Engine():
+Physical_Engine::Physical_Engine(int width, int height):
+	running(false),
+	scene(width, height),
 	objects(),
-	collisions(),
-	running(false)
+	collisions()
 {
 	debug("Physical_Engine::Physical_Engine()");
 	SDL_InitSubSystem(SDL_INIT_EVENTS);

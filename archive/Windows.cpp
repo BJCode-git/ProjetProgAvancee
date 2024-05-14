@@ -1,35 +1,5 @@
 #include "Windows.hpp"
 
-/*
-
-class Window{
-	public:
-		Window(const std::string title, int w = 960, int h = 540, Uint32 flags = SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_MOUSE_FOCUS);
-		~Window();
-
-		shared_ptr<SDL_Renderer*> get_renderer() const;
-		int get_width() const;
-		int get_height() const;
-
-		void print_score(int score);
-		void print_text(const std::string text);
-
-	private:
-		int width;
-		int height;
-
-		std::unique_ptr<SDL_Window*>   window;
-		std::shared_ptr<SDL_Renderer*> renderer;
-
-		std::unique_ptr<SDL_Texture*> texture, text;
-		std::unique_ptr<TTF_Font*>    font;
-
-};
-
-
-*/
-
-
 
 Window::Window(const std::string title, int w, int h, Uint32 flags):
 	width(w),
@@ -38,6 +8,7 @@ Window::Window(const std::string title, int w, int h, Uint32 flags):
 	window(nullptr,SDL_DestroyWindow),
 	renderer(nullptr, SDL_DestroyRenderer)
 {
+	debug("Window::Window");
 
 	window = std::unique_ptr<SDL_Window, void (*)(SDL_Window*)>
 				(SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED, w, h, flags),
@@ -47,12 +18,7 @@ Window::Window(const std::string title, int w, int h, Uint32 flags):
 												-1, 
 												SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
 												SDL_DestroyRenderer);
-	/*
-	if (window.get() == nullptr || renderer.get() == nullptr || font.get() == nullptr){
-		std::cerr << "Error: " << SDL_GetError() << std::endl;
-		std::cerr << "Error: " << TTF_GetError() << std::endl;
-		exit(1);
-	}*/
+
 
 	if (window.get() == nullptr || renderer.get() == nullptr){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;

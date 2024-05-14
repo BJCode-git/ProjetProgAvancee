@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 project(Physical_Engine)
 # Définition de la bibliothèque Physical_Engine
 
+set(CMAKE_CXX_FLAGS "-std=c++20 -g -Wall -Wextra -pedantic -pthread -Werror")
 set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Build)

@@ -35,7 +35,7 @@ struct Scene{
 // Pas de Phase large, Phase étroite directement
 class Physical_Engine{
 	public:
-		Physical_Engine();
+		Physical_Engine(int width = 960, int height = 540);
 		~Physical_Engine();
 
 		void addObject(std::shared_ptr<Physical_Object>);

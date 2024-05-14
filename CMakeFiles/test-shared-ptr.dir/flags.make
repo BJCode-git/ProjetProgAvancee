@@ -6,5 +6,5 @@ CXX_DEFINES = -DDEBUG
 
 CXX_INCLUDES = -I/home/julien/Cours2A/Prog_Avance/Projet/include -I/home/julien/Cours2A/Prog_Avance/Projet/include/indicators/include
 
-CXX_FLAGS = -g -std=gnu++20
+CXX_FLAGS = -std=c++20 -g -Wall -Werror -Wextra -pedantic -pthread -g -std=gnu++20
 

@@ -80,10 +80,10 @@ class Graphical_Engine{
 		std::vector<std::unique_ptr<Graphical_Object>> objects;
 		std::map<std::string, std::shared_ptr<SDL_Texture>> textures;
 
-
-		std::shared_ptr<SDL_Renderer> renderer;
-		std::unique_ptr<TTF_Font   , void (*)(TTF_Font*)>    font;
 		std::unique_ptr<Window> window;
+		std::shared_ptr<SDL_Renderer> renderer;
+		std::unique_ptr<TTF_Font, decltype(&TTF_CloseFont)>    font;
+		
 
 		int fps_limit;
 		//int window_width;

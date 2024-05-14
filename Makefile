@@ -263,6 +263,32 @@ test-shared-ptr/fast:
 .PHONY : test-shared-ptr/fast
 
 #=============================================================================
+# Target rules for targets named test-physical-engine
+
+# Build rule for target.
+test-physical-engine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-physical-engine
+.PHONY : test-physical-engine
+
+# fast build rule for target.
+test-physical-engine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-engine.dir/build.make CMakeFiles/test-physical-engine.dir/build
+.PHONY : test-physical-engine/fast
+
+#=============================================================================
+# Target rules for targets named test-graphical-engine
+
+# Build rule for target.
+test-graphical-engine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-graphical-engine
+.PHONY : test-graphical-engine
+
+# fast build rule for target.
+test-graphical-engine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-graphical-engine.dir/build.make CMakeFiles/test-graphical-engine.dir/build
+.PHONY : test-graphical-engine/fast
+
+#=============================================================================
 # Target rules for targets named Physical_Engine
 
 # Build rule for target.
@@ -384,6 +410,30 @@ src/tests/test-gif-drawing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-gif-drawing.dir/build.make CMakeFiles/test-gif-drawing.dir/src/tests/test-gif-drawing.cpp.s
 .PHONY : src/tests/test-gif-drawing.cpp.s
 
+src/tests/test-graphical-engine.o: src/tests/test-graphical-engine.cpp.o
+.PHONY : src/tests/test-graphical-engine.o
+
+# target to build an object file
+src/tests/test-graphical-engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-graphical-engine.dir/build.make CMakeFiles/test-graphical-engine.dir/src/tests/test-graphical-engine.cpp.o
+.PHONY : src/tests/test-graphical-engine.cpp.o
+
+src/tests/test-graphical-engine.i: src/tests/test-graphical-engine.cpp.i
+.PHONY : src/tests/test-graphical-engine.i
+
+# target to preprocess a source file
+src/tests/test-graphical-engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-graphical-engine.dir/build.make CMakeFiles/test-graphical-engine.dir/src/tests/test-graphical-engine.cpp.i
+.PHONY : src/tests/test-graphical-engine.cpp.i
+
+src/tests/test-graphical-engine.s: src/tests/test-graphical-engine.cpp.s
+.PHONY : src/tests/test-graphical-engine.s
+
+# target to generate assembly for a file
+src/tests/test-graphical-engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-graphical-engine.dir/build.make CMakeFiles/test-graphical-engine.dir/src/tests/test-graphical-engine.cpp.s
+.PHONY : src/tests/test-graphical-engine.cpp.s
+
 src/tests/test-image-drawing.o: src/tests/test-image-drawing.cpp.o
 .PHONY : src/tests/test-image-drawing.o
 
@@ -407,6 +457,30 @@ src/tests/test-image-drawing.s: src/tests/test-image-drawing.cpp.s
 src/tests/test-image-drawing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-image-drawing.dir/build.make CMakeFiles/test-image-drawing.dir/src/tests/test-image-drawing.cpp.s
 .PHONY : src/tests/test-image-drawing.cpp.s
+
+src/tests/test-physical-engine.o: src/tests/test-physical-engine.cpp.o
+.PHONY : src/tests/test-physical-engine.o
+
+# target to build an object file
+src/tests/test-physical-engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-engine.dir/build.make CMakeFiles/test-physical-engine.dir/src/tests/test-physical-engine.cpp.o
+.PHONY : src/tests/test-physical-engine.cpp.o
+
+src/tests/test-physical-engine.i: src/tests/test-physical-engine.cpp.i
+.PHONY : src/tests/test-physical-engine.i
+
+# target to preprocess a source file
+src/tests/test-physical-engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-engine.dir/build.make CMakeFiles/test-physical-engine.dir/src/tests/test-physical-engine.cpp.i
+.PHONY : src/tests/test-physical-engine.cpp.i
+
+src/tests/test-physical-engine.s: src/tests/test-physical-engine.cpp.s
+.PHONY : src/tests/test-physical-engine.s
+
+# target to generate assembly for a file
+src/tests/test-physical-engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-physical-engine.dir/build.make CMakeFiles/test-physical-engine.dir/src/tests/test-physical-engine.cpp.s
+.PHONY : src/tests/test-physical-engine.cpp.s
 
 src/tests/test-physical-object.o: src/tests/test-physical-object.cpp.o
 .PHONY : src/tests/test-physical-object.o
@@ -498,7 +572,9 @@ help:
 	@echo "... Physical_Engine"
 	@echo "... test-circle-drawing"
 	@echo "... test-gif-drawing"
+	@echo "... test-graphical-engine"
 	@echo "... test-image-drawing"
+	@echo "... test-physical-engine"
 	@echo "... test-physical-object"
 	@echo "... test-render-drawing"
 	@echo "... test-shared-ptr"
@@ -514,9 +590,15 @@ help:
 	@echo "... src/tests/test-gif-drawing.o"
 	@echo "... src/tests/test-gif-drawing.i"
 	@echo "... src/tests/test-gif-drawing.s"
+	@echo "... src/tests/test-graphical-engine.o"
+	@echo "... src/tests/test-graphical-engine.i"
+	@echo "... src/tests/test-graphical-engine.s"
 	@echo "... src/tests/test-image-drawing.o"
 	@echo "... src/tests/test-image-drawing.i"
 	@echo "... src/tests/test-image-drawing.s"
+	@echo "... src/tests/test-physical-engine.o"
+	@echo "... src/tests/test-physical-engine.i"
+	@echo "... src/tests/test-physical-engine.s"
 	@echo "... src/tests/test-physical-object.o"
 	@echo "... src/tests/test-physical-object.i"
 	@echo "... src/tests/test-physical-object.s"

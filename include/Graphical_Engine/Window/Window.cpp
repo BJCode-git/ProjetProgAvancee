@@ -5,39 +5,27 @@ Window::Window(const std::string title, int w, int h, Uint32 flags):
 	width(w),
 	height(h),
 	//font(nullptr,TTF_CloseFont),
-	window(SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED, w, h, flags),
-				 SDL_DestroyWindow),
-	renderer(SDL_CreateRenderer(window.get(),
-								-1, 
-								SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
-								SDL_DestroyRenderer)
+	window(nullptr,SDL_DestroyWindow),
+	renderer(nullptr,SDL_DestroyRenderer)
 {
-	/*
-	window = std::unique_ptr<SDL_Window, void (*)(SDL_Window*)>
-				(SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED, w, h, flags),
-				 SDL_DestroyWindow);
-	*/
-	/*
-	 renderer = std::make_shared<SDL_Renderer> (SDL_CreateRenderer(window.get(),
-												-1, 
-												SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
-												SDL_DestroyRenderer);
-	*/
-	/*
-	if (window.get() == nullptr || renderer.get() == nullptr || font.get() == nullptr){
-		std::cerr << "Error: " << SDL_GetError() << std::endl;
-		std::cerr << "Error: " << TTF_GetError() << std::endl;
-		exit(1);
-	}*/
 
-	if (window.get() == nullptr || renderer.get() == nullptr){
+	debug("Window::Window");
+
+	if(SDL_InitSubSystem(SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0 ){
 		std::cerr << "Error: " << SDL_GetError() << std::endl;
 		exit(EXIT_FAILURE);
 	}
 
-	//renderer = std::shared_ptr<SDL_Renderer>(
-	//				SDL_CreateRenderer(window.get(), -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
-	//				SDL_DestroyRenderer);
+	window.reset(SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, flags));
+
+	renderer = std::shared_ptr<SDL_Renderer>(
+					SDL_CreateRenderer(window.get(), -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
+					SDL_DestroyRenderer);
+
+	if (window == nullptr || renderer == nullptr){
+		std::cerr << "Error: " << SDL_GetError() << std::endl;
+		exit(EXIT_FAILURE);
+	}
 
 }
 
