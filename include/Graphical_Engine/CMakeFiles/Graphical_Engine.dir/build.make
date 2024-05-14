@@ -69,10 +69,24 @@ include include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/progress.make
 # Include the compile flags for this target's objects.
 include include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/flags.make
 
+include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/flags.make
+include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o: include/Graphical_Engine/debug-SDL.cpp
+include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o"
+	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o -MF CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o.d -o CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/debug-SDL.cpp
+
+include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.i"
+	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/debug-SDL.cpp > CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.i
+
+include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.s"
+	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/debug-SDL.cpp -o CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.s
+
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/flags.make
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o: include/Graphical_Engine/Graphical_Engine.cpp
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o"
 	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o -MF CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o.d -o CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Engine.cpp
 
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.i: cmake_force
@@ -86,7 +100,7 @@ include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.s:
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/flags.make
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o: include/Graphical_Engine/Graphical_Object/Graphical_Object.cpp
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o"
 	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o -MF CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o.d -o CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Object/Graphical_Object.cpp
 
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.i: cmake_force
@@ -100,7 +114,7 @@ include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphi
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/flags.make
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o: include/Graphical_Engine/Graphical_Circle/Graphical_Circle.cpp
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o"
 	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o -MF CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o.d -o CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Circle/Graphical_Circle.cpp
 
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.i: cmake_force
@@ -114,7 +128,7 @@ include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphi
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/flags.make
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o: include/Graphical_Engine/Graphical_Polygon/Graphical_Polygon.cpp
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o"
 	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o -MF CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o.d -o CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Polygon/Graphical_Polygon.cpp
 
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.i: cmake_force
@@ -128,7 +142,7 @@ include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graph
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/flags.make
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o: include/Graphical_Engine/Window/Window.cpp
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o"
 	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o -MF CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o.d -o CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o -c /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Window/Window.cpp
 
 include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.i: cmake_force
@@ -141,6 +155,7 @@ include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.s: cm
 
 # Object files for target Graphical_Engine
 Graphical_Engine_OBJECTS = \
+"CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o" \
 "CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o" \
 "CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o" \
 "CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o" \
@@ -150,6 +165,7 @@ Graphical_Engine_OBJECTS = \
 # External object files for target Graphical_Engine
 Graphical_Engine_EXTERNAL_OBJECTS =
 
+lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o
 lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Engine.cpp.o
 lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o
 lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Circle/Graphical_Circle.cpp.o
@@ -157,7 +173,7 @@ lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.
 lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o
 lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/build.make
 lib/libGraphical_Engine.a: include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../lib/libGraphical_Engine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julien/Cours2A/Prog_Avance/Projet/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library ../../lib/libGraphical_Engine.a"
 	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && $(CMAKE_COMMAND) -P CMakeFiles/Graphical_Engine.dir/cmake_clean_target.cmake
 	cd /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Graphical_Engine.dir/link.txt --verbose=$(VERBOSE)
 

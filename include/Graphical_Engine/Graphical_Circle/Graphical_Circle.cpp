@@ -75,6 +75,6 @@ void GraphicalCircle::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 	SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
 	drawFilledCircle(renderer.get(), PhyObject->getPosition()[0], PhyObject->getPosition()[1], PhyObject->getRadius());
 
-
+	Graphical_Object::draw(renderer);
 }
 

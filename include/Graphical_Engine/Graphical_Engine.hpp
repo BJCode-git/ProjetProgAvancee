@@ -11,13 +11,13 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 
-
+#include "debug.hpp"
 #include "Physical_Engine/Physical_Engine.hpp"
 #include "Graphical_Engine/Graphical_Object/Graphical_Object.hpp"
 #include "Graphical_Engine/Graphical_Circle/Graphical_Circle.hpp"
 #include "Graphical_Engine/Graphical_Polygon/Graphical_Polygon.hpp"
 #include "Graphical_Engine/Window/Window.hpp"
-#include "debug.hpp"
+#include "Graphical_Engine/debug-SDL.hpp"
 
 class Graphical_Engine{
 

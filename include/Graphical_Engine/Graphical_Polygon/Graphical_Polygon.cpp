@@ -34,5 +34,6 @@ void GraphicalPolygon::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 		SDL_RenderDrawLineF(renderer.get(), points[i][0], points[i][1], points[(i + 1) % points.size()][0], points[(i + 1) % points.size()][1]);
 	}
 	
+	Graphical_Object::draw(renderer);
 
 }

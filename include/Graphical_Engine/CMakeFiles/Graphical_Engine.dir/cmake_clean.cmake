@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o.d"
   "CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o"
   "CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o.d"
+  "CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o"
+  "CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

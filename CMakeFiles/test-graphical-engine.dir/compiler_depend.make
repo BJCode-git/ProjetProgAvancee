@@ -474,7 +474,8 @@ CMakeFiles/test-graphical-engine.dir/src/tests/test-graphical-engine.cpp.o: src/
   include/Graphical_Engine/Graphical_Object/Graphical_Object.hpp \
   include/Graphical_Engine/Graphical_Circle/Graphical_Circle.hpp \
   include/Graphical_Engine/Graphical_Polygon/Graphical_Polygon.hpp \
-  include/Graphical_Engine/Window/Window.hpp
+  include/Graphical_Engine/Window/Window.hpp \
+  include/Graphical_Engine/debug-SDL.hpp
 
 
 include/Graphical_Engine/Graphical_Circle/Graphical_Circle.hpp:
@@ -566,6 +567,8 @@ include/Physical_Engine/Physical_Object/Physical_Object.hpp:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+
+include/Graphical_Engine/debug-SDL.hpp:
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 

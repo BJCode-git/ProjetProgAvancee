@@ -34,8 +34,7 @@ void Graphical_Object::setTexture(std::shared_ptr<SDL_Texture> texture) {
 
 void Graphical_Object::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 
-
-	SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
+	SDL_SetRenderDrawColor(renderer.get(), RED.r, RED.g, RED.b, RED.a);
 	Point2DF topLeft     = PhyObject->getBoundingBox().getTopLeft(),
 			 topRight    = PhyObject->getBoundingBox().getTopRight(),
 			 bottomRight = PhyObject->getBoundingBox().getBottomRight(),

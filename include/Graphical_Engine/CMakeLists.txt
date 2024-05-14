@@ -14,6 +14,7 @@ include_directories(Graphical_Engine)
 
 # Ajout des fichiers source de la bibliothèque
 set(SOURCES
+    debug-SDL.cpp
     Graphical_Engine.cpp
     Graphical_Object/Graphical_Object.cpp
     Graphical_Circle/Graphical_Circle.cpp
@@ -23,6 +24,7 @@ set(SOURCES
 
 # Ajout des fichiers d'en-tête de la bibliothèque
 set(HEADERS
+    debug-SDL.hpp
     Graphical_Engine.hpp
     Graphical_Object/Graphical_Object.hpp
     Graphical_Circle/Graphical_Circle.hpp

@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Object/Graphical_Object.cpp" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o" "gcc" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Object/Graphical_Object.cpp.o.d"
   "/home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Polygon/Graphical_Polygon.cpp" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o" "gcc" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Graphical_Polygon/Graphical_Polygon.cpp.o.d"
   "/home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Window/Window.cpp" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o" "gcc" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.o.d"
+  "/home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/debug-SDL.cpp" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o" "gcc" "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

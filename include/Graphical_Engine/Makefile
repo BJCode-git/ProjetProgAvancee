@@ -305,6 +305,30 @@ Window/Window.cpp.s:
 	cd /home/julien/Cours2A/Prog_Avance/Projet && $(MAKE) $(MAKESILENT) -f include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/build.make include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/Window/Window.cpp.s
 .PHONY : Window/Window.cpp.s
 
+debug-SDL.o: debug-SDL.cpp.o
+.PHONY : debug-SDL.o
+
+# target to build an object file
+debug-SDL.cpp.o:
+	cd /home/julien/Cours2A/Prog_Avance/Projet && $(MAKE) $(MAKESILENT) -f include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/build.make include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.o
+.PHONY : debug-SDL.cpp.o
+
+debug-SDL.i: debug-SDL.cpp.i
+.PHONY : debug-SDL.i
+
+# target to preprocess a source file
+debug-SDL.cpp.i:
+	cd /home/julien/Cours2A/Prog_Avance/Projet && $(MAKE) $(MAKESILENT) -f include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/build.make include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.i
+.PHONY : debug-SDL.cpp.i
+
+debug-SDL.s: debug-SDL.cpp.s
+.PHONY : debug-SDL.s
+
+# target to generate assembly for a file
+debug-SDL.cpp.s:
+	cd /home/julien/Cours2A/Prog_Avance/Projet && $(MAKE) $(MAKESILENT) -f include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/build.make include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/debug-SDL.cpp.s
+.PHONY : debug-SDL.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -334,6 +358,9 @@ help:
 	@echo "... Window/Window.o"
 	@echo "... Window/Window.i"
 	@echo "... Window/Window.s"
+	@echo "... debug-SDL.o"
+	@echo "... debug-SDL.i"
+	@echo "... debug-SDL.s"
 .PHONY : help
 
 
