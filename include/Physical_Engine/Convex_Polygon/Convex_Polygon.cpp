@@ -290,6 +290,7 @@ void Convex_Polygon::update(float dt){
 }
 
 bool Convex_Polygon::isColliding(const Physical_Object& other, Vector2DF& intersection, Vector2DF& normal) const{
+	return Physical_Object::isColliding(other, intersection, normal);
 	try{
 		switch(other.getShape()){
 			case SHAPE::POLYGON:
@@ -338,6 +339,7 @@ Vector2DF Convex_Polygon::projectPoint(const Vector2DF& point, const Vector2DF& 
 }
 
 bool Convex_Polygon::isColliding(const Convex_Polygon &other, Vector2DF &intersection_point, Vector2DF &normal) const {
+	return Physical_Object::isColliding(other, intersection_point, normal);
 	const Polygon& poly2 = other.getPoints();
 	
 	// Déterminer les axes de séparation
@@ -385,7 +387,7 @@ bool Convex_Polygon::isColliding(const Convex_Polygon &other, Vector2DF &interse
 }
 
 bool Convex_Polygon::isColliding(const Circle &other, Vector2DF &intersection_point, Vector2DF &normal) const {
-
+	return Physical_Object::isColliding(other, intersection_point, normal);
 	// Déterminer les axes de séparation
 	std::vector<Vector2DF> axes;
 	for (auto it1 = points.begin(); it1 != std::prev(points.end()); ++it1) {

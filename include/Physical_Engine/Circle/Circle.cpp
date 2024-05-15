@@ -16,6 +16,12 @@ Circle::Circle(Vector2DF & pos, unsigned int r):
 	debug("Création d'un disque");
 	//centroid = pos;
 	computeMinimumBoundingBox();
+
+	std::cout << "Bounding box du cercle : " << std::endl;
+	// width = right - left
+	// height = bottom - top
+	std::cout << "Width : " << getBoundingBox().getTopRight() - getBoundingBox().getTopLeft()  << std::endl;
+	std::cout << "Top right : " << getBoundingBox().getBottomRight() - getBoundingBox().getTopRight()  << std::endl;
 }
 
 Circle::Circle(Vector2DF pos, unsigned int r):
@@ -24,6 +30,11 @@ Circle::Circle(Vector2DF pos, unsigned int r):
 {
 	debug("Création d'un disque");
 	computeMinimumBoundingBox();
+	std::cout << "Bounding box du cercle : " << std::endl;
+	// width = right - left
+	// height = bottom - top
+	std::cout << "Width : " << getBoundingBox().getTopRight() - getBoundingBox().getTopLeft()  << std::endl;
+	std::cout << "Top right : " << getBoundingBox().getBottomRight() - getBoundingBox().getTopRight()  << std::endl;
 }
 
 
@@ -68,7 +79,7 @@ std::pair<float, float> Circle::project(const Vector2DF& axis) const {
 }
 
 bool Circle::isColliding(const Physical_Object& other, Vector2DF& intersection, Vector2DF& normal) const{
-
+	return Physical_Object::isColliding(other, intersection, normal);
 	try{
 		switch(other.getShape()){
 			case SHAPE::POLYGON:
@@ -87,7 +98,7 @@ bool Circle::isColliding(const Physical_Object& other, Vector2DF& intersection, 
 }
 
 bool Circle::isColliding(const Circle& other, Vector2DF& collision_point, Vector2DF& normal) const{
-
+	return Physical_Object::isColliding(other, collision_point, normal);
 	double distance = centroid.distance_square(other.centroid);
 
 	if (distance > radius*radius + other.radius*other.radius)
@@ -101,6 +112,7 @@ bool Circle::isColliding(const Circle& other, Vector2DF& collision_point, Vector
 }
 
 bool Circle::isColliding(const Convex_Polygon& other, Vector2DF& intersection_point, Vector2DF& normal) const {
+	return Physical_Object::isColliding(other, intersection_point, normal);
 	Vector2DF closest_point;
 	float min_distance = std::numeric_limits<float>::max();
 

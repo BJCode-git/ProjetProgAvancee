@@ -199,7 +199,7 @@ void Physical_Engine::resolveCollisions(){
 		Vector2DF speed = obj->getSpeed();
 
 		for(auto& collision : collision_list){
-			float distance = obj->getPosition().distance_square(collision.intersection_point);
+			float distance = obj->getPosition().distance_square(collision.obj2->getPosition());
 			if(distance < min_distance){
 				min_distance = distance;
 				min_collision = collision;
@@ -232,8 +232,8 @@ void Physical_Engine::resolveCollisions(){
 		// ou simplement opposer la vitesse : v' = -v pour un rebond parfait
 		//speed = speed - 2 * speed.scalarProduct(min_collision.normal) * min_collision.normal;
 		speed -= speed;
-		Vector2DF other_speed= min_collision.obj2->getSpeed();
-		min_collision.obj2->setSpeed(-other_speed );
+		//Vector2DF other_speed= min_collision.obj2->getSpeed();
+		min_collision.obj2->setSpeed(-min_collision.obj2->getSpeed() );
 
 
 

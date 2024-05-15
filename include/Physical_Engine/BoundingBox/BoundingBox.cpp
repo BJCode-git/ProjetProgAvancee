@@ -125,7 +125,7 @@ std::pair<float, float> BoundingBox::project(const Vector2DF& axis) const {
 
 	return {min, max};
 }
-
+/*
 bool BoundingBox::isColliding(const BoundingBox& other, Vector2DF& intersection_point, Vector2DF& normal) const {
 	Vector2DF axes[] = { Point2DF(top_right)         - Point2DF(top_left),
                          Point2DF(bottom_left)       - Point2DF(top_left),
@@ -158,6 +158,34 @@ bool BoundingBox::isColliding(const BoundingBox& other, Vector2DF& intersection_
     normal = smallest_axis;
 
     return true;
+}
+*/
+
+bool BoundingBox::isColliding(const BoundingBox& other, Vector2DF& intersection_point, Vector2DF& normal) const {
+    float this_min_x = std::min({top_left[0], top_right[0], bottom_left[0], bottom_right[0]});
+    float this_max_x = std::max({top_left[0], top_right[0], bottom_left[0], bottom_right[0]});
+    float this_min_y = std::min({top_left[1], top_right[1], bottom_left[1], bottom_right[1]});
+    float this_max_y = std::max({top_left[1], top_right[1], bottom_left[1], bottom_right[1]});
+
+    float other_min_x = std::min({other.top_left[0], other.top_right[0], other.bottom_left[0], other.bottom_right[0]});
+    float other_max_x = std::max({other.top_left[0], other.top_right[0], other.bottom_left[0], other.bottom_right[0]});
+    float other_min_y = std::min({other.top_left[1], other.top_right[1], other.bottom_left[1], other.bottom_right[1]});
+    float other_max_y = std::max({other.top_left[1], other.top_right[1], other.bottom_left[1], other.bottom_right[1]});
+
+    bool x_overlap = (other_min_x <= this_max_x && this_min_x <= other_max_x);
+    bool y_overlap = (other_min_y <= this_max_y && this_min_y <= other_max_y);
+
+    if (x_overlap && y_overlap) 
+        std::cout << "Collision ! " << std::endl;
+
+    // Cette boucle ne semble pas nécessaire, je l'ai commentée
+    
+    do {
+        intersection_point = {0, 0};
+        normal = {0, 0};
+    } while(0);
+
+    return x_overlap && y_overlap;
 }
 
 
