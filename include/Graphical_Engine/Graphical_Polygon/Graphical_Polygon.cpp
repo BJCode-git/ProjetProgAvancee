@@ -34,8 +34,8 @@ void GraphicalPolygon::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 
 		SDL_FRect dst = {topLeft[0], topLeft[1], std::abs(topRight[0] - topLeft[0]), std::abs(bottomRight[1] - topRight[1])};
 		SDL_FPoint rotPoint = {topLeft[0], topLeft[1]};
+		std::cout<<"Bouding box : with : "<< topRight[0] - topLeft[0] <<" height : "<< bottomRight[1] - topRight[1]<<std::endl;
 
-		
 		if(SDL_RenderCopyExF(renderer.get(),texture.get(), NULL, &dst, angle, &rotPoint, SDL_FLIP_NONE ) < 0)
 			std::cerr << "Error drawing texture polygon: " << SDL_GetError() << std::endl;
 	}
