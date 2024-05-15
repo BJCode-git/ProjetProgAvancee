@@ -106,7 +106,7 @@ void GameEngine::init(){
 	// et une composante verticale négative 2*supérieure à la gravité
 	// pour qu'elle parte vers le haut
 	ball->setSpeed(Vector2DF{ static_cast<float> (std::rand()%100-50), -7.f*10.f});
-	ball->setBreakable(false);
+	ball->setBreakable(false,1);
 
 	// on l'ajoute à l'engine physique
 	physical_engine->addObject(ball);
@@ -272,10 +272,10 @@ void GameEngine::start(){
 
 	graphical_engine->print_text("Appuyez sur Espace pour commencer");
 	while(running){
-		handle_events();
-		graphical_engine->draw();
 		if(!paused)
 			physical_engine->update();
+		handle_events();
+		graphical_engine->draw();
 		//SDL_Delay(1000/30); // 60 fps
 	}
 	debug("GameEngine::start() reach end of loop");

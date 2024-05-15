@@ -142,7 +142,7 @@ void Physical_Engine::update(float dt){
 
 		// on réduit la vie de l'objet si il sort du bas de la scène
  		if( position[1] >= scene.height){
-			(*it)->reduceLife();
+			(*it)->reduceLife(true);
 			if((*it)->getLife() <= 0) {
 				it = objects.erase(it);
 				sendDestructEvent();
@@ -244,5 +244,6 @@ void Physical_Engine::resolveCollisions(){
 		min_collision.obj2->reduceLife();
 
 	}
+	collisions.clear();
 
 }

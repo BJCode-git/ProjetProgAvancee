@@ -54,7 +54,7 @@ class Physical_Object{
 						);
 		virtual ~Physical_Object();
 
-		void reduceLife();
+		void reduceLife(bool force_reduction = false);
 		void setBreakable(bool,uint8_t l=1);
 		bool isBreakable() const;
 		uint8_t getLife() const;

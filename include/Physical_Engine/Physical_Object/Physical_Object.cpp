@@ -76,8 +76,8 @@ Physical_Object::~Physical_Object(){
 	debug("Destruction d'un objet physique");
 }
 
-void Physical_Object::reduceLife(){
-	if(breakable && life > 0) life--;
+void Physical_Object::reduceLife(bool force_reduction){
+	if((breakable || force_reduction )&& life > 0) life--;
 }
 
 void Physical_Object::setBreakable(bool breakable, uint8_t life){
