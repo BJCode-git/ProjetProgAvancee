@@ -20,6 +20,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/julien/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake"
   "/home/julien/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/Compiler/GNU.cmake"
   "/home/julien/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FeatureSummary.cmake"
+  "/home/julien/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindDoxygen.cmake"
   "/home/julien/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake"
   "/home/julien/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/FindPackageMessage.cmake"
   "/home/julien/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/Platform/Linux-GNU-C.cmake"
@@ -31,6 +32,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.26.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.26.3/CMakeSystem.cmake"
   "CMakeLists.txt"
+  "EmptyDoxygenCMake/CMakeLists.txt"
+  "EmptyDoxygenCMake/doxygen/Doxyfile.in"
   "cmake_modules/FindSDL2_image.cmake"
   "cmake_modules/FindSDL2_mixer.cmake"
   "cmake_modules/FindSDL2_ttf.cmake"
@@ -51,6 +54,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/Physical_Engine/CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/Graphical_Engine/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "EmptyDoxygenCMake/Doxyfile"
+  "EmptyDoxygenCMake/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -66,4 +71,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test-graphical-engine.dir/DependInfo.cmake"
   "include/Physical_Engine/CMakeFiles/Physical_Engine.dir/DependInfo.cmake"
   "include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/DependInfo.cmake"
+  "EmptyDoxygenCMake/CMakeFiles/doc.dir/DependInfo.cmake"
   )

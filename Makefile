@@ -314,6 +314,19 @@ Graphical_Engine/fast:
 	$(MAKE) $(MAKESILENT) -f include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/build.make include/Graphical_Engine/CMakeFiles/Graphical_Engine.dir/build
 .PHONY : Graphical_Engine/fast
 
+#=============================================================================
+# Target rules for targets named doc
+
+# Build rule for target.
+doc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc
+.PHONY : doc
+
+# fast build rule for target.
+doc/fast:
+	$(MAKE) $(MAKESILENT) -f EmptyDoxygenCMake/CMakeFiles/doc.dir/build.make EmptyDoxygenCMake/CMakeFiles/doc.dir/build
+.PHONY : doc/fast
+
 src/Game_Engine.o: src/Game_Engine.cpp.o
 .PHONY : src/Game_Engine.o
 
@@ -567,6 +580,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... doc"
 	@echo "... BrickBreaker"
 	@echo "... Graphical_Engine"
 	@echo "... Physical_Engine"

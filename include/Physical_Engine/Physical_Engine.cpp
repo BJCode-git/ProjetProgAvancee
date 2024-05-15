@@ -195,16 +195,18 @@ void Physical_Engine::resolveCollisions(float dt){
 	for(auto& [obj, collision_list] : collisions){
 		// on cherche la distance la plus proche au point de collision pour éviter la pénétration
 		float min_distance = std::numeric_limits<float>::max();
-		Collision min_collision{};
+		auto min_collision=collision_list.begin();
 		Vector2DF speed = obj->getSpeed();
 
-		for(auto& collision : collision_list){
-			float distance = obj->getPosition().distance_square(collision.obj2->getPosition());
+		for(auto collision = collision_list.begin(); collision != collision_list.end(); collision++){
+			float distance = obj->getPosition().distance_square(collision->obj2->getPosition());
 			if(distance < min_distance){
 				min_distance = distance;
 				min_collision = collision;
 			}
 		}
+
+		if(min_collision == collision_list.end()) continue;
 
 		// On déplace l'objet pour éviter la pénétration, 
 		//jusqu'à ce que le point de collision soit à la distance du rayon
@@ -224,15 +226,15 @@ void Physical_Engine::resolveCollisions(float dt){
 		// On pourrait même prendre en compte la masse des objets et la vitesse de l'objet 2
 		// v' = (m1-m2)/(m1+m2)v1 + 2m2/(m1+m2)v2
 		
-		Vector2DF other_speed= min_collision.obj2->getSpeed();
-		speed = speed*(obj->getMass() - min_collision.obj2->getMass()) / (obj->getMass() + min_collision.obj2->getMass())
-				+  other_speed * 2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass());
+		//Vector2DF other_speed= min_collision.obj2->getSpeed();
+		//speed = speed*(obj->getMass() - min_collision.obj2->getMass()) / (obj->getMass() + min_collision.obj2->getMass())
+		//		+  other_speed * 2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass());
 		//*/
 		// ou simplement opposer la vitesse : v' = -v pour un rebond parfait
 		//speed = speed - 2 * speed.scalarProduct(min_collision.normal) * min_collision.normal;
 		//speed -= speed;
 		//Vector2DF other_speed= min_collision.obj2->getSpeed();
-		min_collision.obj2->setSpeed(-min_collision.obj2->getSpeed() );
+		min_collision->obj2->setSpeed(-min_collision->obj2->getSpeed() );
 
 
 
@@ -241,7 +243,7 @@ void Physical_Engine::resolveCollisions(float dt){
 		obj->setSpeed(speed);
 		
 
-		min_collision.obj2->reduceLife();
+		min_collision->obj2->reduceLife();
 
 	}
 	collisions.clear();

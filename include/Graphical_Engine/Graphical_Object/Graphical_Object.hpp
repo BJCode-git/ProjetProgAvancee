@@ -87,22 +87,68 @@ class Animation{
 };
 */
 
+/**
+ * @class Graphical_Object
+ * @brief Represents a graphical object associated with a physical object.
+ * 
+ * The Graphical_Object class provides a base class for graphical objects in a graphical engine.
+ * It contains methods for drawing the object, accessing and modifying its color and texture, and retrieving information about its associated physical object.
+ */
 class Graphical_Object{
 
 	public:
-
+		/**
+		 * @brief Construct a new Graphical_Object object
+		 * 
+		 * @param PhyObject The physical object associated with the graphical object.
+		 * @param texture  The texture of the graphical object.	
+		 */
 		Graphical_Object(std::shared_ptr<Physical_Object> PhyObject,
 						 std::shared_ptr<SDL_Texture> texture = std::shared_ptr<SDL_Texture>(nullptr));
 		~Graphical_Object();
-
+	
+		/**
+		 * @brief Draws the graphical object on the specified renderer.
+		 * 
+		 * This method must be implemented by derived classes to define how the graphical object is drawn.
+		 * 
+		 * @param renderer The renderer to draw the object on.
+		 */
 		virtual void draw(std::shared_ptr<SDL_Renderer> renderer) const = 0;
 
+		/**
+		 * @brief Returns the remaining life of the associated physical object.
+		 * 
+		 * @return The remaining life of the associated physical object.
+		 */
 		int PhyObjLife() const;
 		
+		/**
+		 * @brief Returns the color of the graphical object.
+		 * 
+		 * @return The color of the graphical object.
+		 */
 		Color getColor() const;
+		
+		/**
+		 * @brief Sets the color of the graphical object.
+		 * 
+		 * @param color The new color of the graphical object.
+		 */
 		void setColor(Color color);
 
+		/**
+		 * @brief Returns the texture of the graphical object.
+		 * 
+		 * @return The texture of the graphical object.
+		 */
 		std::shared_ptr<SDL_Texture> getTexture() const;
+		
+		/**
+		 * @brief Sets the texture of the graphical object.
+		 * 
+		 * @param texture The new texture of the graphical object.
+		 */
 		void setTexture(std::shared_ptr<SDL_Texture> texture);
 
 

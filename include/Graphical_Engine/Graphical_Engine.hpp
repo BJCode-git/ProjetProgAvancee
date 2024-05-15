@@ -19,34 +19,69 @@
 #include "Graphical_Engine/Window/Window.hpp"
 #include "Graphical_Engine/debug-SDL.hpp"
 
+/**
+ * @class Graphical_Engine
+ * @brief The Graphical_Engine class represents a graphical engine for rendering objects on the screen.
+ * 
+ * The Graphical_Engine class provides functionality for managing the rendering of graphical objects,
+ * such as polygons and circles, on a window. It uses SDL library for rendering and supports features
+ * like setting the renderer, starting and stopping the engine, printing text, drawing objects, adding
+ * and removing objects, setting the FPS limit, and more.
+ */
+/**
+ * @class Graphical_Engine
+ * @brief The Graphical_Engine class represents a graphical engine for rendering objects on the screen.
+ * 
+ * The Graphical_Engine class provides functionality to start and stop the engine, set the renderer,
+ * print text on the screen, draw objects, add and remove objects, set the FPS limit, set the window size,
+ * set the background image, and more.
+ */
 class Graphical_Engine{
 
 	public:
-
-		/*Graphical_Engine(std::shared_ptr<SDL_Renderer> renderer, 
-						int scene_width,
-						int scene_height,
-						uint16_t fps_limit = 60);*/
+		
+		/**
+		 * @brief Graphical_Engine constructor.
+		 * @param scene_width The width of the scene.
+		 * @param scene_height The height of the scene.
+		 * @param fps_limit The FPS render limit of the engine.
+		 */
 		Graphical_Engine(int scene_width,
 						 int scene_height,
 						 uint16_t fps_limit = 60);
 		~Graphical_Engine();
 
 		//void setRenderer(std::shared_ptr<SDL_Renderer> renderer);
+		/*
+		* @brief Returns the SDL_Renderer object of the engine.
+		* @return The SDL_Renderer object of the engine.
+		*/
 		std::shared_ptr<SDL_Renderer> getRenderer() const;
 
+		/**
+		 * @brief Starts the graphical engine.
+		 */
 		void start();
+		/**
+		 * @brief Stops the graphical engine.
+		 */
 		void stop();
 
 		//void  operator()(){start();}
-		enum Text_Align{
-			LEFT   = 0b000001,
-			CENTER = 0b000010,
-			RIGHT  = 0b000100,
-			TOP    = 0b001000,
-			MIDDLE = 0b010000,
-			BOTTOM = 0b100000
-		};
+		//enum Text_Align{
+		//	LEFT   = 0b000001,
+		//	CENTER = 0b000010,
+		//	RIGHT  = 0b000100,
+		//	TOP    = 0b001000,
+		//	MIDDLE = 0b010000,
+		//	BOTTOM = 0b100000
+		//};
+
+		/**
+		 * @brief Prints text on the screen.
+		 * @param text The text to print.
+		 * @param position The position to print the text at.
+		 */
 		void print_text(const std::string text);
 
 		void draw();

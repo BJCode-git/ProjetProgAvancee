@@ -224,7 +224,7 @@ void GameEngine::handle_events(){
 				//  v(k+1) - v(k)/(k+1 - k) ~ v'(k) = 6k² + 2k
 				//  d'ou v(k+1) = v(k) + 1/k
 				case SDLK_LEFT:
-					v = std::min(v+2*k*(3*k+1)+10, max_velocity);
+					v = std::min(v+2*k*+20, max_velocity);
 					k++;
 					//speed = phy_bar->getSpeed();
 					speed[0] = - v;
@@ -276,7 +276,7 @@ void GameEngine::start(){
 			physical_engine->update();
 		handle_events();
 		graphical_engine->draw();
-		SDL_Delay(1000/30); // 60 fps
+		SDL_Delay(1000/60); // 60 fps
 	}
 	debug("GameEngine::start() reach end of loop");
 	stop();

@@ -51,6 +51,7 @@ set(EXECUTABLE_OUTPUT_PATH bin)
 # Ajout des sous-répertoire Physical_Engine et Graphical_Engine
 add_subdirectory(include/Physical_Engine)
 add_subdirectory(include/Graphical_Engine)
+add_subdirectory(EmptyDoxygenCMake)
 
 # Ajout de la librairie Physical_Engine
 #add_library(Physical_Engine STATIC lib/libPhysical_Engine.a)
