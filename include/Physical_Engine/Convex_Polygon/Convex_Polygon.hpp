@@ -39,6 +39,7 @@ class Convex_Polygon : public Physical_Object{
 
 		const Polygon& getPoints() const;
 		
+		virtual void      move(const Vector2DF&)                                              override;
 		virtual void      update(float dt=1)                                                  override;
 		virtual void      setPosition(Vector2DF)                                              override;
 		virtual Vector2DF getPosition()                                                 const override;

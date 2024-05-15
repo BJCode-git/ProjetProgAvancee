@@ -61,1263 +61,1913 @@ Création d'un objet physique Polygone
 Création d'un Polygone convexe
 Création d'une bounding box
 Destruction d'une bounding box
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:16 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+update bar speed : 18.000000
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:51 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:17 2024
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Physical_Engine::start()
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
 
-Physical_Engine::update()Wed May 15 05:49:18 2024
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:52 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:18 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:53 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
 
+Physical_Engine::update()Wed May 15 06:46:54 2024
 
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
 
 
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:54 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:54 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:55 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:55 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+update bar speed : 30.000000
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:56 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:56 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:57 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:57 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:58 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:58 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+Graphical_Engine::draw()Wed May 15 06:46:59 2024
+
+
+Physical_Engine::update()Wed May 15 06:46:59 2024
+
+GameEngine::start() reach end of loop
 Physical_Engine::stop()
-Physical_Engine::start() reach end of loop
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:19 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Physical_Engine::start()
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Physical_Engine::update()Wed May 15 05:49:20 2024
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:20 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Physical_Engine::stop()
-Physical_Engine::start() reach end of loop
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Physical_Engine::start()
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:21 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Physical_Engine::update()Wed May 15 05:49:22 2024
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:22 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Graphical_Engine::draw()Wed May 15 05:49:23 2024
-
-
-Physical_Engine::stop()
-Physical_Engine::start() reach end of loop
+GameEngine::stop() wait threads ...
 GameEngine::stop()
 Score: 
-GameEngine::start() reach end of loop , wait threads ...
-
-terminate called after throwing an instance of 'std::system_error'
-  what():  Invalid argument
+Physical_Engine::~Physical_Engine()

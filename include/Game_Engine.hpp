@@ -33,7 +33,7 @@ class GameEngine{
 		void handle_events();
 	
 	private:
-		bool running;
+		bool running, paused;
 		int score;
 		std::shared_ptr<Convex_Polygon> phy_bar;
 

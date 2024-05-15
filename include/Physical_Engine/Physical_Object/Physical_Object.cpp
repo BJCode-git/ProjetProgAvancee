@@ -9,12 +9,13 @@ Vector2DF Gravity(const Physical_Object& obj){
 
 	// Pour éviter le warning "unused parameter"
 	do { (void)(obj); } while (0);
-	return {0, 9.81};
+	constexpr float g = 1.62;//9.81;
+	return {0, g};
 }
 
 Vector2DF Friction(const Physical_Object& obj) {
 
-	float alpha = 0.1;
+	constexpr float alpha = 0.1;
 	return obj.getSpeed()* -alpha;
 	//return {-obj.getSpeed()[0] * alpha, -obj.getSpeed()[1] * alpha};
 }
@@ -39,7 +40,7 @@ Physical_Object::Physical_Object(Point2DF centroid,
 	hitbox(),
 	mass(mass),
 	is_static(is_static),
-	//ignore_collision(ignore_collision),
+	//ignore_collision(ignore_collision);
 	breakable(breakable),
 	life(life)
 	
@@ -61,6 +62,8 @@ Physical_Object::Physical_Object(Point2DF centroid,
 	debug("Création d'un objet physique "+s_shape);
 	if(mass <= 0) throw std::invalid_argument("La masse doit être strictement positive");
 	if(shape == SHAPE::NONE) throw std::invalid_argument("La forme de l'objet physique doit être spécifiée");
+
+	do { (void)(ignore_gravity); } while (0);
 
 	if(!ignore_gravity) addForce(Gravity);
 	//if(!is_static) addForce(Friction);
@@ -94,7 +97,7 @@ SHAPE Physical_Object::getShape() const{
 	return shape;
 }
 
-void Physical_Object::move             (Vector2DF offset){
+void Physical_Object::move             (const Vector2DF& offset){
 	centroid = centroid + offset;
 }
 
@@ -128,12 +131,12 @@ void Physical_Object::clearForces      (){
 	F_ext.clear();
 }
 
-void Physical_Object::setMass(float){
+void Physical_Object::setMass(float mass){
 	if(mass <= 0) throw std::invalid_argument("La masse doit être strictement positive");
 	this->mass = mass;
 }
 
-void Physical_Object::setStatic(bool){
+void Physical_Object::setStatic(bool is_static){
 	this->is_static = is_static;
 }
 /*

@@ -247,6 +247,15 @@ void Convex_Polygon::computeMinimumBoundingBox(){ // Vérifier si le polygone a 
 }
 
 
+void Convex_Polygon::move(const Vector2DF& offset){
+	// On déplace le polygone en déplaçant tous ses points
+	for(auto& p : points){
+		p += offset;
+	}
+	centroid += offset;
+}
+
+
 void Convex_Polygon::update(float dt){
 
 	Physical_Object::update(dt);
@@ -258,7 +267,6 @@ void Convex_Polygon::update(float dt){
 
 
 }
-
 
 bool Convex_Polygon::isColliding(const Physical_Object& other, Vector2DF& intersection, Vector2DF& normal) const{
 	try{

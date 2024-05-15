@@ -61,7 +61,7 @@ class Physical_Object{
 		SHAPE getShape() const;
 		const BoundingBox & getBoundingBox() const;
 
-		virtual void move             (Vector2DF);
+		virtual void move     (const Vector2DF&) = 0;
 		void setSpeed         (Vector2DF);
 		void setAcceleration  (Vector2DF);
 

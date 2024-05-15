@@ -4,6 +4,7 @@
 
 GameEngine::GameEngine(int width, int height): 
 	running(false),
+	paused(true),
 	score(0),
 
 	phy_bar(nullptr),
@@ -59,117 +60,6 @@ GameEngine::~GameEngine(){
 }
 
 
-void GameEngine::handle_events(){
-
-	static float v = 0;
-	static float k = 1;
-	constexpr float max_velocity = 5;
-
-	SDL_Event event;
-	Vector2DF speed;
-
-	SDL_PollEvent(&event);
-	switch(event.type){
-		case SDL_USEREVENT:
-			// quand un objet physique a été détruit
-			// on incrémente le score
-			// si c'est la barre qui a été détruite
-			// on arrête le jeu
-
-			// on met le jeu en pause
-			if(phy_bar->getLife() <= 0){
-				//window->print_text("Game Over");
-				graphical_engine->print_text("Game Over");
-				//stop();
-				running = false;
-				std::this_thread::sleep_for(std::chrono::seconds(2));
-			}
-			else{
-				score++;
-				debug("Score: " + score);
-				//window->print_score(score);
-				graphical_engine->print_text("Score: " + std::to_string(score));
-			}
-
-		break;
-		case SDL_QUIT:
-			//window->print_text("Fin du jeu");
-			graphical_engine->print_text("Fin du jeu");
-			running = false;
-			//stop();
-		break;
-		case SDL_WINDOWEVENT:
-		switch (event.window.event) {
-
-			case SDL_WINDOWEVENT_CLOSE:   // exit game
-				//window->print_text("Fin du jeu");
-				graphical_engine->print_text("Fin du jeu");
-				running = false;
-				//stop();
-
-			default:
-				break;
-		}
-		break;
-		case SDL_KEYDOWN:
-			switch(event.key.keysym.sym){
-				case SDLK_SPACE:
-					if(running && !physical_engine->isRunning()){
-						physical_engine_thread = std::thread(&Physical_Engine::start,physical_engine.get());
-						graphical_engine->print_text("Appuyez sur Espace pour mettre en pause");
-					}
-					else if(running && physical_engine->isRunning()){
-						physical_engine->stop();
-						graphical_engine->print_text("Appuyez sur Espace pour relancer");
-						physical_engine_thread.join();
-					}
-				break;
-					
-				// on change la vitesse de la barre
-				// pour laisser le moteur physique gérer le reste
-				// La vélocité augmente logarithmiquement : v(k) = ln(k)
-				//  v(k+1) - v(k)/(k+1 - k) ~ ln'(k) = 1/k
-				//  d'ou v(k+1) = v(k) + 1/k
-				case SDLK_LEFT:
-					v = std::min(v+1/k, max_velocity);
-					k++;
-					speed = phy_bar->getSpeed();
-					speed[0] = - v;
-					phy_bar->setSpeed(speed);
-					debug("update bar speed : " + std::to_string(v));
-				break;
-				case SDLK_RIGHT:
-					v = std::min(v + 1/k, max_velocity);
-					k++;
-					//augmenter la vélocité de la barre
-					speed = phy_bar->getSpeed();
-					speed[0] = v;
-					phy_bar->setSpeed(speed);
-					debug("update bar speed : " + std::to_string(v));
-				break;
-				
-				default:
-				break;
-			}
-		break;
-		// on arrête de bouger la barre
-		case SDL_KEYUP:
-			switch(event.key.keysym.sym){
-				case SDLK_LEFT:
-				case SDLK_RIGHT:
-					v = 0;
-				default:
-				break;
-			}
-		break;
-
-		default:
-		break;
-	}
-
-}
-
-
 void GameEngine::init(){
 
 	// on charge la musique
@@ -189,17 +79,18 @@ void GameEngine::init(){
 	physical_engine->setScene(width,height);
 
 
-	// on crée la barre
-
+	// on crée la barre de longueur 70 pixels et de hauteur 10 pixels
+	// on la place au milieu de l'écran
 	phy_bar = std::make_shared<Convex_Polygon>(Polygon{
-		Point2DF{width/2 - 25, height - 15},
-		Point2DF{width/2 + 25, height - 15},
-		Point2DF{width/2 + 25, height -  5},
-		Point2DF{width/2 - 25, height -  5}
+		Point2DF{width/2 - 75, height - 15},
+		Point2DF{width/2 + 75, height - 15},
+		Point2DF{width/2 + 75, height -  5},
+		Point2DF{width/2 - 75, height -  5}
 	});
 
 	phy_bar->setSpeed(Vector2DF{0,0});
 	phy_bar->setBreakable(false);
+	phy_bar->setStatic(true);
 
 	// on l'ajoute à l'engine physique
 	physical_engine->addObject(phy_bar);
@@ -214,7 +105,7 @@ void GameEngine::init(){
 	// avec une composante horizontale aléatoire
 	// et une composante verticale négative 2*supérieure à la gravité
 	// pour qu'elle parte vers le haut
-	ball->setSpeed(Vector2DF{ static_cast<float> (std::rand()%10 - 5), -2.f*10.f});
+	ball->setSpeed(Vector2DF{ static_cast<float> (std::rand()%10 - 5), -4.f*10.f});
 	ball->setBreakable(false);
 
 	// on l'ajoute à l'engine physique
@@ -265,6 +156,112 @@ void GameEngine::init(){
 }
 
 
+void GameEngine::handle_events(){
+
+	static float v = 0;
+	static float k = 1;
+	constexpr float max_velocity = 30;
+
+	SDL_Event event;
+	Vector2DF speed({0,0});
+
+	SDL_PollEvent(&event);
+	switch(event.type){
+		case SDL_USEREVENT:
+			// quand un objet physique a été détruit
+			// on incrémente le score
+			// si c'est la barre qui a été détruite
+			// on arrête le jeu
+
+			// on met le jeu en pause
+			if(phy_bar->getLife() <= 0){
+				//window->print_text("Game Over");
+				graphical_engine->print_text("Game Over");
+				//stop();
+				running = false;
+				std::this_thread::sleep_for(std::chrono::seconds(2));
+			}
+			else{
+				score++;
+				debug("Score: " + score);
+				//window->print_score(score);
+				graphical_engine->print_text("Score: " + std::to_string(score));
+			}
+
+		break;
+		case SDL_QUIT:
+			//window->print_text("Fin du jeu");
+			graphical_engine->print_text("Fin du jeu");
+			running = false;
+			//stop();
+		break;
+		case SDL_WINDOWEVENT:
+		switch (event.window.event) {
+
+			case SDL_WINDOWEVENT_CLOSE:   // exit game
+				//window->print_text("Fin du jeu");
+				graphical_engine->print_text("Fin du jeu");
+				running = false;
+				//stop();
+
+			default:
+				break;
+		}
+		break;
+		case SDL_KEYDOWN:
+			switch(event.key.keysym.sym){
+				case SDLK_SPACE:
+					if(paused)
+						graphical_engine->print_text("Appuyez sur Espace pour mettre en pause");
+					else
+						graphical_engine->print_text("Appuyez sur Espace pour relancer");
+					paused = !paused;
+				break;
+					
+				// on change la vitesse de la barre
+				// pour laisser le moteur physique gérer le reste
+				// La vélocité augmente linéairement : v(k) = k³+k²
+				//  v(k+1) - v(k)/(k+1 - k) ~ v'(k) = 6k² + 2k
+				//  d'ou v(k+1) = v(k) + 1/k
+				case SDLK_LEFT:
+					v = std::min(v+2*k*(3*k+1)+10, max_velocity);
+					k++;
+					//speed = phy_bar->getSpeed();
+					speed[0] = - v;
+					phy_bar->move(speed);
+					debug("update bar speed : " + std::to_string(v));
+				break;
+				case SDLK_RIGHT:
+					v = std::min(v + 2*k*(3*k+1)+10, max_velocity);
+					k++;
+					//augmenter la vélocité de la barre
+					//speed = phy_bar->getSpeed();
+					speed[0] = v;
+					phy_bar->move(speed);
+					debug("update bar speed : " + std::to_string(v));
+				break;
+				
+				default:
+				break;
+			}
+		break;
+		// on arrête de bouger la barre
+		case SDL_KEYUP:
+			switch(event.key.keysym.sym){
+				case SDLK_LEFT:
+				case SDLK_RIGHT:
+					v = 0;
+				default:
+				break;
+			}
+		break;
+
+		default:
+		break;
+	}
+
+}
+
 void GameEngine::start(){
 
 	running = true;
@@ -277,12 +274,13 @@ void GameEngine::start(){
 	while(running){
 		handle_events();
 		graphical_engine->draw();
+		if(!paused)
+			physical_engine->update();
+		SDL_Delay(1000/60); // 60 fps
 	}
+	debug("GameEngine::start() reach end of loop");
 	stop();
-
-	debug("GameEngine::start() reach end of loop , wait threads ...\n");
-	physical_engine_thread.join();
-	//graphical_engine_thread.join();
+	
 }
 
 
@@ -292,7 +290,10 @@ void GameEngine::stop(){
 	graphical_engine->print_text("Pause (Espace pour continuer) ~> Score: " + std::to_string(score));
 	graphical_engine->stop();
 	physical_engine->stop();
-	physical_engine_thread.join();
+
+	debug("GameEngine::stop() wait threads ...");
+	//physical_engine_thread.join();
+	//graphical_engine_thread.join();
 
 	debug("GameEngine::stop()");
 	debug("Score: " + score);

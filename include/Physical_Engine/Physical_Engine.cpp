@@ -125,13 +125,8 @@ void Physical_Engine::update(float dt){
 	// on détecte si un objet sort de la scène
 	auto it = objects.begin();
 	while(it != objects.end()){
-		if(*it == nullptr){ 
-			it = objects.erase(it);
-			continue;
-		};
 
-		(*it)->getPosition();
-		Vector2DF position; 
+		Vector2DF position = (*it)->getPosition();
 		Vector2DF speed    = (*it)->getSpeed();
 
 		// on fait rebondir l'objet sur les bords de la scène 

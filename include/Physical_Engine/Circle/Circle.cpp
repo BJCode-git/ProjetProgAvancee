@@ -54,6 +54,10 @@ void Circle::computeMinimumBoundingBox(){
 					 Point2DF({centroid[0] - radius, centroid[1] + radius}));
 }
 
+void Circle::move(const Vector2DF& offset){
+	Physical_Object::move(offset);
+}
+
 void Circle::update(float dt){
 	Physical_Object::update(dt);
 }
