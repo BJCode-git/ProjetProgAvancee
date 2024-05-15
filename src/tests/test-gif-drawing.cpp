@@ -11,7 +11,6 @@ int main() {
 
   int width = 1000;
   int height = 300;
-  int nbImg = 100;
   
   window = SDL_CreateWindow("Test SDL2", 
                             SDL_WINDOWPOS_CENTERED, 
@@ -29,7 +28,7 @@ int main() {
     exit(1);
 	}	
 	
-  SDL_Event *event;
+  SDL_Event *event =nullptr;
   bool resized = false;
 
   while (!SDL_QuitRequested()) {

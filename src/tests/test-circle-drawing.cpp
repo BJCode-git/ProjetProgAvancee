@@ -58,7 +58,7 @@ int main() {
   float radius = ((float)width) / ((float) (2*(nbCircles+1) ) );
   
   window = SDL_CreateWindow("test", SDL_WINDOWPOS_CENTERED,
-                            SDL_WINDOWPOS_CENTERED, 300, 300, 0);
+                            SDL_WINDOWPOS_CENTERED, width, height, 0);
   renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
 
   while (!SDL_QuitRequested()) {

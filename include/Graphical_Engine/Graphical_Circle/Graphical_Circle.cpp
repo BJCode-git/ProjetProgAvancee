@@ -58,23 +58,24 @@ void drawCircle(SDL_Renderer* renderer, float x, float y, float radius) {
 GraphicalCircle::GraphicalCircle(std::shared_ptr<Circle> Circle, std::shared_ptr<SDL_Texture> texture) :
 	Graphical_Object(Circle, texture),
 	PhyObject(Circle)
-{}
+{
 
-GraphicalCircle::~GraphicalCircle() {}
+}
+
+GraphicalCircle::~GraphicalCircle() {
+}
 
 void GraphicalCircle::draw(std::shared_ptr<SDL_Renderer> renderer) const {
+	if(PhyObject == nullptr)
+		return;
 
 	if(texture) {
-		SDL_FRect dest = {PhyObject->getPosition()[0] - PhyObject->getRadius(), 
-						  PhyObject->getPosition()[1] - PhyObject->getRadius(), 
-						  2 * PhyObject->getRadius(), 
-						  2 * PhyObject->getRadius()};
-
-		SDL_RenderCopyF(renderer.get(), texture.get(), NULL, &dest);
+		Graphical_Object::draw(renderer);
 	}
-	SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
-	drawFilledCircle(renderer.get(), PhyObject->getPosition()[0], PhyObject->getPosition()[1], PhyObject->getRadius());
-
-	Graphical_Object::draw(renderer);
+	else {
+		SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
+		drawFilledCircle(renderer.get(), PhyObject->getPosition()[0], PhyObject->getPosition()[1], PhyObject->getRadius());
+	}
+	//Graphical_Object::draw(renderer);
 }
 

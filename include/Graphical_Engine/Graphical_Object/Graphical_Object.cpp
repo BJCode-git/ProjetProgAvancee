@@ -5,15 +5,16 @@
  ********************/
 
 Graphical_Object::Graphical_Object(std::shared_ptr<Physical_Object> PhyObject, std::shared_ptr<SDL_Texture> texture) : 
-	color(GREEN),
+	color(BLACK),
 	PhyObject(PhyObject),
 	texture(texture)
-{}
+{
+}
 
 Graphical_Object::~Graphical_Object() {}
 
 int Graphical_Object::PhyObjLife() const {
-	return PhyObject->getLife();
+	return PhyObject == nullptr ? 0 : PhyObject->getLife();
 }
 
 Color Graphical_Object::getColor() const {
@@ -34,26 +35,20 @@ void Graphical_Object::setTexture(std::shared_ptr<SDL_Texture> texture) {
 
 void Graphical_Object::draw(std::shared_ptr<SDL_Renderer> renderer) const {
 
+	if(PhyObject == nullptr)
+		return;
+
 	SDL_SetRenderDrawColor(renderer.get(), RED.r, RED.g, RED.b, RED.a);
 	Point2DF topLeft     = PhyObject->getBoundingBox().getTopLeft(),
 			 topRight    = PhyObject->getBoundingBox().getTopRight(),
-			 bottomRight = PhyObject->getBoundingBox().getBottomRight(),
-			 bottomLeft  = PhyObject->getBoundingBox().getBottomLeft();
+			 bottomRight = PhyObject->getBoundingBox().getBottomRight();
 			
-	SDL_RenderDrawLineF(renderer.get(), topLeft[0], topLeft[1], topRight[0], topRight[1]);
-	SDL_RenderDrawLineF(renderer.get(), topRight[0], topRight[1], bottomRight[0], bottomRight[1]);
-	SDL_RenderDrawLineF(renderer.get(), bottomRight[0], bottomRight[1], bottomLeft[0], bottomLeft[1]);
-	SDL_RenderDrawLineF(renderer.get(), bottomLeft[0], bottomLeft[1], topLeft[0], topLeft[1]);
 
 	SDL_FRect dest = {topLeft[0], topLeft[1], topRight[0] - topLeft[0], bottomRight[1] - topRight[1]};
-
-	SDL_RenderFillRectF(renderer.get(), &dest);
 	
-
-	if(texture) {
-		dest = {topLeft[0], topLeft[1], topRight[0] - topLeft[0], bottomRight[1] - topRight[1]};
-
+	if(texture)
 		SDL_RenderCopyF(renderer.get(), texture.get(), NULL, &dest);
-	}
+	else
+		SDL_RenderFillRectF(renderer.get(), &dest);
 	
 }

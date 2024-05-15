@@ -238,6 +238,7 @@ bool test_Circle(indicators::ProgressBar &bar,int origine ,int &increment, int &
     circle.update();
     ASSERT_TRUE(circle.getPosition() == Point2DF(2));
     increment += 100 /3 * proportion/100;
+    bar.set_progress(origine + increment);
 
     return true;
 }
@@ -275,6 +276,7 @@ bool test_collision_methods(indicators::ProgressBar &bar,int origine ,int &incre
     increment += 100 /9 * proportion/100;
     ASSERT_FLOAT_EQUAL(intersection_point[1], 2);
     increment += 100 /9 * proportion/100;
+    bar.set_progress(origine + increment);
 
     return true;
 
@@ -303,7 +305,6 @@ int main() {
     // Run tests for each class and method
 
     uint8_t test_passed = 0;
-    bool test_passed_ok = false;
     int increment = 0;
     int proportion =   20;
     try{

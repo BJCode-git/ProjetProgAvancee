@@ -396,4 +396,5 @@ CMakeFiles/BrickBreaker.dir/src/main.cpp.o: \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Circle/Graphical_Circle.hpp \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Graphical_Polygon/Graphical_Polygon.hpp \
  /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/Window/Window.hpp \
+ /home/julien/Cours2A/Prog_Avance/Projet/include/Graphical_Engine/debug-SDL.hpp \
  /home/julien/Cours2A/Prog_Avance/Projet/include/debug.hpp

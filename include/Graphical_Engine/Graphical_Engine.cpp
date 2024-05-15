@@ -8,8 +8,8 @@
 Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 	is_text_to_draw(false),
 	text_to_print(),
-	animated_background(nullptr),
-	static_background(nullptr),
+	animated_background(nullptr,IMG_FreeAnimation),
+	static_background(nullptr,SDL_DestroyTexture),
 	objects(),
 	textures(),
 	window(new Window("Casse-briques Test", width, height)),
@@ -25,11 +25,11 @@ Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 
 	if( (IMG_Init(IMG_INIT_ALL)  &IMG_INIT_ALL) != ( IMG_INIT_ALL )) {
 		std::cerr << "Erreur lors de l'initialisation de SDL_image : " << IMG_GetError() << std::endl;
-		throw std::runtime_error("Erreur lors de l'initialisation de SDL_image");
+		exit(1);
 	}
 	else if(TTF_Init() < 0){
 		std::cerr << "Erreur lors de l'initialisation de SDL_ttf : " << TTF_GetError() << std::endl;
-		throw std::runtime_error("Erreur lors de l'initialisation de SDL_ttf");
+		exit(1);
 	}
 
 	//window = std::make_unique<Window>("Casse-briques Test", width, height);
@@ -66,32 +66,34 @@ void Graphical_Engine::addObject(std::shared_ptr<Circle> object, std::string tex
 
 void Graphical_Engine::addGraphicalPolygon(std::shared_ptr<Convex_Polygon> PhyObject, std::string texture_path) {
 	if (texture_path.empty()) {
-		objects.emplace_back(new GraphicalPolygon(PhyObject, nullptr));
+		objects.emplace_back(std::make_unique<GraphicalPolygon>(PhyObject, nullptr));
 	} 
 	else {
 		// On ajoute la texture à la liste des textures si elle n'existe pas
 		auto texture_iter = textures.find(texture_path);
 		if (texture_iter == textures.end() || texture_iter->second == nullptr) {
+			//textures.emplace(texture_path, 
+			//IMG_LoadTexture(renderer.get(), texture_path.c_str()));
 			textures[texture_path] = std::shared_ptr<SDL_Texture> (IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
 		} 
-
-		objects.emplace_back(new GraphicalPolygon(PhyObject, textures[texture_path]));
+		objects.push_back(std::make_unique<GraphicalPolygon>(PhyObject, textures[texture_path]));
+		//objects.emplace_back(new GraphicalPolygon(PhyObject, textures[texture_path]));
 	}
 }
 
 void Graphical_Engine::addGraphicalCircle(std::shared_ptr<Circle> PhyObject, std::string texture_path) {
 	if (texture_path.empty()) {
-		std::unique_ptr<GraphicalCircle> obj = std::make_unique<GraphicalCircle>(PhyObject, nullptr);
-		objects.emplace_back(new GraphicalCircle(PhyObject, nullptr));
+
+		objects.push_back(std::make_unique<GraphicalCircle>(PhyObject, nullptr));
+		//objects.emplace_back(new GraphicalCircle(PhyObject, nullptr));
 	} 
 	else {
 		// on ajoute la texture à la liste des textures si elle n'existe pas
 		if (textures.find(texture_path) == textures.end()) {
 			textures[texture_path] = std::shared_ptr<SDL_Texture>(IMG_LoadTexture(renderer.get(), texture_path.c_str()), SDL_DestroyTexture);
 		}
-		else {
-			objects.emplace_back(new GraphicalCircle(PhyObject, textures[texture_path]));
-		}
+		objects.push_back(std::make_unique<GraphicalCircle>(PhyObject, textures[texture_path]));
+		//objects.emplace_back(new GraphicalCircle(PhyObject, textures[texture_path]));
 	}
 }
 
@@ -163,32 +165,24 @@ void Graphical_Engine::set_background(std::string filepath, bool animated){
 
 	//debug("Graphical_Engine::set_background()");
 
-	if(animated_background != nullptr){
-		IMG_FreeAnimation(animated_background);
-		animated_background = nullptr;
-	}
-
-	if(static_background != nullptr){
-		SDL_FreeSurface(static_background);
-		static_background = nullptr;
-	}
-
-	if(animated){
-		animated_background = IMG_LoadAnimation(filepath.c_str());
-	}
+	
+	if(animated)
+		animated_background.reset(IMG_LoadAnimation(filepath.c_str()));
 	else{
-		static_background = IMG_Load(filepath.c_str());
+		SDL_Surface *surface = IMG_Load(filepath.c_str());
+		if(surface == nullptr){
+			std::cerr << "Graphical_Engine::set_background() Error: " << IMG_GetError() << std::endl;
+		}
+		static_background.reset(SDL_CreateTextureFromSurface(renderer.get(), surface));
+		SDL_FreeSurface(surface);
 	}
 
 	if(animated_background == nullptr && static_background == nullptr){
 		std::cerr << "Graphical_Engine::set_background() Error: " << IMG_GetError() << std::endl;
-		exit(1);
 	}
 }
 
 void Graphical_Engine::draw_background(){
-
-	//debug("Graphical_Engine::draw_background()");
 
 	SDL_Texture* texture = nullptr;
 	SDL_FRect dstRect = { 0,
@@ -203,7 +197,7 @@ void Graphical_Engine::draw_background(){
 		n = (n + 1) % animated_background->count;
 	}
 	else if(static_background != nullptr){
-		texture = SDL_CreateTextureFromSurface(renderer.get(), static_background);
+		texture = static_background.get();
 	}
 	else{
 		std::cerr << "Graphical_Engine::draw_background() Error: " << IMG_GetError() << std::endl;
@@ -211,7 +205,6 @@ void Graphical_Engine::draw_background(){
 
 	if(texture){
 		SDL_RenderCopyF(renderer.get(), texture, nullptr, &dstRect);
-		SDL_DestroyTexture(texture);
 	}
 	else{
 		std::cerr << "Error: " << SDL_GetError() << std::endl;

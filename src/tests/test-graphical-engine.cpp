@@ -22,14 +22,7 @@ void init(std::shared_ptr<Physical_Engine> physical_engine,std::shared_ptr<Graph
 
 	// on crée la balle
 	// on la place au dessus de la barre
-	std::shared_ptr<Circle> ball = std::make_shared<Circle>(Point2DF{width/2, height - 35}, 5);
-
-	// on lui défini une vitesse initiale
-	// avec une composante horizontale aléatoire
-	// et une composante verticale négative 2*supérieure à la gravité
-	// pour qu'elle parte vers le haut
-	ball->setSpeed(Vector2DF{ static_cast<float> (std::rand()%10 - 5), -2.f*10.f});
-	ball->setBreakable(false);
+	std::shared_ptr<Circle> ball = std::make_shared<Circle>(Point2DF{width/2, height - 35}, 10);
 
 	// on l'ajoute à l'engine physique
 	physical_engine->addObject(ball);
@@ -71,8 +64,17 @@ void init(std::shared_ptr<Physical_Engine> physical_engine,std::shared_ptr<Graph
 			// on l'ajoute à l'engine graphique
 			graphical_engine->addGraphicalPolygon(brick,"rsc/Breakout_Tile_Set_Free/PNG/0"+std::to_string(i+1)+"-Breakout-Tiles.png");
 		}
-		
 	}
+
+	// On ajoute différents cercles pour tester l'affichage
+
+	// on crée un gros cercle
+
+	std::shared_ptr<Circle> circle = std::make_shared<Circle>(Point2DF{width/2, height/2}, 50);
+	// on l'ajoute à l'engine physique
+	physical_engine->addObject(circle);
+	// on l'ajoute à l'engine graphique
+	graphical_engine->addGraphicalCircle(circle,"rsc/Breakout_Tile_Set_Free/PNG/58-Breakout-Tiles.png");
 
 }
 

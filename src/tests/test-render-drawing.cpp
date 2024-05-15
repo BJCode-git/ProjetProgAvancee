@@ -12,7 +12,6 @@ int main() {
 
   int width = 1000;
   int height = 300;
-  int nbImg = 100;
   
   window = std::unique_ptr<SDL_Window, void (*)(SDL_Window*)>
 			   (SDL_CreateWindow("Test SDL2", 
@@ -34,7 +33,7 @@ int main() {
     exit(1);
 	}	
 	
-  SDL_Event *event;
+  SDL_Event *event=nullptr;
   bool resized = false;
 
   while (!SDL_QuitRequested()) {

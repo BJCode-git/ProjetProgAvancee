@@ -1,8 +1,9 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "C/C++ Runner: Debug BrickBreaker",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/bin/BrickBreaker", // Chemin vers l'exécutable à déboguer
@@ -18,21 +19,47 @@
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
         }
-      ],
-      "linux": {
-        "program": "${workspaceFolder}/bin/BrickBreaker", // Chemin vers l'exécutable à déboguer (Linux)
-        "MIMode": "gdb",
-        "miDebuggerPath": "/usr/bin/gdb" // Chemin vers GDB (Linux)
-      },
-      "osx": {
-        "program": "${workspaceFolder}/bin/BrickBreaker", // Chemin vers l'exécutable à déboguer (macOS)
-        "MIMode": "lldb"
-      },
-      "windows": {
-        "program": "${workspaceFolder}/bin/BrickBreaker.exe", // Chemin vers l'exécutable à déboguer (Windows)
-        "MIMode": "gdb",
-        "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe" // Chemin vers GDB (Windows)
-      }
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Graphical engine",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/test-graphical-engine", // Chemin vers l'exécutable à déboguer
+      "args": [], // Arguments de ligne de commande (si nécessaire)
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "${workspaceFolder}", // Répertoire de travail du processus débogué
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Physical engine",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/test-physical-engine", // Chemin vers l'exécutable à déboguer
+      "args": [], // Arguments de ligne de commande (si nécessaire)
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "${workspaceFolder}", // Répertoire de travail du processus débogué
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
     }
+    
+
   ]
 }

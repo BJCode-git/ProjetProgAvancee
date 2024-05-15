@@ -44,6 +44,7 @@ Physical_Object::Physical_Object(Point2DF centroid,
 	life(life)
 	
 {
+	
 	std::string s_shape = "";
 	switch(shape){
 		case SHAPE::CIRCLE:
@@ -62,6 +63,8 @@ Physical_Object::Physical_Object(Point2DF centroid,
 	if(shape == SHAPE::NONE) throw std::invalid_argument("La forme de l'objet physique doit être spécifiée");
 
 	if(!ignore_gravity) addForce(Gravity);
+	if(!is_static) addForce(Friction);
+	if(!breakable) life = 255;
 
 }
 

@@ -75,8 +75,8 @@ class Graphical_Engine{
 		bool is_text_to_draw;
 
 		std::pair<std::string,Vector2DF> text_to_print;
-		IMG_Animation *animated_background;
-		SDL_Surface   *static_background;
+		std::unique_ptr<IMG_Animation,decltype(&IMG_FreeAnimation)> animated_background;
+		std::unique_ptr<SDL_Texture,decltype(&SDL_DestroyTexture)>  static_background;
 		std::vector<std::unique_ptr<Graphical_Object>> objects;
 		std::map<std::string, std::shared_ptr<SDL_Texture>> textures;
 
