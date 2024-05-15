@@ -268,7 +268,7 @@ void Graphical_Engine::start(){
 		// On limite le nombre d'images par seconde à fps
 		if(dt >= max_dt) draw();
 
-		else std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(max_dt - dt));
+		//else std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(max_dt - dt));
 	}
 
 	//debug("Graphical_Engine::start() reach end of loop");

@@ -1,1 +1,1 @@
-/usr/bin/c++ -std=c++20 -g -Wall -Werror -Wextra -pedantic -pthread -g "CMakeFiles/test-shared-ptr.dir/src/tests/test-shared-ptr.cpp.o" -o bin/test-shared-ptr   -L/home/julien/Cours2A/Prog_Avance/Projet/lib 
+/usr/bin/c++ -std=c++20 -O3 -g -Wall -Werror -Wextra -pedantic -pthread -g "CMakeFiles/test-shared-ptr.dir/src/tests/test-shared-ptr.cpp.o" -o bin/test-shared-ptr   -L/home/julien/Cours2A/Prog_Avance/Projet/lib 

@@ -65,7 +65,7 @@ void Physical_Engine::start(){
 		// on vérifie si le temps écoulé est supérieur à max_dt
 		// on procède comme suit pour limiter le temps de calcul
 		if( dt >= max_dt){
-			update(dt / 10);
+			update(dt);
 		}
 		else{
 			std::this_thread::sleep_for(std::chrono::duration<double, std::milli>(max_dt - dt)); //ms
@@ -116,6 +116,8 @@ void Physical_Engine::update(float dt){
 
 	// On met à jour les objets physiques
 	for(auto obj : objects){
+		// on sauvegarde l'état de l'objet
+		// pour y revenir en cas de collision
 		obj->saveState();
 		obj->update(dt);
 	}
@@ -123,7 +125,7 @@ void Physical_Engine::update(float dt){
 	//debug("Physical_Engine::update() check objects");
 	
 	// on détecte si un objet sort de la scène
-	auto it = objects.begin();
+ 	auto it = objects.begin();
 	while(it != objects.end()){
 
 		Vector2DF position = (*it)->getPosition();
@@ -146,6 +148,7 @@ void Physical_Engine::update(float dt){
 			if((*it)->getLife() <= 0) {
 				it = objects.erase(it);
 				sendDestructEvent();
+				std::cout << "Physical_Engine::update() object destroyed" << std::endl;
 			}
 			else{
 				++it;
@@ -154,7 +157,6 @@ void Physical_Engine::update(float dt){
 		else{
 			++it;
 		}
-		//debug("Physical_Engine::update()");
 
 	}
 	
@@ -162,10 +164,9 @@ void Physical_Engine::update(float dt){
 	//debug("Physical_Engine::update() detectCollisions");
 	detectCollisions();
 
-
 	// On résout les collisions
 	//debug("Physical_Engine::update() resolveCollisions");
-	resolveCollisions();
+	resolveCollisions(dt);
 
 	// On supprime les objets physiques qui ont une vie nulle
 	//debug("Physical_Engine::update() removeDeadObjects");
@@ -176,8 +177,8 @@ void Physical_Engine::update(float dt){
 void Physical_Engine::detectCollisions(){
 	// On détecte les collisions entre les objets physiques
 	// On compare chaque objet avec tous les autres objets O(n^2)
-	for(auto it1 = objects.begin(); it1 != std::prev(objects.end()); ++it1){
-		for(auto it2 = it1+1; it2 != objects.end(); ++it2){
+	for(auto it1 = objects.begin(); it1 != std::prev(objects.end()); it1++){
+		for(auto it2 = it1+1; it2 != objects.end(); it2++){
 			Vector2DF intersection_point;
 			Vector2DF normal;
 			if((*it1)->isColliding(**it2, intersection_point, normal)){
@@ -189,8 +190,7 @@ void Physical_Engine::detectCollisions(){
 }
 
 
-
-void Physical_Engine::resolveCollisions(){
+void Physical_Engine::resolveCollisions(float dt){
 	// On résout les collisions
 	for(auto& [obj, collision_list] : collisions){
 		// on cherche la distance la plus proche au point de collision pour éviter la pénétration
@@ -214,9 +214,8 @@ void Physical_Engine::resolveCollisions(){
 		// on restaure l"état de l'objet
 		obj->restoreState();
 
-		// on applique la vitesse et déplace les objets
-		obj->setSpeed(speed);
-		obj->update();
+		// on applique la vitesse max et déplace les objets
+		obj->update(dt,speed);
 		// ensuite on applique la réflexion de la vitesse de colision par rapport à la normale (rebond)
 		// v' = v - 2(v.n)n (symétrie par rapport à la normale)
 		// on pourrait aussi ajouter un coefficient de restitution pour simuler l'amortissement
@@ -224,14 +223,14 @@ void Physical_Engine::resolveCollisions(){
 		// avec e le coefficient de restitution (0 < e < 1)
 		// On pourrait même prendre en compte la masse des objets et la vitesse de l'objet 2
 		// v' = (m1-m2)/(m1+m2)v1 + 2m2/(m1+m2)v2
-		/*
+		
 		Vector2DF other_speed= min_collision.obj2->getSpeed();
 		speed = speed*(obj->getMass() - min_collision.obj2->getMass()) / (obj->getMass() + min_collision.obj2->getMass())
 				+  other_speed * 2 * min_collision.obj2->getMass()/(obj->getMass() + min_collision.obj2->getMass());
-		*/
+		//*/
 		// ou simplement opposer la vitesse : v' = -v pour un rebond parfait
 		//speed = speed - 2 * speed.scalarProduct(min_collision.normal) * min_collision.normal;
-		speed -= speed;
+		//speed -= speed;
 		//Vector2DF other_speed= min_collision.obj2->getSpeed();
 		min_collision.obj2->setSpeed(-min_collision.obj2->getSpeed() );
 
@@ -240,6 +239,7 @@ void Physical_Engine::resolveCollisions(){
 		// on applique la nouvelle vitesse, 
 		// à la prochaine itération, l'objet ne devrait plus être en collision
 		obj->setSpeed(speed);
+		
 
 		min_collision.obj2->reduceLife();
 

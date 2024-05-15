@@ -277,9 +277,9 @@ void Convex_Polygon::move(const Vector2DF& offset){
 }
 
 
-void Convex_Polygon::update(float dt){
+void Convex_Polygon::update(float dt,const Vector2DF& max_speed){
 
-	Physical_Object::update(dt);
+	Physical_Object::update(dt,max_speed);
 
 	// On met à jour les positions des points du polygone
 	for (auto& p : points) {

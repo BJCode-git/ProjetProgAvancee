@@ -3,7 +3,7 @@ project(Graphical_Engine)
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(CMAKE_CXX_FLAGS "-std=c++20 -g -Wall -Wextra -pedantic -pthread -Werror")
+set(CMAKE_CXX_FLAGS "-std=c++20 -O3 -g -Wall -Wextra -pedantic -pthread -Werror")
 
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Build)
 

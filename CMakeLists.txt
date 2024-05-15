@@ -6,7 +6,7 @@ project(Casse-brique-BRELOT)
 # Configuration du standard C++ à utiliser
 set(CMAKE_CXX_STANDARD 20)
 
-set(CMAKE_CXX_FLAGS "-std=c++20 -g -Wall -Werror -Wextra -pedantic -pthread")
+set(CMAKE_CXX_FLAGS "-std=c++20 -O3 -g -Wall -Werror -Wextra -pedantic -pthread")
 
 set(CACHE PATH ${CMAKE_BINARY_DIR})
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake_modules/")

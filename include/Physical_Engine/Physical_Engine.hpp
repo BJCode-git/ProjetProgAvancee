@@ -65,7 +65,7 @@ class Physical_Engine{
 		// On suppose qu'à l'état initial, les objets physiques ne se chevauchent pas
 		void detectCollisions();
 
-		void resolveCollisions();
+		void resolveCollisions(float dt);
 
 	private:
 		bool running;

@@ -13,8 +13,8 @@ template<typename T, size_t Size, typename En = void>
 class NumericVector;
 
 
-using Vector2D  = NumericVector<unsigned int,2>;//std::pair<int, int>;
-using Vector2DF = NumericVector<float       ,2>;//std::pair<float, float>;
+using Vector2D  = NumericVector<unsigned int,2>;
+using Vector2DF = NumericVector<float       ,2>;
 
 // Point 2D
 using Point2D  = NumericVector<unsigned int,2>;
@@ -316,6 +316,14 @@ class NumericVector<T, Size, std::enable_if_t<std::is_arithmetic<T>::value>>{
 				elements[i] /= norm;
 			}
 		}
+
+		T norm() const{
+			T norm = 0;
+			for (size_t i = 0; i < Size; ++i) {
+				norm += elements[i] * elements[i];
+			}
+			return std::sqrt(norm);
+		}
 		
 		/**
 		 * @brief Outputs the vector to an output stream.
@@ -333,5 +341,7 @@ class NumericVector<T, Size, std::enable_if_t<std::is_arithmetic<T>::value>>{
 			return os;
 		}
 };
+
+const Vector2DF maxVector2DF({std::numeric_limits<float>::max(),std::numeric_limits<float>::max()});
 
 #endif // NUMERICVECTOR_HPP

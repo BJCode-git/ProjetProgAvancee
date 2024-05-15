@@ -69,8 +69,8 @@ void Circle::move(const Vector2DF& offset){
 	Physical_Object::move(offset);
 }
 
-void Circle::update(float dt){
-	Physical_Object::update(dt);
+void Circle::update(float dt,const Vector2DF& max_speed){
+	Physical_Object::update(dt, max_speed);
 }
 
 std::pair<float, float> Circle::project(const Vector2DF& axis) const {

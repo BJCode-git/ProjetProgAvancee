@@ -6,5 +6,5 @@ CXX_DEFINES = -DDEBUG
 
 CXX_INCLUDES = -I/home/julien/Cours2A/Prog_Avance/Projet/include -I/home/julien/Cours2A/Prog_Avance/Projet/include/indicators/include -I/home/julien/Cours2A/Prog_Avance/Projet/include/Physical_Engine/Physical_Engine -isystem /usr/local/include/SDL2
 
-CXX_FLAGS = -std=c++20 -g -Wall -Wextra -pedantic -pthread -Werror -g -std=gnu++20
+CXX_FLAGS = -std=c++20 -g -O3 -Wall -Wextra -pedantic -pthread -Werror -g -std=gnu++20
 

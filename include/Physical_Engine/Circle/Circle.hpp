@@ -28,7 +28,7 @@ class Circle : public Physical_Object{
 		float getRadius() const;
 		
 		virtual void move(const Vector2DF&)                                               override;
-		virtual void update(float dt=1)                                                   override;
+		virtual void update(float dt=1,const Vector2DF& max_speed= maxVector2DF)               override;
 		virtual bool isColliding(const Physical_Object &, Vector2DF &, Vector2DF &) const override;
 		virtual bool isColliding(const Convex_Polygon &,  Vector2DF &, Vector2DF &) const;
 		virtual bool isColliding(const Circle &,          Vector2DF &, Vector2DF &) const;

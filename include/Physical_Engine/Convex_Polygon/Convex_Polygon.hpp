@@ -40,7 +40,7 @@ class Convex_Polygon : public Physical_Object{
 		const Polygon& getPoints() const;
 		
 		virtual void      move(const Vector2DF&)                                              override;
-		virtual void      update(float dt=1)                                                  override;
+		virtual void      update(float dt=1,const Vector2DF& max_speed=maxVector2DF)                override;
 		virtual void      setPosition(Vector2DF)                                              override;
 		virtual Vector2DF getPosition()                                                 const override;
 		virtual bool      isColliding(const Physical_Object &,Vector2DF &,Vector2DF &)  const override;

@@ -87,10 +87,9 @@ class Physical_Object{
 		
 		virtual Vector2DF getPosition() const   ;
 		virtual void      setPosition(Vector2DF);
-
 		// Méthodes virtuelles pures
 		virtual bool      isColliding(const Physical_Object &, Vector2DF &, Vector2DF &) const = 0;
-		virtual void      update(float dt=1)                                                   = 0;
+		virtual void      update(float dt=1,const Vector2DF& max_speed= maxVector2DF)                = 0;
 
 	protected:
 		// donne la normale à un point donné de l'objet physique
@@ -109,7 +108,7 @@ class Physical_Object{
 
 	private:
 
-		void updateSpeed(float dt=1)       ;
+		void updateSpeed(float dt=1,const Vector2DF& max_speed= maxVector2DF)       ;
 		void updateAcceleration(float dt=1);
 
 		const SHAPE shape;

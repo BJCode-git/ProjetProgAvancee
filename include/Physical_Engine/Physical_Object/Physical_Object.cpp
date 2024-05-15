@@ -9,7 +9,7 @@ Vector2DF Gravity(const Physical_Object& obj){
 
 	// Pour éviter le warning "unused parameter"
 	do { (void)(obj); } while (0);
-	constexpr float g = 4.5;//1.62;//9.81;
+	constexpr float g = 1.5;//1.62;//9.81;
 	return {0, g};
 }
 
@@ -178,11 +178,17 @@ void      Physical_Object::setPosition(Vector2DF){
 	this->centroid = centroid;
 }
 
-void Physical_Object::updateSpeed(float dt){
+void Physical_Object::updateSpeed(float dt,const Vector2DF& max_speed){
 	// On met à jour la vitesse
 	// (v(t+dt) -v(t))/dt ~ a(t) => v(t+dt) = v(t) + a(t)*dt
 	speed[0] += acceleration[0] * dt;
 	speed[1] += acceleration[1] * dt;
+
+	float norm = speed.norm();
+	float max_norm = max_speed.norm();
+	if(norm > max_norm)
+		speed = speed * (max_norm / norm);
+
 }
 
 void Physical_Object::updateAcceleration(float dt){
@@ -199,10 +205,10 @@ void Physical_Object::updateAcceleration(float dt){
 }
 
 
-void Physical_Object::update(float dt){
+void Physical_Object::update(float dt,const Vector2DF& max_speed){
 	if(is_static) return;
 
-	updateSpeed(dt);
+	updateSpeed(dt,max_speed);
 	updateAcceleration(dt);
 	
 	Vector2DF offset = speed * dt;
