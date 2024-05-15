@@ -185,14 +185,16 @@ void Convex_Polygon::updateMinimumBoundingBox(const Polygon& points, int k, Poly
 	}
 }
 
+
 /**
- * Computes the minimum bounding box for a convex polygon.
+ * Computes the minimum bounding box for a convex polygon.(Rotating Calipers Algorithm)
  * 
  * This function calculates the minimum bounding box that tightly encloses a convex polygon.
  * The polygon must have at least 3 points for the calculation to be valid.
  * 
  * @throws std::runtime_error if the polygon has less than 3 points.
  */
+ /*
 void Convex_Polygon::computeMinimumBoundingBox(){ // Vérifier si le polygone a au moins 3 points
 	if (points.size() < 3) {
 		throw std::runtime_error("Convex polygon must have at least 3 points to compute minimum bounding box.");
@@ -245,14 +247,33 @@ void Convex_Polygon::computeMinimumBoundingBox(){ // Vérifier si le polygone a 
 	setBoundingBox(min_bounding_box[0], min_bounding_box[1], min_bounding_box[2], min_bounding_box[3]);
 	//hitbox = BoundingBox(min_bounding_box[0], min_bounding_box[1], min_bounding_box[2], min_bounding_box[3]);
 }
+*/
+/*Por que ça marche à peu près (au moins avec des rectangles), on simplifie grandement l'algorithme*/
+void Convex_Polygon::computeMinimumBoundingBox(){
+	float min_x = std::numeric_limits<float>::max();
+	float max_x = -std::numeric_limits<float>::max();
+	float min_y = std::numeric_limits<float>::max();
+	float max_y = -std::numeric_limits<float>::max();
+
+	for (const auto& p : points) {
+		min_x = std::min(min_x, p[0]);
+		max_x = std::max(max_x, p[0]);
+		min_y = std::min(min_y, p[1]);
+		max_y = std::max(max_y, p[1]);
+	}
+
+	setBoundingBox({min_x, min_y}, {max_x, min_y}, {max_x, max_y}, {min_x, max_y});
+
+}
 
 
 void Convex_Polygon::move(const Vector2DF& offset){
 	// On déplace le polygone en déplaçant tous ses points
+	Physical_Object::move(offset);
 	for(auto& p : points){
 		p += offset;
 	}
-	centroid += offset;
+	
 }
 
 

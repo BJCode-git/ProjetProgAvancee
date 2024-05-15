@@ -9,7 +9,7 @@ Vector2DF Gravity(const Physical_Object& obj){
 
 	// Pour éviter le warning "unused parameter"
 	do { (void)(obj); } while (0);
-	constexpr float g = 1.62;//9.81;
+	constexpr float g = 4.5;//1.62;//9.81;
 	return {0, g};
 }
 
@@ -99,6 +99,7 @@ SHAPE Physical_Object::getShape() const{
 
 void Physical_Object::move             (const Vector2DF& offset){
 	centroid = centroid + offset;
+	hitbox.move(offset);
 }
 
 void Physical_Object::setSpeed         (Vector2DF speed){
