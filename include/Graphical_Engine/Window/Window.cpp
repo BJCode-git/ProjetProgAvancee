@@ -4,7 +4,6 @@
 Window::Window(const std::string title, int w, int h, Uint32 flags):
 	width(w),
 	height(h),
-	//font(nullptr,TTF_CloseFont),
 	window(nullptr,SDL_DestroyWindow),
 	renderer(nullptr,SDL_DestroyRenderer)
 {
@@ -30,7 +29,6 @@ Window::Window(const std::string title, int w, int h, Uint32 flags):
 }
 
 Window::~Window(){
-	//TTF_CloseFont(font.get());
 	//TTF_Quit();
 	SDL_DestroyRenderer(renderer.get());
 	SDL_DestroyWindow(window.get());

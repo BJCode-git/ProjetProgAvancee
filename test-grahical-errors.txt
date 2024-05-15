@@ -1,1 +1,0 @@
-BrickBreaker: ../../src/hb-object.hh:279: bool hb_object_destroy(Type*) [with Type = hb_font_t]: Assertion `hb_object_is_valid (obj)' failed.

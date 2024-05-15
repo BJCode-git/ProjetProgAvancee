@@ -51,11 +51,12 @@ class BoundingBox{
 		 * @return The center point of the bounding box.
 		 */
 		Point2DF getCenter() const;
-
 		Point2DF getTopLeft()     const{ return top_left;};
 		Point2DF getTopRight()    const{ return top_right;};
 		Point2DF getBottomRight() const{ return bottom_right;};
 		Point2DF getBottomLeft()  const{ return bottom_left;};
+
+		void move(Vector2DF offset);
 
 	private:
 		/**

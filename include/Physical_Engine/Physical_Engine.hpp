@@ -48,6 +48,7 @@ class Physical_Engine{
 
 		void start();
 		void stop();
+		bool isRunning() const{ return running;}
 
 		void update(float dt=1);
 

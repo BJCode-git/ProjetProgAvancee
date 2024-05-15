@@ -61,7 +61,6 @@ GameEngine::~GameEngine(){
 
 void GameEngine::handle_events(){
 
-	static bool pause = false;
 	static float v = 0;
 	static float k = 1;
 	constexpr float max_velocity = 5;
@@ -114,13 +113,18 @@ void GameEngine::handle_events(){
 		break;
 		case SDL_KEYDOWN:
 			switch(event.key.keysym.sym){
-				case SDLK_ESCAPE:
-					if(pause) start();
-					else stop();
-				
-					pause = !pause;
-					break;
-				
+				case SDLK_SPACE:
+					if(running && !physical_engine->isRunning()){
+						physical_engine_thread = std::thread(&Physical_Engine::start,physical_engine.get());
+						graphical_engine->print_text("Appuyez sur Espace pour mettre en pause");
+					}
+					else if(running && physical_engine->isRunning()){
+						physical_engine->stop();
+						graphical_engine->print_text("Appuyez sur Espace pour relancer");
+						physical_engine_thread.join();
+					}
+				break;
+					
 				// on change la vitesse de la barre
 				// pour laisser le moteur physique gérer le reste
 				// La vélocité augmente logarithmiquement : v(k) = ln(k)
@@ -204,7 +208,7 @@ void GameEngine::init(){
 
 	// on crée la balle
 	// on la place au dessus de la barre
-	std::shared_ptr<Circle> ball = std::make_shared<Circle>(Point2DF{width/2, height - 35}, 5);
+	std::shared_ptr<Circle> ball = std::make_shared<Circle>(Point2DF{width/2, height - 35}, 10);
 
 	// on lui défini une vitesse initiale
 	// avec une composante horizontale aléatoire
@@ -248,7 +252,8 @@ void GameEngine::init(){
 			});
 
 
-			brick->setBreakable(true,1);
+			brick->setBreakable(true,i);
+			brick->setStatic(true);
 			// on l'ajoute à l'engine physique
 			physical_engine->addObject(brick);
 			// on l'ajoute à l'engine graphique
@@ -264,34 +269,30 @@ void GameEngine::start(){
 
 	running = true;
 
-	
 	// on lance les threads
 	//graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get());
-	//physical_engine_thread  = std::thread(&Physical_Engine::start, physical_engine.get());
-	//graphical_engine_thread = std::thread(&Graphical_Engine::start, graphical_engine.get();
+	//graphical_engine_thread = std::thread(&Graphical_Engine::start,graphical_engine.get());
 
-	
-	//window->print_text("Appuyez sur Echap pour mettre en pause");
-	graphical_engine->print_text("Appuyez sur Echap pour mettre en pause");
+	graphical_engine->print_text("Appuyez sur Espace pour commencer");
 	while(running){
-		graphical_engine->draw();
-		physical_engine->update();
 		handle_events();
+		graphical_engine->draw();
 	}
 	stop();
 
 	debug("GameEngine::start() reach end of loop , wait threads ...\n");
-	//physical_engine_th.wait();
-	//physical_engine_thread.join();
+	physical_engine_thread.join();
 	//graphical_engine_thread.join();
-	
 }
 
 
 void GameEngine::stop(){
 
+	running = false;
+	graphical_engine->print_text("Pause (Espace pour continuer) ~> Score: " + std::to_string(score));
 	graphical_engine->stop();
 	physical_engine->stop();
+	physical_engine_thread.join();
 
 	debug("GameEngine::stop()");
 	debug("Score: " + score);

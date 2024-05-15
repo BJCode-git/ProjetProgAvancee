@@ -41,7 +41,7 @@ Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 	set_background("rsc/bg.gif", true);
 
 
-	if(font.get() == nullptr){
+	if(font == nullptr){
 		std::cerr << "Error: " << TTF_GetError() << std::endl;
 	}
 
@@ -50,7 +50,6 @@ Graphical_Engine::Graphical_Engine(int width, int height, uint16_t fps_limit) :
 Graphical_Engine::~Graphical_Engine() {
 	//debug("Graphical_Engine::~Graphical_Engine()");
 
-	TTF_CloseFont(font.get());
 	IMG_Quit();
 	TTF_Quit();
 	SDL_QuitSubSystem(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
@@ -145,10 +144,6 @@ void Graphical_Engine::draw_text(){
 
 		SDL_FreeSurface(surface);
 
-		// On va afficher le au centre de la fenêtre
-		
-		//text_to_print.second[0] -= surface->w/2;
-		//text_to_print.second[1] -= surface->h/2; ;
 
 		SDL_FRect dest ={text_to_print.second[0] - surface->w/2 ,
 						 text_to_print.second[1] - surface->h/2 ,
@@ -157,6 +152,7 @@ void Graphical_Engine::draw_text(){
 						};
 
 		SDL_RenderCopyF(renderer.get(), texture, NULL, &dest);
+		
 		SDL_DestroyTexture(texture);
 	}
 }

@@ -39,7 +39,14 @@ class Graphical_Engine{
 		void stop();
 
 		//void  operator()(){start();}
-
+		enum Text_Align{
+			LEFT   = 0b000001,
+			CENTER = 0b000010,
+			RIGHT  = 0b000100,
+			TOP    = 0b001000,
+			MIDDLE = 0b010000,
+			BOTTOM = 0b100000
+		};
 		void print_text(const std::string text);
 
 		void draw();

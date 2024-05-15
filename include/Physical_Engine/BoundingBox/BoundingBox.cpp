@@ -159,3 +159,11 @@ bool BoundingBox::isColliding(const BoundingBox& other, Vector2DF& intersection_
 
     return true;
 }
+
+
+void BoundingBox::move(Vector2DF offset){
+	top_left += offset;
+	top_right += offset;
+	bottom_right += offset;
+	bottom_left += offset;
+}

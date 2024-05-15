@@ -63,7 +63,7 @@ Physical_Object::Physical_Object(Point2DF centroid,
 	if(shape == SHAPE::NONE) throw std::invalid_argument("La forme de l'objet physique doit être spécifiée");
 
 	if(!ignore_gravity) addForce(Gravity);
-	if(!is_static) addForce(Friction);
+	//if(!is_static) addForce(Friction);
 	if(!breakable) life = 255;
 
 }
@@ -92,6 +92,10 @@ uint8_t Physical_Object::getLife() const{
 
 SHAPE Physical_Object::getShape() const{
 	return shape;
+}
+
+void Physical_Object::move             (Vector2DF offset){
+	centroid = centroid + offset;
 }
 
 void Physical_Object::setSpeed         (Vector2DF speed){
@@ -196,11 +200,14 @@ void Physical_Object::update(float dt){
 
 	updateSpeed(dt);
 	updateAcceleration(dt);
-
+	
+	Vector2DF offset = speed * dt;
 	// On met à jour la position
-	// (x(t+dt) -x(t))/dt ~ v(t) => x(t+dt) = x(t) + v(t)
-	centroid[0] += speed[0] * dt;
-	centroid[1] += speed[1] * dt;
+	// (x(t+dt) -x(t))/dt ~ v(t) => x(t+dt) = x(t) + v(t) *dt
+	centroid += offset;
+
+	// On met à jour la hitbox
+	hitbox.move(offset);
 
 }
 

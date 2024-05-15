@@ -25,8 +25,8 @@ class Window{
 	private:
 		int width;
 		int height;
+		
 
-		//std::unique_ptr<TTF_Font   , void (*)(TTF_Font*)>    font;
 		std::unique_ptr<SDL_Window , decltype(&SDL_DestroyWindow)>   window;
 		std::shared_ptr<SDL_Renderer> renderer;
 		

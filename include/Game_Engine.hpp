@@ -37,17 +37,17 @@ class GameEngine{
 		int score;
 		std::shared_ptr<Convex_Polygon> phy_bar;
 
-		//std::unique_ptr<Window> window;
 		std::unique_ptr<Graphical_Engine> graphical_engine;
 		std::unique_ptr<Physical_Engine> physical_engine;
 		std::unique_ptr<Mix_Music,decltype(&Mix_FreeMusic)> music;
-		//std::unique_ptr<Sound_Engine> sound_engine;
 
-		std::thread graphical_engine_thread;
+
+		// Note : on ne peut pas utiliser de thread c++11 avec SDL2
+		// car SDL2 utilise des mécanismes de synchronisation
+		// qui ne sont pas compatibles avec les threads c++11
+		//std::thread graphical_engine_thread;
 		std::thread physical_engine_thread;
-		//std::thread sound_engine_thread;
 
-		
 
 };
 

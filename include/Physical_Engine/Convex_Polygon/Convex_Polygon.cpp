@@ -12,12 +12,17 @@ Convex_Polygon::Convex_Polygon(const Polygon &points):
 	debug("Création d'un Polygone convexe");
 	if (!isConvex()) throw std::invalid_argument("Le polygone n'est pas convexe");
 	computeCentroid();
+	computeMinimumBoundingBox();
 }
 
 Convex_Polygon::Convex_Polygon(std::initializer_list<Point2DF> list){
+	debug("Création d'un Polygone convexe");
 	for(auto point : list){
 		points.push_back(point);
 	}
+	if (!isConvex()) throw std::invalid_argument("Le polygone n'est pas convexe");
+	computeCentroid();
+	computeMinimumBoundingBox();
 }
 
 Convex_Polygon::~Convex_Polygon(){
@@ -248,9 +253,9 @@ void Convex_Polygon::update(float dt){
 
 	// On met à jour les positions des points du polygone
 	for (auto& p : points) {
-		p[0] += speed[0]*dt;
-		p[1] += speed[1]*dt;
+		p += speed*dt;
 	}
+
 
 }
 

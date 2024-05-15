@@ -21,7 +21,7 @@ class Convex_Polygon;
 class Circle : public Physical_Object{
 	public:
 		Circle(Vector2DF & pos, unsigned int r);
-		Circle(Vector2DF pos, unsigned int r);
+		Circle(Vector2DF pos,   unsigned int r);
 		~Circle();
 
 		void setRadius(float radius);

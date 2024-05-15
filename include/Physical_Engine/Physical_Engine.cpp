@@ -124,7 +124,7 @@ void Physical_Engine::update(float dt){
 	
 	// on détecte si un objet sort de la scène
 	auto it = objects.begin();
-	while(it <= objects.end()){
+	while(it != objects.end()){
 		if(*it == nullptr){ 
 			it = objects.erase(it);
 			continue;
